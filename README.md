@@ -16,7 +16,9 @@ The core of HealthCheck's backend curation around startup company data is powere
 
 ## Team
 
-Startup HealthCheck is a project of the non-profit startup hub / co-working space, [Launch Academy](http://launchacademy.ca/), based out of Vancouver, BC, Canada. [PixelCrafters](http://www.pixelcrafters.ca) is an entrepreneur-led Vancouver tech community group. [Boris Mann](http://github.com/bmann) is the project lead and [Claire Atkin](http://github.com/csatkin) is the Vancouver community curator. [DesignStamp](http://designstamp.com) is assisting with product design, UX and branding for the initial WeAreYVR site.
+Startup HealthCheck is a project of the non-profit startup hub / co-working space, [Launch Academy](http://launchacademy.ca/), based out of Vancouver, BC, Canada. [PixelCrafters](http://www.pixelcrafters.ca) is an entrepreneur-led Vancouver tech community group.
+
+Check the Contributors file for a list of the people & companies that are active contributors. We welcome pull requests!
 
 ## Collaborating
 
