@@ -7,5 +7,5 @@ When(/^I visit this page$/) do
 end
 
 Then(/^I should see the organizations profile$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content(@organization.name)
 end
