@@ -1,5 +1,5 @@
-Given(/^an organization named "(.*?)" with slug "(.*?)"$/) do |name, slug|
-  @organization = FactoryGirl.create(:organization, name: name, slug: slug)
+Given(/^an organization named "(.*?)"$/) do |name|
+  @organization = FactoryGirl.create(:organization, name: name)
 end
 
 When(/^I visit this page$/) do
