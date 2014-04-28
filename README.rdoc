@@ -1,28 +1,42 @@
-== README
+== QUICKSTART
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Ensure you have ruby v 2.1.1p76
 
-Things you may want to cover:
+2. Clone the repository from git:
+  ```shell
+  git clone git@github.com:BrewhouseTeam/startuphealthcheck.git
+  ```
 
-* Ruby version
+3. Run [Bundler](http://bundler.io/):
+  ```shell
+  bundle
+  ```
 
-* System dependencies
+4. Create your database
+  ```shell
+  bundle exec rake db:create
+  ```
 
-* Configuration
+5. Run the migrations
+  ```shell
+  bundle exec rake db:migrate
+  ```
 
-* Database creation
+5. Start the rails server
+  ```shell
+  rails server
+  ```
 
-* Database initialization
+### Running tests
 
-* How to run the test suite
+Ensure that your test database has been prepared via `bundle exec rake db:test:prepare`. After you have your database schema set up, you can begin running tests with either [RSpec](https://github.com/rspec/rspec) or [Cucumber](http://cukes.info/).
 
-* Services (job queues, cache servers, search engines, etc.)
+To run Cucumber
+```shell
+bundle exec cucumber
+```
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To run RSpec
+```shell
+bundle exec rspec spec
+```
