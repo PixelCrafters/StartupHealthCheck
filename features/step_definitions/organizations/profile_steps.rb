@@ -1,5 +1,6 @@
 Given(/^the organization has a profile page$/) do
-  pending # express the regexp above with the code you wish you had
+  organization = FactoryGirl.create(:organization)
+  visit organization_path(organization)
 end
 
 When(/^I visit this page$/) do
