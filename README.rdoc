@@ -1,28 +1,28 @@
 ==QUICKSTART
 
-1. Ensure you have ruby v 2.1.1p76
+Ensure you have ruby v 2.1.1p76
 
-2. Clone the repository from git:
+Clone the repository from git:
   
   git clone git@github.com:BrewhouseTeam/startuphealthcheck.git
   
 
-3. Run Bundler (http://bundler.io)
+Run Bundler (http://bundler.io)
   
   bundle
   
 
-4. Create your database
+Create your database
   
   bundle exec rake db:create
   
 
-5. Run the migrations
+Run the migrations
   
   bundle exec rake db:migrate
   
 
-5. Start the rails server
+Start the rails server
   
   rails server
   
