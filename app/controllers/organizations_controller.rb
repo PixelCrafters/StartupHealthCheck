@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
   def show
-    @organization = Organization.find(params[:id])
+    @organization = Organization.friendly.find(params[:id])
   end
 end
