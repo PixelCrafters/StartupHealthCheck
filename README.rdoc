@@ -1,4 +1,4 @@
-== QUICKSTART
+### QUICKSTART
 
 1. Ensure you have ruby v 2.1.1p76
 
