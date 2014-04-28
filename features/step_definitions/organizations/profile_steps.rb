@@ -6,6 +6,6 @@ When(/^I visit this page$/) do
   visit organization_path(@organization)
 end
 
-Then(/^I should see the organizations profile$/) do
+Then(/^I should see the organization profile$/) do
   page.should have_content(@organization.name)
 end

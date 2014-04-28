@@ -8,4 +8,4 @@ Feature: Organization's profile
 
   Scenario: View public profile
     When I visit this page
-    Then I should see the organizations profile
+    Then I should see the organization profile
