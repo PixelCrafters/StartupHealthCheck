@@ -4,7 +4,7 @@ Feature: Organization's profile
   I want to see an organization's profile
 
   Background:
-    Given an organization named "Brewhouse"
+    Given an organization named "Brewhouse" with slug "brewhouse"
 
   Scenario: View public profile
     When I visit this page
