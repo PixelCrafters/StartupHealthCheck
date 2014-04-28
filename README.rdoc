@@ -1,42 +1,47 @@
-### QUICKSTART
+==QUICKSTART
 
 1. Ensure you have ruby v 2.1.1p76
 
 2. Clone the repository from git:
-  ```
+  
   git clone git@github.com:BrewhouseTeam/startuphealthcheck.git
-  ```
+  
 
-3. Run [Bundler](http://bundler.io/):
-  ```
+3. Run Bundler (http://bundler.io)
+  
   bundle
-  ```
+  
 
 4. Create your database
-  ```
+  
   bundle exec rake db:create
-  ```
+  
 
 5. Run the migrations
-  ```
+  
   bundle exec rake db:migrate
-  ```
+  
 
 5. Start the rails server
-  ```
+  
   rails server
-  ```
+  
 
-### Running tests
+==Running Tests
 
-Ensure that your test database has been prepared via `bundle exec rake db:test:prepare`. After you have your database schema set up, you can begin running tests with either [RSpec](https://github.com/rspec/rspec) or [Cucumber](http://cukes.info/).
+Prepare your database
+
+  bundle exec rake db:test:prepare 
+  
+After you have your database schema set up, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
+
 
 To run Cucumber
-```
-bundle exec cucumber
-```
+
+  bundle exec cucumber
+
 
 To run RSpec
-```
-bundle exec rspec spec
-```
+
+  bundle exec rspec spec
+
