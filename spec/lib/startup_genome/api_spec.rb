@@ -5,7 +5,9 @@ describe StartupGenome::API do
 
   describe "#get_organizations" do
     it "sends a success response" do
-      expect(sg.get_organizations.status).to eq(200) 
+      VCR.use_cassette 'startup_genome_api_get_organizations' do
+        expect(sg.get_organizations.status).to eq(200) 
+      end
     end
   end
 end
