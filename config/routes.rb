@@ -54,5 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :organizations, only: [:show]
+  root :to => "organizations#index"
+  resources :organizations, only: [:index, :show]
 end

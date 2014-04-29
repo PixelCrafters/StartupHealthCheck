@@ -1,0 +1,17 @@
+<%= form_tag organizations_path, method: "get" do %>
+  <p>
+    <%= text_field_tag "query", params[:query] %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<% if @organizations.present? %>
+  <div id="organizations">
+    <% @organizations.each do |org| %>
+      <p class="search-result">
+        <%= org.name %>
+      </p>
+      <br />
+    <% end %>
+  </div>
+<% end %>

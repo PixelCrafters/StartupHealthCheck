@@ -28,6 +28,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'friendly_id', '~> 5.0.0'
 
+gem 'searchkick'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -36,6 +38,7 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :development do
