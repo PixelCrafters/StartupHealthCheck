@@ -9,7 +9,6 @@ Given(/^there are organizations available$/) do
   FactoryGirl.create(:organization, name: 'Web Startup 1')
   FactoryGirl.create(:organization, name: 'Web Startup 2')
   Organization.reindex
-  Organization.searchkick_index.refresh
 end
 
 When(/^I search for organization "(.*?)"$/) do |keywords|
