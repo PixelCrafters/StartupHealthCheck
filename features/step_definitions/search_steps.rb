@@ -26,3 +26,11 @@ Then(/^I should see (\d+) result\(s\)$/) do |count|
     page.should_not have_css("#organizations")
   end
 end
+
+When(/^I click on the first result for "(.*?)"$/) do |name|
+  click_link name
+end
+
+Then(/^I should be on the profile page for "(.*?)"$/) do |name|
+  page.should have_content(name)
+end

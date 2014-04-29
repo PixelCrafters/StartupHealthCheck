@@ -9,7 +9,9 @@ Feature: Search
   Scenario: Searching for an organization name
     When I search for "Brewhouse"
     Then I should see search results for "Brewhouse"
-    And I should see 1 result(s)   
+    And I should see 1 result(s)
+    When I click on the first result for "Brewhouse"
+    Then I should be on the profile page for "Brewhouse"   
 
   Scenario: Searching for a keyword
     When I search for "Web"
