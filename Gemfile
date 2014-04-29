@@ -30,6 +30,8 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem 'searchkick'
 
+gem 'faraday'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
