@@ -11,7 +11,7 @@ Given(/^there are organizations available$/) do
   Organization.reindex
 end
 
-When(/^I search for organization "(.*?)"$/) do |keywords|
+When(/^I search for "(.*?)"$/) do |keywords|
   search_for_keywords(keywords)
 end
 
@@ -19,7 +19,7 @@ Then(/^I should see search results for "(.*?)"$/) do |keywords|
   page.should have_content(keywords)
 end
 
-Then(/^I should see (\d*) result$/) do |count|
+Then(/^I should see (\d+) result\(s\)$/) do |count|
   if count.to_i > 0
     page.should have_css("#organizations > .search-result", :count => count.to_i)
   else

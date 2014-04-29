@@ -7,6 +7,11 @@ Feature: Search
     Given there are organizations available
 
   Scenario: Searching for an organization name
-    When I search for organization "Brewhouse"
+    When I search for "Brewhouse"
     Then I should see search results for "Brewhouse"
-    And I should see 1 result   
+    And I should see 1 result(s)   
+
+  Scenario: Searching for a keyword
+    When I search for "Web"
+    Then I should see search results for "Web"
+    And I should see 2 result(s)
