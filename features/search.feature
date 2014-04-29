@@ -1,4 +1,3 @@
-@javascript
 Feature: Search
   In order to find information
   As a visitor/person
