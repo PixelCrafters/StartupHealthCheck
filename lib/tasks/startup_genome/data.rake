@@ -2,8 +2,6 @@ namespace :data do
   desc "import data from Startup Genome API and persist"
   task import: :environment do
     sg = StartupGenome::API.new
-    sg.connect
-
     results = sg.get_organizations
     orgs = JSON.parse results.body
 
