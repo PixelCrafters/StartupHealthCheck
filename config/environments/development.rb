@@ -34,7 +34,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
-  # Location slug from Startup Genome
-  config.startup_genome_location_slug = "vancouver-britishcolumbia-can"
 end
