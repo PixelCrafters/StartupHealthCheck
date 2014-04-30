@@ -34,9 +34,6 @@ Start the rails server
 
 ==Running Tests
 
-Prepare your database
-
-  bundle exec rake db:test:prepare 
   
 After you have your database schema set up, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
 
