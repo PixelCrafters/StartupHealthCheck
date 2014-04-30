@@ -5,6 +5,11 @@ Ensure you have ruby v 2.1.1p76
 Clone the repository from git:
   
   git clone git@github.com:BrewhouseTeam/startuphealthcheck.git
+
+
+Change directories into startuphealthcheck
+
+  cd startuphealthcheck
   
 
 Run Bundler (http://bundler.io)
@@ -29,9 +34,6 @@ Start the rails server
 
 ==Running Tests
 
-Prepare your database
-
-  bundle exec rake db:test:prepare 
   
 After you have your database schema set up, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
 
