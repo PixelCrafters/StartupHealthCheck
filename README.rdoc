@@ -17,8 +17,8 @@ Run Bundler (http://bundler.io)
   bundle
   
 
-Create your database
-  
+Create your database. Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file)
+
   bundle exec rake db:create
   
 
