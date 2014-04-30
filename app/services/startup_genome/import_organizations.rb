@@ -15,19 +15,22 @@ module StartupGenome
     end
 
     def self.create_or_update_organization(org)
-      data = { name: org[1]["name"],
-               headline: org[1]["headline"],
-               description: org[1]["description"],
-               hiring_url: org[1]["hiring_url"],
-               active: org[1]["active"],
-               approved: org[1]["approved"],
-               startup_genome_slug: org[1]["slug"],
-               url: org[1]["url"],
-               founded: org[1]["founded"].to_i,
-               startup_genome_id: org[1]["organization_id"] }
-
+      data = build_data_hash(org)
       organization = Organization.find_or_initialize_by(startup_genome_id: org[1]["organization_id"])
       organization.update(data) ? print(true, org[1]["name"]) : print(false, org[1]["name"])
+    end
+
+    def self.build_data_hash(org)
+      { name: org[1]["name"],
+        headline: org[1]["headline"],
+        description: org[1]["description"],
+        hiring_url: org[1]["hiring_url"],
+        active: org[1]["active"],
+        approved: org[1]["approved"],
+        startup_genome_slug: org[1]["slug"],
+        url: org[1]["url"],
+        founded: org[1]["founded"].to_i,
+        startup_genome_id: org[1]["organization_id"] }
     end
 
     def self.print(success, org_name)
