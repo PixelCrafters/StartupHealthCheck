@@ -1,5 +1,5 @@
 module StartupGenome
-  class ImportOrganizationData
+  class ImportOrganizations
     include Service
 
     def call
