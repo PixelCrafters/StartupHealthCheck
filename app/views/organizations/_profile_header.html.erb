@@ -4,7 +4,7 @@
       <h3><%= @organization.name %></h3>
       <h5><%= @organization.headline %></h5>
       <span>status: <%= status %></span>
-      <span class="right"><%= @organization.url %></span>
+      <span class="right"><%= link_to @organization.url, @organization.url %></span>
     </div>
   </div>
 </div>
