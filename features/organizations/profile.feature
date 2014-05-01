@@ -7,5 +7,9 @@ Feature: Organization's profile
     Given an organization named "Brewhouse"
 
   Scenario: View public profile
-    When I visit this page
-    Then I should see the organization profile
+    When I visit the profile page
+    Then I should see the organization's profile
+
+  Scenario: View organization's address
+    When I visit the profile page
+    Then I should see the organization's address
