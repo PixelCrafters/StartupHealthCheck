@@ -1,6 +1,6 @@
 def search_for_keywords(keywords)
   visit "/"
-  fill_in "query", :with => keywords
+  fill_in "home-page-search", :with => keywords
   click_button "Search"
 end
 
