@@ -12,12 +12,7 @@
       <%= render 'header' %>
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <div id="headline"> 
-            <h1><%= Rails.application.config.location_name %>'s Startup<br /> Community Hub</h3>
-          </div>
-          <div class="jumbotron">
-            <%= yield %>
-          </div>
+          <%= yield %>
         </div>
       </div>
     </div><!-- /.container -->
