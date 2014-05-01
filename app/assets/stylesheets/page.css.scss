@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-input#query {
+input#home-page-search {
   height: 50px;
   font-size: 20px;
 }
@@ -17,6 +17,15 @@ input#query {
   float: right;
 }
 
+.left{
+  float: left;
+}
+
 .top-buffer { 
   margin-top:40px; 
+}
+
+.form-group-buffer{
+  position: relative;
+  top: 7px;
 }

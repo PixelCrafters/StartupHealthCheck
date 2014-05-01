@@ -8,13 +8,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    </div>
-    <div class="collapse navbar-collapse">
+    </div>   
+
+    <div class="collapse navbar-collapse left">
       <ul class="nav navbar-nav">
         <!-- TODO: hook these up -->
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div><!--/.nav-collapse -->
+
+    <div class="col-sm-4 col-sm-offset-1">
+      <% if not current_page?(organizations_path) %>
+        <%= form_tag organizations_path, method: "get", html: {role: "form"} do %>
+          <div class="form-group form-group-buffer">
+            <%= text_field_tag "query", params[:query], class: "form-control", type: "search", placeholder: "Search for Organizations" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
