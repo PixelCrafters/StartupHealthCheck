@@ -1,6 +1,4 @@
 class OrganizationsController < ApplicationController
-  include OrganizationsHelper
-
   def index
     if params[:query].present?
       results = Organization.search params[:query], {misspellings: false}
