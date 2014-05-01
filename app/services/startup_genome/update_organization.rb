@@ -12,7 +12,7 @@ module StartupGenome
       data = build_data_hash(org_hash)
       organization = Organization.find_or_initialize_by(startup_genome_id: org_hash["organization_id"])
 
-      msg = organization.update!(data) ? 'Successfully created/updated #{org_name}' : 'Failed to update #{org_name}'
+      msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
       puts msg
 
       organization
@@ -24,7 +24,7 @@ module StartupGenome
       { name: org_hash["name"],
         headline: org_hash["headline"],
         description: org_hash["description"],
-        hiring_url: org_hash["hiring_url"],
+        hiring_url: org_hash["hiring_url"], 
         active: org_hash["active"],
         approved: org_hash["approved"],
         startup_genome_slug: org_hash["slug"],
