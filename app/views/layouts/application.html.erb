@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Startuphealthcheck</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Startuphealthcheck</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <%= render 'header' %>
+    <div class="container">
+      <%= render 'header' %>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div id="headline"> 
+            <h1><%= Rails.application.config.location_name %>'s Startup<br /> Community Hub</h3>
+          </div>
+          <div class="jumbotron">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container -->
 
-  <div class="container">
-    <div class="starter-template">
-      <%= yield %>
-    </div>
-  </div><!-- /.container -->
-
-</body>
+  </body>
 </html>

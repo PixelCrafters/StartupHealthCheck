@@ -1,17 +1,25 @@
-<%= form_tag organizations_path, method: "get" do %>
-  <p>
-    <%= text_field_tag "query", params[:query] %>
-    <%= submit_tag "Search" %>
-  </p>
-<% end %>
-
-<% if @organizations.present? %>
-  <div id="organizations">
-    <% @organizations.each do |org| %>
-      <p class="search-result">
-        <%= link_to org.name, organization_path(org) %>
-      </p>
-      <br />
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <%= form_tag organizations_path, method: "get", html: {role: "form"} do %>
+      <div class="form-group">
+        <%= text_field_tag "query", params[:query], class: "form-control", type: "search", placeholder: "Search for Organizations" %>
+      </div>
+      <%= submit_tag "Search", class: "btn btn-lg btn-primary" %>
     <% end %>
   </div>
-<% end %>
+</div>
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <% if @organizations.present? %>
+      <div id="organizations">
+        <% @organizations.each do |org| %>
+          <p class="search-result">
+            <%= link_to org.name, organization_path(org) %>
+          </p>
+          <br />
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>  
