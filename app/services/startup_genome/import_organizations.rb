@@ -6,7 +6,7 @@ module StartupGenome
       results = StartupGenome::API.new.get_organizations
       persist(JSON.parse(results.body))
 
-     # TODO: Add Completion Summary "Inserted #{x} and updated #{y}"
+      # TODO: Add Completion Summary "Inserted #{x} and updated #{y}"
     end
   
     private
