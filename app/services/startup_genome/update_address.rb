@@ -20,6 +20,7 @@ module StartupGenome
       address = Address.find_or_initialize_by(organization_id: organization.id)
       msg = address.update!(data) ? "Successfully created/updated address of #{org_hash['name']}" : "Failed to update address of #{org_hash['name']}"
       puts msg
+      address
     end
 
     def build_address_hash(org_hash)
