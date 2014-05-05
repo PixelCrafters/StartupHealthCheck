@@ -5,6 +5,7 @@
       <% if @organization.main_address %>
         <span class="right"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
       <% end %>
+      <br />
       <h5><%= @organization.headline %></h5>
       <span>status: <%= status %></span>
       <span class="right"><%= link_to @organization.url, @organization.url %></span>
