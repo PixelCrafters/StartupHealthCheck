@@ -27,10 +27,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'friendly_id', '~> 5.0.0'
-
 gem 'searchkick'
-
 gem 'faraday'
+gem 'auth0'
 
 group :development, :test do
   gem 'rspec-rails'
