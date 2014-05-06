@@ -1,3 +1,4 @@
+<div class="auth-btns right">
 <% if current_user.nil? %>
   <script type="text/javascript">
     
@@ -8,8 +9,9 @@
     });
     
   </script>
-  <button onclick="widget.signin({ scope: 'openid profile' })">Login</button>
+  <button onclick="widget.signin({ scope: 'openid profile' })" class="btn btn-default" >Login</button>
 <% end %>
 <% if current_user %>
-  <%= link_to "Logout", unset_session_path %>
+  <%= link_to "Logout", unset_session_path, class: "btn btn-default" %>
 <% end %>
+</div>
