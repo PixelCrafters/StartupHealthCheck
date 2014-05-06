@@ -18,4 +18,5 @@
 .DS_Store
 
 config/database.yml
-config/secrets.yml
+config/auth0.yml
+config/startup_genome.yml
