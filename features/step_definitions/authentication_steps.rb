@@ -1,37 +1,20 @@
 def mock_auth_hash
   OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:twitter] = {
-    'provider' => 'twitter',
-    'uid' => '123545',
-    'user_info' => {
-      'name' => 'mockuser',
-      'image' => 'mock_user_thumbnail_url'
-    },
-    'credentials' => {
-      'token' => 'mock_token',
-      'secret' => 'mock_secret'
+  Capybara.default_host = 'http://localhost:3000'
+
+  OmniAuth.config.add_mock(:twitter, {
+    :uid => '12345',
+    :info => {
+      :name => 'twitteruser',
     }
-  }
+  })
 end
 
-Given(/^I click the login button$/) do
+Given(/^I login with "(.*?)"$/) do |auth_service|
   visit '/'
   mock_auth_hash
-  click_button "Login"
 end
 
-Given(/^I select Twitter$/) do
-  find(".a0-twitter").click
-end
-
-Given(/^Twitter authorizes me$/) do
-  click_button "Sign In"
-end
-
-Then(/^I should be logged in$/) do
+Then(/^I should be on the user profile page for "(.*?)"$/) do |name|
   page.should have_content("Welcome")
-end
-
-Given(/^I have registered$/) do
-  pending # express the regexp above with the code you wish you had
 end

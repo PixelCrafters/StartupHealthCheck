@@ -1,0 +1,10 @@
+require 'spec_helper'
+
+describe CreateAuthorizedUser do
+  describe "#call" do
+    it "should create the user" do
+      user = CreateAuthorizedUser.call(USER_INFO_HASH_TWITTER)
+      expect(user.persisted?).to eq true
+    end
+  end
+end

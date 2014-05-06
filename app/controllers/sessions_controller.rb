@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def set
-    if user = CreateUser.call(session[:userinfo])
+    if user = CreateAuthorizedUser.call(session[:userinfo])
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
