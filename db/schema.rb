@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501231334) do
+ActiveRecord::Schema.define(version: 20140506182745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,5 +55,16 @@ ActiveRecord::Schema.define(version: 20140501231334) do
   end
 
   add_index "organizations", ["slug"], name: "index_organizations_on_slug", unique: true, using: :btree
+
+  create_table "user_auth_services", force: true do |t|
+    t.integer "user_id"
+    t.string  "uid"
+    t.string  "service_type"
+  end
+
+  create_table "users", force: true do |t|
+    t.string "email"
+    t.string "auth0_client_id"
+  end
 
 end
