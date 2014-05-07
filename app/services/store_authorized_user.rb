@@ -13,7 +13,7 @@ class StoreAuthorizedUser
       image: userinfo["info"]["image"],
       email: userinfo["info"]["email"]
     }
-    user.create!(attributes)
+    User.create!(attributes)
   end
 end
 

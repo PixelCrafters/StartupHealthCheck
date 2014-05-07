@@ -1,4 +1,3 @@
-@javascript
 Feature: Authentication
   In order to access my account
   As a person (user)
@@ -6,4 +5,6 @@ Feature: Authentication
 
   Scenario: Signing into my account
     Given I login with "Twitter"
-    Then I should be on the user profile page for "twitteruser"
+    And I submit an email address
+    Then I should be on the user profile page for "Twitter User"
+    And my email address should be present
