@@ -1,12 +1,9 @@
 class SessionsController < ApplicationController
   def set
-    if user = StoreAuthorizedUser.call(session[:userinfo])
-      session[:user_id] = user.id
-      redirect_to user_path(user)
-    else
-      flash[:error] = "We can't sign you in."
-      redirect_to root_path
-    end
+    userinfo = session[:userinfo]
+    user_auth_service = StoreUserAuthService.call(userinfo, current_user)
+    session[:user_id] = user_auth_service.user.id
+    redirect_to user_path(user_auth_service.user)
   end
 
   def unset
