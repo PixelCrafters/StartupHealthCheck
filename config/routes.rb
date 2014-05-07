@@ -60,7 +60,7 @@ Rails.application.routes.draw do
 
   get "/auth/auth0/callback" => "auth0#callback"
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show, :update, :edit]
 
   get "/sessions/set" => "sessions#set", as: "set_session"
   get "/sessions/unset" => "sessions#unset", as: "unset_session"

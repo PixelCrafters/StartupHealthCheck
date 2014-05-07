@@ -2,11 +2,11 @@ class UsersController < ApplicationController
   def show
   end
 
-  def new
+  def edit
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @user.update(user_params)
     redirect_to user_path(@user)
   end
@@ -14,6 +14,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :name)
   end
 end
