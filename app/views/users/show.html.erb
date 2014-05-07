@@ -1,9 +1,13 @@
-<%= image_tag current_user.image, height: '50' %>
-<br />
-<%= current_user.name %>
-
-<% if current_user.email.present? %>
-  <%= current_user.email %>
-<% else %>
-  <%= render 'email_modal' %>
-<% end %>
+<div class="row">
+  <div class="col-sm-1">
+    <%= image_tag current_user.image, height: '50' %>
+  </div>
+  <div class="col-sm-4">
+    <span class="big-text"><%= current_user.name %></span><br />
+    <% if current_user.email.present? %>
+      <%= current_user.email %>
+    <% else %>
+      <%= render 'email_modal' %>
+    <% end %>
+  </div>
+</div>
