@@ -1,4 +1,4 @@
-class CreateAuthorizedUser
+class StoreAuthorizedUser
   include Service
 
   attr_reader :userinfo
