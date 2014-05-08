@@ -1,11 +1,11 @@
 <div class="auth-btns right">
 <% if current_user.nil? %>
   <script type="text/javascript">
-    
+  
     var widget = new Auth0Widget({
       domain:         '<%= Rails.application.secrets.auth0_username %>.auth0.com',
-      clientID:       'N8s02JgamO99vbx7FOsyS6rJN8nbJMIl',
-      callbackURL:    'http://localhost:3000/auth/auth0/callback'
+      clientID:       '<%= Rails.application.secrets.auth0_client_id %>',
+      callbackURL:    '<%= Rails.application.secrets.auth0_callback_url %>'
     });
     
   </script>
