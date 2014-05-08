@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :check_session
+
   def show
   end
 
@@ -12,6 +14,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def check_session
+    redirect_to unset_session_path if session[:expires_at] < Time.current
+  end
 
   def user_params
     params.require(:user).permit(:email, :name)
