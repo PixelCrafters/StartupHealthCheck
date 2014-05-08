@@ -30,6 +30,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'searchkick'
 gem 'faraday'
 gem 'auth0'
+gem 'jwt', '0.1.11' #to fix dependency issue with jwt on heroku 
 
 group :development, :test do
   gem 'rspec-rails'
