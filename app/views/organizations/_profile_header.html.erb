@@ -10,6 +10,5 @@
       <span>status: <%= status %></span>
       <span class="right"><%= link_to @organization.url, @organization.url %></span>
     </div>
-    This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
   </div>
 </div>

@@ -1,6 +1,8 @@
 
 <div>
-  <% if not @organization.claimed? %>
+  <% if @organization.claimed? %>
+      This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
+  <% else %>
     <%= link_to "claim", claim_organization_path(@organization) %>
   <% end %>
 </div>
