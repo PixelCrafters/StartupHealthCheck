@@ -1,3 +1,10 @@
+
+<div>
+  <% if not @organization.claimed? %>
+    <%= link_to "claim", claim_organization_path(@organization) %>
+  <% end %>
+</div>
+
 <%= render "organizations/profile_header" %>
 
 <%= render "organizations/profile_description" %>

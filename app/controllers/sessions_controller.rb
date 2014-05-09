@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
     user_auth_service = StoreUserAuthService.call(userinfo, current_user)
     session[:user_id] = user_auth_service.user.id
     session[:expires_at] = Time.current + 2.hours
-    redirect_to user_path(user_auth_service.user)
+    if session[:original_url]
+      redirect_to session[:original_url]
+    else
+      redirect_to user_path(user_auth_service.user)
+    end
   end
 
   def unset

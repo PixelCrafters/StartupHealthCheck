@@ -14,3 +14,12 @@
     <%= link_to "edit", edit_user_path(current_user) %>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-12">
+    <% current_user.organizations.each do |org| %>
+      <p>
+        <%= org.name %>
+      </p>
+    <% end %>
+  </div>
+</div>

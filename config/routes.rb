@@ -56,14 +56,15 @@ Rails.application.routes.draw do
 
   root :to => "organizations#index"
 
-  resources :organizations, only: [:index, :show]
+  resources :organizations, only: [:index, :show] do
+    get 'claim', on: :member
+  end
 
   get "/auth/auth0/callback" => "auth0#callback"
+  get "/auth/auth0", as: "login"
 
   resources :users, only: [:show, :update, :edit]
 
   get "/sessions/set" => "sessions#set", as: "set_session"
   get "/sessions/unset" => "sessions#unset", as: "unset_session"
-
-
 end

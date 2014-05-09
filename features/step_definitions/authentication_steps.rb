@@ -8,7 +8,7 @@ end
 
 Given(/^I login with "(.*?)"$/) do |auth_service|
   mock_auth_hash
-  visit 'auth/auth0'
+  visit login_path
 end
 
 Then(/^I should be on the user profile page for "(.*?)"$/) do |name|

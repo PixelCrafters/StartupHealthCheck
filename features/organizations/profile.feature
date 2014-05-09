@@ -13,3 +13,10 @@ Feature: Organization's profile
   Scenario: View organization's address
     When I visit the profile page
     Then I should see the organization's address
+
+  Scenario: User claims organization's profile
+    When I visit the profile page
+    And I claim the profile
+    And I login with "Twitter"
+    Then I should be the organization's admin user
+    And I should see the organization on my profile

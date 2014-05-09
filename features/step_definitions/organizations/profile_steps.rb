@@ -14,3 +14,15 @@ end
 Then(/^I should see the organization's address$/) do
   page.should have_content(@organization.main_address.address1)
 end
+
+When(/^I claim the profile$/) do
+  click_link "claim"
+end
+
+Then(/^I should be the organization's admin user$/) do
+  expect(@organization.users.first).to_not be_nil
+end
+
+Then(/^I should see the organization on my profile$/) do
+  page.should have_content(@organization.name)
+end
