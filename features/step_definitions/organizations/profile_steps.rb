@@ -16,7 +16,7 @@ Then(/^I should see the organization's address$/) do
 end
 
 When(/^I claim the profile$/) do
-  click_link "claim"
+  click_link "click here"
 end
 
 Then(/^I should be the organization's admin user$/) do

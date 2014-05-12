@@ -1,11 +1,9 @@
 
-<div>
-  <% if @organization.claimed? %>
-      This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
-  <% else %>
-    <%= link_to "claim", claim_organization_path(@organization) %>
+  <% if not @organization.claimed? %>
+    <p class="bg-primary claim-header">
+      This profile was generated via <%= link_to "Startup Genome", "http://startupgenome.com/", class: "bg-primary", target: "_blank" %>. If you would like to claim this profile, <%= link_to "click here", claim_organization_path(@organization), class: "bg-primary" %>.
+    </p>
   <% end %>
-</div>
 
 <%= render "organizations/profile_header" %>
 

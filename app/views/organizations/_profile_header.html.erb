@@ -8,6 +8,10 @@
       <br />
       <h5><%= @organization.headline %></h5>
       <span>status: <%= status %></span>
+      <% if @organization.claimed? %>
+        <br />
+        This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
+      <% end %>
       <span class="right"><%= link_to @organization.url, @organization.url %></span>
     </div>
   </div>
