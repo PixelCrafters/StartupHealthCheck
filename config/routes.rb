@@ -67,4 +67,6 @@ Rails.application.routes.draw do
 
   get "/sessions/set" => "sessions#set", as: "set_session"
   get "/sessions/unset" => "sessions#unset", as: "unset_session"
+
+  resources :profile_links, only: [:create, :update]
 end

@@ -20,3 +20,8 @@ Feature: Organization's profile
     And I login with "Twitter"
     Then I should be the organization's admin user
     And I should see the organization on my profile
+
+  Scenario: Admin user adds arbitary links to profile
+    When I visit the profile page
+    And I add a profile link for "brewhouse.io"
+    Then I should see the "brewhouse.io" link on the profile

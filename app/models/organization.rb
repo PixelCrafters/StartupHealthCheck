@@ -5,6 +5,7 @@ class Organization < ActiveRecord::Base
   searchkick
 
   has_many :addresses
+  has_many :profile_links
   has_and_belongs_to_many :users
 
   def search_data

@@ -26,3 +26,12 @@ end
 Then(/^I should see the organization on my profile$/) do
   page.should have_content(@organization.name)
 end
+
+When(/^I add a profile link for "(.*?)"$/) do |url|
+  fill_in "profile_link_url", with: url
+  click_button "Add Link"
+end
+
+Then(/^I should see the "(.*?)" link on the profile$/) do |url|
+  page.should have_content(url)
+end

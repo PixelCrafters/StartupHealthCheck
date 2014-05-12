@@ -1,10 +1,9 @@
-
-  <% if not @organization.claimed? %>
-    <p class="bg-primary claim-header">
-      This profile was generated via <%= link_to "Startup Genome", "http://startupgenome.com/", class: "bg-primary", target: "_blank" %>. If you would like to claim this profile, <%= link_to "click here", claim_organization_path(@organization), class: "bg-primary" %>.
-    </p>
-  <% end %>
+<% if not @organization.claimed? %>
+  <p class="bg-primary claim-header">
+    This profile was generated via <%= link_to "Startup Genome", "http://startupgenome.com/", class: "bg-primary", target: "_blank" %>. If you would like to claim this profile, <%= link_to "click here", claim_organization_path(@organization), class: "bg-primary" %>.
+  </p>
+<% end %>
 
 <%= render "organizations/profile_header" %>
-
+<%= render "organizations/profile_links" %>
 <%= render "organizations/profile_description" %>

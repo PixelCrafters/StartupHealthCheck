@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.friendly.find(params[:id])
+    @profile_link = ProfileLink.new
   end
 
   def claim
