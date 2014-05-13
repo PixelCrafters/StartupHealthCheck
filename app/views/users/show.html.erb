@@ -1,24 +1,29 @@
 <div class="row">
   <div class="col-sm-1">
-    <%= image_tag current_user.image, height: '50' %>
+    <% if @user.image.present? %>
+      <%= image_tag @user.image, height: '50' %>
+    <% end %>
   </div>
   <div class="col-sm-4">
-    <span class="big-text"><%= current_user.name %></span><br />
-    <% if current_user.email.present? %>
-      <%= current_user.email %>
+    <span class="big-text"><%= @user.name %></span><br />
+    <% if @user.email.present? %>
+      <%= @user.email %>
     <% else %>
       <%= render 'email_modal' %>
     <% end %>
   </div>
-  <div class="col-sm-1 col-sm-offset-10">
-    <%= link_to "edit", edit_user_path(current_user) %>
-  </div>
+  <% if current_user.present? %>
+    <div class="col-sm-1 col-sm-offset-10">
+      <%= link_to "edit", edit_user_path(@user) %>
+    </div>
+  <% end %>
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <% current_user.organizations.each do |org| %>
+    <h3>Organizations</h3>
+    <% @user.organizations.each do |org| %>
       <p>
-        <%= org.name %>
+        <%= link_to org.name, organization_path(org) %>
       </p>
     <% end %>
   </div>

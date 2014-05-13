@@ -19,6 +19,6 @@
 
 <% if @organization.claimed? %>
   <p class="claimant">
-    This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
+    This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first) %>
   </p>
 <% end %>
