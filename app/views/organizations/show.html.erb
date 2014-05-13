@@ -1,9 +1,4 @@
-<% if not @organization.claimed? %>
-  <p class="bg-primary claim-header">
-    This profile was generated via <%= link_to "Startup Genome", "http://startupgenome.com/", class: "bg-primary", target: "_blank" %>. If you would like to claim this profile, <%= link_to "click here", claim_organization_path(@organization), class: "bg-primary" %>.
-  </p>
-<% end %>
-
+<%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
 <% @organization.profile_links.each do |profile_link| %>
   <%= link_to profile_link.name, profile_link.url %>
