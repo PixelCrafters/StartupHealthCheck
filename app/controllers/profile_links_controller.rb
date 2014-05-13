@@ -6,7 +6,15 @@ class ProfileLinksController < ApplicationController
     else
       flash[:error] = "Your link was not created successfully."
     end
-    redirect_to organization_path(profile_link.organization)
+    redirect_to edit_organization_path(profile_link.organization)
+  end
+
+  def destroy
+    organization = ProfileLink.find(params[:id]).organization
+    if ProfileLink.destroy(params[:id])
+      flash[:success] = "Your link was deleted successfully"
+    end
+    redirect_to edit_organization_path(organization)
   end
 
   private

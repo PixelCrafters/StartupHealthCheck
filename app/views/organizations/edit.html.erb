@@ -1,7 +1,18 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
-<% @organization.profile_links.each do |profile_link| %>
-  <%= link_to profile_link.name, profile_link.url %><br />
-<% end %>
-<%= render "organizations/profile_links_form" %>
+<div class="col-sm-10">
+  <table class="table table-striped links-table">
+    <% @organization.profile_links.each do |profile_link| %>
+      <tr>
+        <td><%= link_to profile_link.name, profile_link.url %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-remove"></span>
+'.html_safe, profile_link_path(profile_link), method: :delete %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= render "organizations/profile_links_form" %></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
 <%= render "organizations/profile_description" %>

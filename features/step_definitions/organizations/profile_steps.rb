@@ -49,3 +49,15 @@ Given "I am an admin user" do
   step %|I submit an email address|
   step %|I visit the profile page|
 end
+
+When(/^I delete the link$/) do
+  within('.table') do
+    find('span.glyphicon-remove').click
+  end
+end
+
+Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
+  page.should_not have_content(name)
+  expect(@organization.reload.profile_links).to be_empty
+end
+

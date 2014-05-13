@@ -28,3 +28,13 @@ Feature: Organization's profile
     And I edit the profile
     And I add a profile link for "brewhouse.io" with name "Website"
     Then I should see the "Website" link on the profile
+    And I logout
+
+  @javascript  
+  Scenario: Admin user deletes arbitrary link
+    Given I am an admin user
+    And I edit the profile
+    And I add a profile link for "brewhouse.io" with name "Website"
+    And I edit the profile
+    When I delete the link
+    Then I should not see the "Website" link on the profile

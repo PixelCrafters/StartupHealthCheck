@@ -1,7 +1,9 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
 <% @organization.profile_links.each do |profile_link| %>
-  <%= link_to profile_link.name, profile_link.url %>
+  <%= link_to profile_link.name, profile_link.url %><br />
 <% end %>
-<%= link_to "edit", edit_organization_path(@organization) %>
+<div class="right">
+  <%= link_to "edit", edit_organization_path(@organization) %>
+</div>
 <%= render "organizations/profile_description" %>
