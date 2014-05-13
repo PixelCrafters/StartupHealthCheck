@@ -12,7 +12,8 @@
   <% end %>
 </ul>
 
-  <%= link_to "Edit Links", edit_organization_path(@organization), class: "edit" %>
+  <%= link_to '<span class="glyphicon glyphicon-edit"></span>
+'.html_safe, edit_organization_path(@organization), class: "edit" %>
 
 <%= render "organizations/profile_description" %>
 
