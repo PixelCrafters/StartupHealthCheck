@@ -27,6 +27,11 @@ Then(/^I should see the organization on my profile$/) do
   page.should have_content(@organization.name)
 end
 
+Given(/^I edit the profile$/) do
+  click_link 'edit'
+  current_path.should == edit_organization_path(@organization)
+end
+
 When(/^I add a profile link for "(.*?)" with name "(.*?)"$/) do |url, name|
   fill_in "profile_link_name", with: name
   fill_in "profile_link_url", with: url

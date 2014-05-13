@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_filter :check_if_signed_in, only: [:claim]
+  before_filter :check_if_signed_in, only: [:claim, :edit]
 
   def index
     if params[:query].present?
@@ -10,7 +10,6 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.friendly.find(params[:id])
-    @profile_link = ProfileLink.new
   end
 
   def claim
@@ -23,6 +22,11 @@ class OrganizationsController < ApplicationController
       redirect_to organization_path(@organization)
     end
     session[:original_url] = nil if session[:original_url]
+  end
+
+  def edit
+    @organization = Organization.friendly.find(params[:id])
+    @profile_link = ProfileLink.new
   end
 
   private

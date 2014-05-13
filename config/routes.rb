@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   root :to => "organizations#index"
 
-  resources :organizations, only: [:index, :show] do
+  resources :organizations, only: [:index, :show, :edit] do
     get 'claim', on: :member
   end
 

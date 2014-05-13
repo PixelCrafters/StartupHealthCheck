@@ -1,0 +1,11 @@
+<div class="col-sm-4">
+  <%= form_for @profile_link, method: :post, html: {role: "form"} do |f| %>
+    <div class="form-group">
+      Name: <%= f.text_field :name, class: "form-control" %>
+      URL: <%= f.text_field :url, class: "form-control" %>
+    </div>
+    <%= f.hidden_field :organization_id, :value => @organization.id %>
+    <%= f.submit "Add Link", class: "btn btn-primary" %>
+  <% end %>
+</div>
+

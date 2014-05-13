@@ -5,8 +5,9 @@
 <% end %>
 
 <%= render "organizations/profile_header" %>
+<%= render "organizations/profile_links_form" %>
 <% @organization.profile_links.each do |profile_link| %>
   <%= link_to profile_link.name, profile_link.url %>
 <% end %>
-<%= link_to "edit", edit_organization_path(@organization) %>
+<%= link_to "done", organization_path(@organization) %>
 <%= render "organizations/profile_description" %>

@@ -25,5 +25,6 @@ Feature: Organization's profile
 
   Scenario: Admin user adds arbitary links to profile
     Given I am an admin user
+    And I edit the profile
     And I add a profile link for "brewhouse.io" with name "Website"
     Then I should see the "Website" link on the profile
