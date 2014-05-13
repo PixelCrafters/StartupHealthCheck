@@ -27,11 +27,20 @@ Then(/^I should see the organization on my profile$/) do
   page.should have_content(@organization.name)
 end
 
-When(/^I add a profile link for "(.*?)"$/) do |url|
+When(/^I add a profile link for "(.*?)" with name "(.*?)"$/) do |url, name|
+  fill_in "profile_link_name", with: name
   fill_in "profile_link_url", with: url
   click_button "Add Link"
 end
 
-Then(/^I should see the "(.*?)" link on the profile$/) do |url|
-  page.should have_content(url)
+Then(/^I should see the "(.*?)" link on the profile$/) do |name|
+  page.should have_content(name)
+end
+
+Given "I am an admin user" do
+  step %|I visit the profile page|
+  step %|I claim the profile|
+  step %|I login with "Twitter"|
+  step %|I submit an email address|
+  step %|I visit the profile page|
 end

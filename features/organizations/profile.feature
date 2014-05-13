@@ -18,10 +18,12 @@ Feature: Organization's profile
     When I visit the profile page
     And I claim the profile
     And I login with "Twitter"
+    And I submit an email address
     Then I should be the organization's admin user
     And I should see the organization on my profile
+    And I logout
 
   Scenario: Admin user adds arbitary links to profile
-    When I visit the profile page
-    And I add a profile link for "brewhouse.io"
-    Then I should see the "brewhouse.io" link on the profile
+    Given I am an admin user
+    And I add a profile link for "brewhouse.io" with name "Website"
+    Then I should see the "Website" link on the profile

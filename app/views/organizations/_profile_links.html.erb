@@ -1,8 +1,9 @@
-<% if current_user == @organization.users.first %>
+<% if current_user and (current_user == @organization.users.first) %>
   <div class="col-sm-4">
     <%= form_for @profile_link, method: :post, html: {role: "form"} do |f| %>
       <div class="form-group">
-        <%= f.text_field :url, class: "form-control" %>
+        Name: <%= f.text_field :name, class: "form-control" %>
+        URL: <%= f.text_field :url, class: "form-control" %>
       </div>
       <%= f.hidden_field :organization_id, :value => @organization.id %>
       <%= f.submit "Add Link", class: "btn btn-primary" %>
@@ -10,5 +11,5 @@
   </div>
 <% end %>
 <% @organization.profile_links.each do |profile_link| %>
-  <%= link_to profile_link.url, "http://" + profile_link.url %>
+  <%= link_to profile_link.name, profile_link.url %>
 <% end %>

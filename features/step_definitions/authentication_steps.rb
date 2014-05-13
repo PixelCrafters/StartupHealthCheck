@@ -23,3 +23,7 @@ end
 Then(/^my email address should be present$/) do
   page.should have_content("twitteruser@example.com")
 end
+
+Given(/^I logout$/) do 
+  click_link "Logout"
+end
