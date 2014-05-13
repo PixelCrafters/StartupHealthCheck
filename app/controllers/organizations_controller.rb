@@ -12,16 +12,21 @@ class OrganizationsController < ApplicationController
     @organization = Organization.friendly.find(params[:id])
   end
 
+  #TODO: extract into service
   def claim
     @organization = Organization.friendly.find(params[:id])
-    @organization.claimed = true
-    if @organization.save!
-      @organization.users << current_user
-      redirect_to user_path(@organization.users.first)
+    if @organization.claimed?
+      redirect_to user_path(current_user)
     else
-      redirect_to organization_path(@organization)
+      @organization.claimed = true
+      if @organization.save!
+        @organization.users << current_user
+        redirect_to user_path(@organization.users.first)
+      else
+        redirect_to organization_path(@organization)
+      end
+      session[:original_url] = nil if session[:original_url]
     end
-    session[:original_url] = nil if session[:original_url]
   end
 
   def edit
