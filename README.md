@@ -2,6 +2,11 @@
 
 Ensure you have ruby v 2.1.1p76
 
+Install Elastic Search (using Homebrew or package manager of your choosing)
+
+  brew install elasticsearch
+  
+
 Clone the repository from git:
   
   git clone git@github.com:BrewhouseTeam/startuphealthcheck.git
