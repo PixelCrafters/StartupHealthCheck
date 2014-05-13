@@ -1,9 +1,23 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
-<% @organization.profile_links.each do |profile_link| %>
-  <%= link_to profile_link.name, profile_link.url %><br />
-<% end %>
-<div class="right">
-  <%= link_to "edit", edit_organization_path(@organization) %>
-</div>
+
+<ul class="list-unstyled">
+  <li>
+    <span><%= link_to "Startup Genome", @organization.url %></span>
+  </li>
+  <% @organization.profile_links.each do |profile_link| %> 
+    <li>
+      <%= link_to profile_link.name, profile_link.url %>
+    </li>
+  <% end %>
+</ul>
+
+  <%= link_to "Edit Links", edit_organization_path(@organization), class: "edit" %>
+
 <%= render "organizations/profile_description" %>
+
+<% if @organization.claimed? %>
+  <p class="claimant">
+    This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
+  </p>
+<% end %>

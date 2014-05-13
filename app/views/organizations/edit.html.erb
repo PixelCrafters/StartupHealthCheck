@@ -2,6 +2,12 @@
 <%= render "organizations/profile_header" %>
 <div class="col-sm-10">
   <table class="table table-striped links-table">
+    <tr>
+      <td> 
+        <%= link_to "Startup Genome", @organization.url %>
+      </td>
+      <td></td>
+    </tr>
     <% @organization.profile_links.each do |profile_link| %>
       <tr>
         <td><%= link_to profile_link.name, profile_link.url %></td>

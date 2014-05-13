@@ -52,7 +52,7 @@ input#home-page-search {
 }
 
 .claim-header{
-  padding: 20px;
+  padding: 15px;
 }
 
 .small-field{
@@ -62,5 +62,13 @@ input#home-page-search {
 
 .no-buffer{
   padding: 0 !important;
+}
+
+.claimant{
+  margin-top: 50px;
+}
+
+a.edit{
+  text-decoration: underline;
 }
 

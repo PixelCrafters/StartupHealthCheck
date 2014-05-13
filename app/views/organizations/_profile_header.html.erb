@@ -3,16 +3,16 @@
     <div id="profile-header">
       <h3><%= @organization.name %></h3>
       <% if @organization.main_address %>
-        <span class="right"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
+        <span class="left"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
       <% end %>
-      <br />
-      <h5><%= @organization.headline %></h5>
-      <span>status: <%= status %></span>
-      <% if @organization.claimed? %>
-        <br />
-        This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first.name) %>
+      <p><%= @organization.headline %></p>
+      <br /><br />
+      <% if status == "active" %>
+        <span class="label label-success left"><%= status %></span>
+      <% else %>
+        <span class="label label-danger left"><%= status %></span>
       <% end %>
-      <span class="right"><%= link_to @organization.url, @organization.url %></span>
     </div>
+    <br /><br />
   </div>
 </div>
