@@ -28,7 +28,7 @@ Then(/^I should see the organization on my profile$/) do
 end
 
 Given(/^I edit the profile$/) do
-  click_link 'edit'
+  find('span.glyphicon-edit').click
   current_path.should == edit_organization_path(@organization)
 end
 

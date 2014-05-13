@@ -23,6 +23,7 @@ Feature: Organization's profile
     And I should see the organization on my profile
     And I logout
 
+  @javascript
   Scenario: Admin user adds arbitary links to profile
     Given I am an admin user
     And I edit the profile
@@ -35,6 +36,5 @@ Feature: Organization's profile
     Given I am an admin user
     And I edit the profile
     And I add a profile link for "brewhouse.io" with name "Website"
-    And I edit the profile
     When I delete the link
     Then I should not see the "Website" link on the profile
