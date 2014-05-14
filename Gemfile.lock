@@ -122,7 +122,6 @@ GEM
     multi_test (0.1.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    net-http-persistent (2.9.4)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth2 (0.9.3)
@@ -151,10 +150,6 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rack-wwwhisper (1.1.7)
-      addressable (~> 2.0)
-      net-http-persistent
-      rack (~> 1.0)
     rails (4.1.0)
       actionmailer (= 4.1.0)
       actionpack (= 4.1.0)
@@ -257,7 +252,6 @@ DEPENDENCIES
   pg
   pry
   pry-debugger
-  rack-wwwhisper (~> 1.0)
   rails (= 4.1.0)
   rspec-rails
   sass-rails (~> 4.0.3)
