@@ -3,6 +3,7 @@ class Organization < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   searchkick
+  acts_as_taggable
 
   has_many :addresses
   has_many :profile_links

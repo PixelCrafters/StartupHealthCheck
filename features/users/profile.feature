@@ -1,3 +1,4 @@
+@auth0
 Feature: User's profile
   In order to present information about myself
   As a user

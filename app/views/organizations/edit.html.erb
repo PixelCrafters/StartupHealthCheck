@@ -21,4 +21,9 @@
     </tr>
   </table>
 </div>
+
+<div class="col-sm-10">
+  <%= @organization.tag_list %>
+  <%= render "organizations/tags_form" %>
+</div>
 <%= render "organizations/profile_description" %>

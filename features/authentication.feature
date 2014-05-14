@@ -1,3 +1,4 @@
+@auth0
 Feature: Authentication
   In order to access my account
   As a person (user)
