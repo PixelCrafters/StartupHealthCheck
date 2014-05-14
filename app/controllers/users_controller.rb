@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :check_session, only: [:edit, :update]
+  before_filter :check_session, only: [:edit, :update, :verify_email]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def edit
@@ -15,6 +15,15 @@ class UsersController < ApplicationController
     end  
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  def verify_email_callback
+    if current_user.present?
+      current_user.email_verified = true
+      current_user.save!
+    end
+    flash[:success] = "Thank you! Your email has been verified."
+    binding.pry
   end
 
   private

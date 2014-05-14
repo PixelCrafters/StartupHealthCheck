@@ -1,4 +1,9 @@
 <div class="row">
+  <% if current_user.present? && !current_user.email_verified? %>
+    <p class="bg-primary claim-header">
+      Please verify your email address by clicking the link in the email we sent you.
+    </p>
+  <% end %>
   <div class="col-sm-1">
     <% if @user.image.present? %>
       <%= image_tag @user.image, height: '50' %>

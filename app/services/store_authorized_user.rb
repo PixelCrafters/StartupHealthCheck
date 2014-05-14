@@ -11,7 +11,8 @@ class StoreAuthorizedUser
     attributes = {
       name: userinfo["info"]["name"], 
       image: userinfo["info"]["image"],
-      email: userinfo["info"]["email"]
+      email: userinfo["info"]["email"],
+      email_verified: userinfo["extra"]["raw_info"]["email_verified"]
     }
     User.create!(attributes)
   end

@@ -1,3 +1,4 @@
+@auth0
 Feature: Organization's profile
   In order to acquire info about an organization
   As a visitor/person

@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://jncoops.auth0.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"N8s02JgamO99vbx7FOsyS6rJN8nbJMIl","client_secret":"gXwlUlAm-pR-KLEQ8jI3yxFnU3J6sFuzJxDzfIZg3GEJfsCO-rZ4cKe2sYDqiZrM","grant_type":"client_credentials"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.7.0
+      Date:
+      - Wed, 14 May 2014 21:52:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - auth0=-D03X2sIo8bpduHerCB9yQ.giPAS9aZMFCq3KvKc0VVK8Ph5qDLwZbrKD6QTT29_b4.1400104346554.86400000.1KVF7_CxJnjiwMSm_pIom8dJ6lU2obfZhymNd-GUorI;
+        path=/; secure; httponly
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"vNK2LHE1U8PVKB6KdxjgACRz2YJeYwbAp8ZgOmciqYFbrRLC8TNgUdTrjciwfi2d","token_type":"bearer"}'
+    http_version: 
+  recorded_at: Wed, 14 May 2014 21:52:28 GMT
+- request:
+    method: post
+    uri: https://jncoops.auth0.com/api/users/send_verification_email
+    body:
+      encoding: UTF-8
+      string: '{"email":"twitteruser@example.com","connection":"twitter"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer vNK2LHE1U8PVKB6KdxjgACRz2YJeYwbAp8ZgOmciqYFbrRLC8TNgUdTrjciwfi2d
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.7.0
+      Date:
+      - Wed, 14 May 2014 21:52:27 GMT
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+    body:
+      encoding: UTF-8
+      string: OK
+    http_version: 
+  recorded_at: Wed, 14 May 2014 21:52:29 GMT
+recorded_with: VCR 2.9.0

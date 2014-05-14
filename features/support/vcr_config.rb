@@ -6,3 +6,7 @@ VCR.config do |c|
   c.default_cassette_options = { :record => :new_episodes }
   c.ignore_localhost = true
 end
+
+VCR.cucumber_tags do |t|
+  t.tag '@auth0'
+end

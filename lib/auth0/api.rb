@@ -35,6 +35,19 @@ module Auth0
       end
     end
 
+    def update_email(email, uid)
+      connect
+      @conn.put do |request|
+        request.url 'api/users/#{uid}/email'
+        request.headers['Authorization'] = 'Bearer ' + access_token
+        request.headers['Content-Type'] = 'application/json'
+        request.body = {
+                        email: email,
+                        verify: true
+                       }.to_json
+      end
+    end
+
     private
 
     def connect
