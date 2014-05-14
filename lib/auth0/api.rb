@@ -1,0 +1,48 @@
+require 'faraday'
+
+module Auth0
+  class API
+    def initialize
+      @host = 'https://jncoops.auth0.com/'
+      @auth0_client_id = Rails.application.secrets.auth0_client_id
+      @auth0_secret = Rails.application.secrets.auth0_secret
+    end
+
+    def access_token
+      connect
+      response = @conn.post do |request|
+        request.url 'oauth/token' 
+        request.headers['Content-Type'] = 'application/json'
+        request.body = {
+                        client_id: @auth0_client_id,
+                        client_secret: @auth0_secret,
+                        grant_type: 'client_credentials'
+                       }.to_json
+      end
+      JSON.parse(response.body)["access_token"]
+    end
+
+    def send_verification_email(email, connection)
+      connect
+      @conn.post do |request|
+        request.url 'api/users/send_verification_email' 
+        request.headers['Authorization'] = 'Bearer ' + access_token
+        request.headers['Content-Type'] = 'application/json'
+        request.body = {
+                        email: email,
+                        connection: connection
+                       }.to_json
+      end
+    end
+
+    private
+
+    def connect
+      @conn = Faraday.new(:url => @host) do |faraday|
+        faraday.request  :url_encoded            
+        faraday.response :logger                 
+        faraday.adapter  Faraday.default_adapter
+      end
+    end
+  end
+end 
