@@ -15,6 +15,4 @@ class StoreAuthorizedUser
     }
     User.create!(attributes)
   end
-end
-
-    
+end   
