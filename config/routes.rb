@@ -71,4 +71,5 @@ Rails.application.routes.draw do
   resources :profile_links, only: [:create, :update, :destroy]
 
   get 'tags/:tag', to: 'organizations#index', as: :tag
+  delete 'tag/:organization_id/:tag_id', to: 'organizations#destroy_tag', as: "destroy_tag"
 end

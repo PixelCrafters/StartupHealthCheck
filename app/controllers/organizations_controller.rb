@@ -44,6 +44,18 @@ class OrganizationsController < ApplicationController
     redirect_to edit_organization_path(@organization)
   end
 
+  def destroy_tag
+    organization = Organization.find(params[:organization_id])
+    tag = organization.tags.find(params[:tag_id])
+    organization.tag_list.remove(tag.name)
+    if organization.save!
+      flash[:success] = "The tag was successfully removed"
+    else
+      flash[:error] = "There was a problem removing your tag"
+    end
+    redirect_to edit_organization_path(organization)
+  end
+
   private
 
   # TODO: extract into service
