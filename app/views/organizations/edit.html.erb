@@ -1,5 +1,6 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
+
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-body">
@@ -40,7 +41,7 @@
                   <span class="label label-primary tag">
                     <%= link_to tag.name, tag_path(tag.name) %>
                     <%= link_to '<span class="glyphicon glyphicon-remove"></span>
-      '.html_safe, destroy_tag_path(@organization.id, tag.id), method: :delete %>
+      '.html_safe, destroy_tag_path(@organization.id, tag.id), method: :delete, class: "remove-tag" %>
                   </span>
                 <% end %>
               </div>
