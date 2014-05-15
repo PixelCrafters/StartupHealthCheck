@@ -1,10 +1,3 @@
-Given(/^I edit the tags$/) do
-  within("#tags") do
-    find('span.glyphicon-edit').click
-  end
-  current_path.should == edit_organization_path(@organization)
-end
-
 Given(/^I add a new tag "(.*?)"$/) do |tag_name|
   fill_in "organization_tag_list", with: tag_name
   click_button "Add Tag"

@@ -10,7 +10,7 @@ Feature: Organization's tags
   @javascript
   Scenario: Adding a tag
     Given I am an admin user
-    And I edit the tags
+    And I edit the profile
     And I add a new tag "software"
     Then the new tag "software" should be applied to my organization
     And I should see my organization when I browse by "software"
