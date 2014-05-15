@@ -47,10 +47,10 @@ After you have your database schema set up, you can begin running tests with eit
 
 To run Cucumber
 
-  bundle exec cucumber
+  cucumber
 
 
 To run RSpec
 
-  bundle exec rspec spec
+  rspec spec
 
