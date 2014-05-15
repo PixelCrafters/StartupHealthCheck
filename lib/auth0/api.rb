@@ -6,7 +6,7 @@ module Auth0
       @host = "https://" + Rails.application.secrets.auth0_domain
       @auth0_client_id = Rails.application.secrets.auth0_client_id
       @auth0_secret = Rails.application.secrets.auth0_secret
-      @conn = connect
+      @conn = APIConnection.connect_via_faraday(@host)
     end
 
     def access_token
@@ -31,16 +31,6 @@ module Auth0
                         email: email,
                         connection: connection
                        }.to_json
-      end
-    end
-
-    private
-
-    def connect
-      Faraday.new(:url => @host) do |faraday|
-        faraday.request  :url_encoded            
-        faraday.response :logger                 
-        faraday.adapter  Faraday.default_adapter
       end
     end
   end
