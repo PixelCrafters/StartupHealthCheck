@@ -51,6 +51,12 @@ input#home-page-search {
   color: #FFF;
 }
 
+.no-buffer{
+  padding: 0 !important;
+}
+
+/*** Organization Styles ***/
+
 .claim-header{
   padding: 15px;
 }
@@ -58,10 +64,6 @@ input#home-page-search {
 .small-field{
   height: 30px !important;
   width: 150px !important;
-}
-
-.no-buffer{
-  padding: 0 !important;
 }
 
 .claimant{
@@ -92,4 +94,3 @@ a.edit{
 .tag-list{
   margin: 10px;
 }
-

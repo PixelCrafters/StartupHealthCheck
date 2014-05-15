@@ -1,37 +1,7 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
-
-<div class="row">
-  <div class="col-sm-5">
-    <ul class="list-unstyled">
-      <li>
-        <span><%= link_to "Startup Genome", @organization.url %></span>
-      </li>
-      <% @organization.profile_links.each do |profile_link| %> 
-        <li>
-          <%= link_to profile_link.name, profile_link.url %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-
-<% if @organization.tags.any? %>
-  <div class="row">
-    <div class="col-sm-12">
-      <div id="tags">
-        <div class="tag-list">
-          <% @organization.tags.each do |tag| %>
-            <span class="label label-primary tag">
-              <%= link_to tag.name, tag_path(tag.name) %>
-            </span>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
+<%= render "organizations/show_profile_links" %>
+<%= render "organizations/show_tags" if @organization.tags.any? %> 
 <%= render "organizations/profile_description" %>
 
 <% if @organization.claimed? %>
