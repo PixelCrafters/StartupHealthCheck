@@ -35,22 +35,32 @@ class OrganizationsController < ApplicationController
   end
 
   def update
+    save_tags if params[:organization][:tag_list].present?
     if @organization.update(organization_params)
-      flash[:success] = "Your tag(s) were added successfully!"
+      flash[:success] = "The organization was updated successfully"
     else
-      flash[:error] = "There was a problem adding your tag(s)."
+      flash[:error] = "There was a problem updating your organization"
     end
     redirect_to edit_organization_path(@organization)
   end
 
   private
 
+  # TODO: extract into service
+  def save_tags
+    if @organization.tag_list.add(params[:organization][:tag_list])
+      flash[:success] = "Your tag was saved successfully"
+    else
+      flash[:error] = "There was a problem saving your tag"
+    end
+  end
+
   def find_organization
     @organization = Organization.friendly.find(params[:id])
   end
 
   def organization_params
-    params.require(:organization).permit(:claimed, :user_id, :tag_list)
+    params.require(:organization).permit(:claimed, :user_id)
   end
 
   def check_if_signed_in
