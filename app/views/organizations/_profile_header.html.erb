@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-sm-12">
     <div id="profile-header">
-      <h3><%= @organization.name %></h3>
+      <h3>
+        <%= @organization.name %>
+        <%= link_to '<span class="glyphicon glyphicon-edit"></span>
+'.html_safe, edit_organization_path(@organization), class: "edit right" %>
+      </h3>
       <% if @organization.main_address %>
         <span class="left"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
       <% end %>

@@ -12,15 +12,16 @@
       </li>
     <% end %>
   </ul>
-
-  <%= link_to '<span class="glyphicon glyphicon-edit"></span>
-'.html_safe, edit_organization_path(@organization), class: "edit" %>
 </div>
 
 <div id="tags">
-  <%= @organization.tag_list %>
-  <%= link_to '<span class="glyphicon glyphicon-edit"></span>
-'.html_safe, edit_organization_path(@organization), class: "edit" %>
+  <div class="tag-list">
+    <% @organization.tags.each do |tag| %>
+      <span class="label label-primary tag">
+        <%= link_to tag.name, tag_path(tag.name) %>
+      </span>
+    <% end %>
+  </div>
 </div>
 
 <%= render "organizations/profile_description" %>
