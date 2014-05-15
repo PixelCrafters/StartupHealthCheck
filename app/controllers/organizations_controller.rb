@@ -60,10 +60,12 @@ class OrganizationsController < ApplicationController
 
   # TODO: extract into service
   def save_tags
-    if @organization.tag_list.add(params[:organization][:tag_list])
-      flash[:success] = "Your tag was saved successfully"
-    else
-      flash[:error] = "There was a problem saving your tag"
+    params[:organization][:tag_list].split(',').each do |tag_name|
+      if @organization.tag_list.add(tag_name)
+        flash[:success] = "Your tag was saved successfully"
+      else
+        flash[:error] = "There was a problem saving your tag"
+      end
     end
   end
 
