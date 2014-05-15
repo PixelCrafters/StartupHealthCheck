@@ -22,7 +22,7 @@ input#home-page-search {
 }
 
 .top-buffer { 
-  margin-top:40px; 
+  margin-top: 40px; 
 }
 
 .form-group-buffer{
@@ -70,5 +70,26 @@ input#home-page-search {
 
 a.edit{
   text-decoration: underline;
+}
+
+.status{
+  font-size: 11pt !important;
+}
+
+.tag{
+  margin: 3px;
+  font-size: 11pt !important;
+}
+
+.tag a{
+  color: #FFF;
+}
+
+.tag a:hover{
+  color: #FFF;
+}
+
+.tag-list{
+  margin: 10px;
 }
 
