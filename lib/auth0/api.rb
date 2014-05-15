@@ -6,10 +6,10 @@ module Auth0
       @host = "https://" + Rails.application.secrets.auth0_domain
       @auth0_client_id = Rails.application.secrets.auth0_client_id
       @auth0_secret = Rails.application.secrets.auth0_secret
+      @conn = connect
     end
 
     def access_token
-      connect
       response = @conn.post do |request|
         request.url 'oauth/token' 
         request.headers['Content-Type'] = 'application/json'
@@ -23,7 +23,6 @@ module Auth0
     end
 
     def send_verification_email(email, connection)
-      connect
       @conn.post do |request|
         request.url 'api/users/send_verification_email' 
         request.headers['Authorization'] = 'Bearer ' + access_token
@@ -38,7 +37,7 @@ module Auth0
     private
 
     def connect
-      @conn = Faraday.new(:url => @host) do |faraday|
+      Faraday.new(:url => @host) do |faraday|
         faraday.request  :url_encoded            
         faraday.response :logger                 
         faraday.adapter  Faraday.default_adapter

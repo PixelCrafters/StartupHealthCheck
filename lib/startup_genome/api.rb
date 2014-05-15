@@ -7,6 +7,7 @@ module StartupGenome
       @path = 'organizations/city/'
       @auth_code = Rails.application.secrets.startup_genome_auth_code
       @location_slug = Rails.application.config.startup_genome_location_slug
+      @conn = connect
 
       raise 'You must provide a Startup Genome Authorization Code' if @auth_code.nil?
       raise 'You must provide a Startup Genome Location Slug' if @location_slug.nil?
@@ -14,14 +15,13 @@ module StartupGenome
 
     # TODO: Pass in organizations path to method rather than setting on obj creation
     def get_organizations
-      connect
       @conn.get url, {}, {'auth-code' => @auth_code}
     end
 
     private
 
     def connect
-      @conn = Faraday.new(:url => @host) do |faraday|
+      Faraday.new(:url => @host) do |faraday|
         faraday.request  :url_encoded            
         faraday.response :logger                 
         faraday.adapter  Faraday.default_adapter
