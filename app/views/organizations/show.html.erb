@@ -1,19 +1,27 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
 
-<ul class="list-unstyled">
-  <li>
-    <span><%= link_to "Startup Genome", @organization.url %></span>
-  </li>
-  <% @organization.profile_links.each do |profile_link| %> 
+<div id="profile-links">
+  <ul class="list-unstyled">
     <li>
-      <%= link_to profile_link.name, profile_link.url %>
+      <span><%= link_to "Startup Genome", @organization.url %></span>
     </li>
-  <% end %>
-</ul>
+    <% @organization.profile_links.each do |profile_link| %> 
+      <li>
+        <%= link_to profile_link.name, profile_link.url %>
+      </li>
+    <% end %>
+  </ul>
 
   <%= link_to '<span class="glyphicon glyphicon-edit"></span>
 '.html_safe, edit_organization_path(@organization), class: "edit" %>
+</div>
+
+<div id="tags">
+  <%= @organization.tag_list %>
+  <%= link_to '<span class="glyphicon glyphicon-edit"></span>
+'.html_safe, edit_organization_path(@organization), class: "edit" %>
+</div>
 
 <%= render "organizations/profile_description" %>
 

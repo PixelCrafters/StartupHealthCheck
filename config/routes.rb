@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   root :to => "organizations#index"
 
-  resources :organizations, only: [:index, :show, :edit] do
+  resources :organizations, only: [:index, :show, :edit, :update] do
     get 'claim', on: :member
   end
 
@@ -72,4 +72,6 @@ Rails.application.routes.draw do
   get "/sessions/unset" => "sessions#unset", as: "unset_session"
 
   resources :profile_links, only: [:create, :update, :destroy]
+
+  get 'tags/:tag', to: 'organizations#index', as: :tag
 end

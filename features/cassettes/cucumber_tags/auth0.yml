@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Wed, 14 May 2014 21:52:26 GMT
+      - Thu, 15 May 2014 16:12:58 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,13 +35,13 @@ http_interactions:
       Pragma:
       - no-cache
       Set-Cookie:
-      - auth0=-D03X2sIo8bpduHerCB9yQ.giPAS9aZMFCq3KvKc0VVK8Ph5qDLwZbrKD6QTT29_b4.1400104346554.86400000.1KVF7_CxJnjiwMSm_pIom8dJ6lU2obfZhymNd-GUorI;
+      - auth0=GGbtJkZF3vaOzVzLH1moLQ.xMFBrwym-WwwvNKoc2oV9iUUYmTCYOweQHxbCo0SUzE.1400170378513.86400000.OZCLta9LVF_NfULZEyBllYQue4Yrz5jzm8H3Wg27DHo;
         path=/; secure; httponly
     body:
       encoding: UTF-8
-      string: '{"access_token":"vNK2LHE1U8PVKB6KdxjgACRz2YJeYwbAp8ZgOmciqYFbrRLC8TNgUdTrjciwfi2d","token_type":"bearer"}'
+      string: '{"access_token":"DO9VCvJHRa8UwoGdnotrpwOomdduCCf7TfM0TmK83Eb6hqCKKe55yr8K3a0DiYhY","token_type":"bearer"}'
     http_version: 
-  recorded_at: Wed, 14 May 2014 21:52:28 GMT
+  recorded_at: Thu, 15 May 2014 16:12:58 GMT
 - request:
     method: post
     uri: https://jncoops.auth0.com/api/users/send_verification_email
@@ -52,7 +52,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer vNK2LHE1U8PVKB6KdxjgACRz2YJeYwbAp8ZgOmciqYFbrRLC8TNgUdTrjciwfi2d
+      - Bearer DO9VCvJHRa8UwoGdnotrpwOomdduCCf7TfM0TmK83Eb6hqCKKe55yr8K3a0DiYhY
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -67,7 +67,7 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Wed, 14 May 2014 21:52:27 GMT
+      - Thu, 15 May 2014 16:12:59 GMT
       Content-Type:
       - text/plain
       Content-Length:
@@ -80,5 +80,5 @@ http_interactions:
       encoding: UTF-8
       string: OK
     http_version: 
-  recorded_at: Wed, 14 May 2014 21:52:29 GMT
+  recorded_at: Thu, 15 May 2014 16:12:59 GMT
 recorded_with: VCR 2.9.0
