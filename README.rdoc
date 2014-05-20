@@ -1,3 +1,5 @@
+{<img src="https://codeclimate.com/github/BrewhouseTeam/startuphealthcheck.png" />}[https://codeclimate.com/github/BrewhouseTeam/startuphealthcheck]
+
 ==QUICKSTART
 
 Ensure you have ruby v 2.1.1p76
@@ -45,10 +47,10 @@ After you have your database schema set up, you can begin running tests with eit
 
 To run Cucumber
 
-  bundle exec cucumber
+  cucumber
 
 
 To run RSpec
 
-  bundle exec rspec spec
+  rspec spec
 

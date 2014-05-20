@@ -27,7 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (3.2.1)
+    acts-as-taggable-on (3.2.3)
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
     addressable (2.3.6)
@@ -239,7 +239,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
+  acts-as-taggable-on (= 3.2.3)
   auth0
   better_errors
   binding_of_caller

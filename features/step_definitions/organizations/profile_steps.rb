@@ -28,9 +28,7 @@ Then(/^I should see the organization on my profile$/) do
 end
 
 Given(/^I edit the profile$/) do
-  within("#profile-links") do
-    find('span.glyphicon-edit').click
-  end
+  find('span.glyphicon-edit').click
   current_path.should == edit_organization_path(@organization)
 end
 
@@ -53,7 +51,7 @@ Given "I am an admin user" do
 end
 
 When(/^I delete the link$/) do
-  within('.table') do
+  within('.links-table') do
     find('span.glyphicon-remove').click
   end
 end

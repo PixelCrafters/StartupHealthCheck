@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-5">
+    <ul class="list-unstyled">
+      <li>
+        <span><%= link_to "Startup Genome", @organization.url %></span>
+      </li>
+      <% @organization.profile_links.each do |profile_link| %> 
+        <li>
+          <%= link_to profile_link.name, profile_link.url %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

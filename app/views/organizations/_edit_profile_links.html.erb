@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>LINKS</h4>
+      <table class="table table-striped links-table">
+        <tr>
+          <td> 
+            <%= link_to "Startup Genome", @organization.url %>
+          </td>
+          <td></td>
+        </tr>
+        <% @organization.profile_links.each do |profile_link| %>
+          <tr>
+            <td><%= link_to profile_link.name, profile_link.url %></td>
+            <td><%= link_to '<span class="glyphicon glyphicon-remove"></span>
+    '.html_safe, profile_link_path(profile_link), method: :delete %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td><%= render "organizations/profile_links_form" %></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

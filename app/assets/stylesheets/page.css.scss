@@ -22,7 +22,7 @@ input#home-page-search {
 }
 
 .top-buffer { 
-  margin-top:40px; 
+  margin-top: 40px; 
 }
 
 .form-group-buffer{
@@ -51,6 +51,12 @@ input#home-page-search {
   color: #FFF;
 }
 
+.no-buffer{
+  padding: 0 !important;
+}
+
+/*** Organization Styles ***/
+
 .claim-header{
   padding: 15px;
 }
@@ -58,10 +64,6 @@ input#home-page-search {
 .small-field{
   height: 30px !important;
   width: 150px !important;
-}
-
-.no-buffer{
-  padding: 0 !important;
 }
 
 .claimant{
@@ -72,3 +74,27 @@ a.edit{
   text-decoration: underline;
 }
 
+.status{
+  font-size: 11pt !important;
+}
+
+.tag{
+  margin: 3px;
+  font-size: 11pt !important;
+}
+
+.tag a{
+  color: #FFF;
+}
+
+.tag a:hover{
+  color: #FFF;
+}
+
+.tag-list{
+  margin: 10px;
+}
+
+a.remove-tag{
+  text-decoration: none !important;
+}

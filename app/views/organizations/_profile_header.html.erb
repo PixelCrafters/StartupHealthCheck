@@ -1,16 +1,19 @@
 <div class="row">
   <div class="col-sm-12">
     <div id="profile-header">
-      <h3><%= @organization.name %></h3>
+      <h3>
+        <%= @organization.name %>
+        <%= render "organizations/edit_mode" %>
+      </h3>
       <% if @organization.main_address %>
         <span class="left"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
       <% end %>
       <p><%= @organization.headline %></p>
       <br /><br />
       <% if status == "active" %>
-        <span class="label label-success left"><%= status %></span>
+        <span class="label label-success left status"><%= status %></span>
       <% else %>
-        <span class="label label-danger left"><%= status %></span>
+        <span class="label label-danger left status"><%= status %></span>
       <% end %>
     </div>
     <br /><br />
