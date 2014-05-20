@@ -24,7 +24,7 @@ module Auth0
 
     def send_verification_email(email, connection, uid)
       @conn.post do |request|
-        request.url "api/users/#{URI::encode(uid)}/send_verification_email" 
+        request.url "api/users/#{uid.gsub!('|','%7C')}/send_verification_email" 
         request.headers['Authorization'] = 'Bearer ' + access_token
         request.headers['Content-Type'] = 'application/json'
         request.body = {
@@ -36,7 +36,7 @@ module Auth0
 
     def update_email(email, uid)
       @conn.put do |request|
-        request.url "api/users/#{URI::encode(uid)}/email"
+        request.url "api/users/#{uid.gsub!('|','%7C')}/email"
         request.headers['Authorization'] = 'Bearer ' + access_token
         request.headers['Content-Type'] = 'application/json'
         request.body = {
