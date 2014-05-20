@@ -3,6 +3,7 @@ class OrganizationsController < ApplicationController
   before_filter :find_organization, only: [:show, :claim, :edit, :update]
 
   def index
+    @activities = PublicActivity::Activity.all
     if params[:query].present?
       results = Organization.search params[:query], {misspellings: false}
       @organizations = results if results.any?

@@ -1,4 +1,7 @@
 class Organization < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+  
   extend FriendlyId
   friendly_id :name, use: :slugged
 
