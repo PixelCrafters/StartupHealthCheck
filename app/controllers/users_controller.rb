@@ -23,7 +23,6 @@ class UsersController < ApplicationController
       current_user.save!
     end
     flash[:success] = "Thank you! Your email has been verified."
-    binding.pry
   end
 
   private
