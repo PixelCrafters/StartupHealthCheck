@@ -15,6 +15,12 @@ Feature: Activity Stream
     Then I should see the "Twitter User" activity
 
   @javascript
+  Scenario: A user claims an organization profile
+    Given I am an admin user
+    When I go to the activity stream page
+    Then I should see the claim activity
+
+  @javascript
   Scenario: Org Admin doin' stuff and seeing it on the stream
     Given I am an admin user
     And I edit the profile

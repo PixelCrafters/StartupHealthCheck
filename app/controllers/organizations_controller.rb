@@ -22,6 +22,7 @@ class OrganizationsController < ApplicationController
       @organization.claimed = true
       if @organization.save!
         @organization.users << current_user
+        @organization.create_activity key: "organization.claim", owner: current_user
         redirect_to user_path(@organization.users.first)
       else
         redirect_to organization_path(@organization)
