@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = PublicActivity::Activity.all
+    @activities = PublicActivity::Activity.order('created_at desc')
   end
 end
