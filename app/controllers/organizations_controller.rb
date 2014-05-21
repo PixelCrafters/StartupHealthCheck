@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
-  before_filter :check_if_signed_in, only: [:claim, :edit]
-  before_filter :find_organization, only: [:show, :claim, :edit, :update]
+  before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring]
+  before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring]
 
   def index
     if params[:query].present?
@@ -56,6 +56,15 @@ class OrganizationsController < ApplicationController
       flash[:error] = "There was a problem removing your tag"
     end
     redirect_to edit_organization_path(organization)
+  end
+
+  def toggle_hiring
+    if params[:hiring] == "false"
+      @organization.update(hiring: true)
+    else
+      @organization.update(hiring: false)
+    end
+    redirect_to edit_organization_path(@organization)
   end
 
   private

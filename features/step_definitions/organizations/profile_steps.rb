@@ -60,3 +60,15 @@ Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
   page.should_not have_content(name)
   expect(@organization.reload.profile_links).to be_empty
 end
+
+Given(/^I toggle the hiring box$/) do
+  check('hiring')
+end
+
+Then(/^the organization should be hiring$/) do
+  expect(@organization.reload.hiring?).to be_true
+end
+
+Then(/^the organization should not be hiring$/) do
+  expect(@organization.reload.hiring?).to be_false
+end

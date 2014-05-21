@@ -45,4 +45,3 @@ Feature: Activity Stream
     And I delete the link
     When I go to the activity stream page
     Then I should see the "deleted link Website" activity
-
