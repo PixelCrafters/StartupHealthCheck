@@ -1,3 +1,4 @@
+@auth0
 Feature: Activity Stream
   In order to have more exposure for my organization
   As an organization admin

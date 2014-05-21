@@ -3,7 +3,6 @@ class OrganizationsController < ApplicationController
   before_filter :find_organization, only: [:show, :claim, :edit, :update]
 
   def index
-    @activities = PublicActivity::Activity.all
     if params[:query].present?
       results = Organization.search params[:query], {misspellings: false}
       @organizations = results if results.any?
@@ -50,6 +49,7 @@ class OrganizationsController < ApplicationController
     tag = organization.tags.find(params[:tag_id])
     organization.tag_list.remove(tag.name)
     if organization.save!
+      organization.create_activity key: "tag.removed", owner: current_user, parameters: {tag_name: tag.name}
       flash[:success] = "The tag was successfully removed"
     else
       flash[:error] = "There was a problem removing your tag"
@@ -63,6 +63,7 @@ class OrganizationsController < ApplicationController
   def save_tags
     params[:organization][:tag_list].split(',').each do |tag_name|
       if @organization.tag_list.add(tag_name)
+        @organization.create_activity key: "tag.added", owner: current_user, parameters: {tag_name: tag_name}
         flash[:success] = "Your tag was saved successfully"
       else
         flash[:error] = "There was a problem saving your tag"

@@ -60,4 +60,3 @@ Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
   page.should_not have_content(name)
   expect(@organization.reload.profile_links).to be_empty
 end
-
