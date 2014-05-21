@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'organizations#index', as: :tag
   delete 'tag/:organization_id/:tag_id', to: 'organizations#destroy_tag', as: "destroy_tag"
 
-  resources :activities
+  resources :activities, only: [:index]
 end
