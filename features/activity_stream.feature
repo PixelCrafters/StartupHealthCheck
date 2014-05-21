@@ -26,4 +26,11 @@ Feature: Activity Stream
     And I edit the profile
     And I add a new tag "software"
     When I go to the activity stream page
-    Then I should see the "software" activity
+    Then I should see the "added tag software" activity
+    When I visit the profile page
+    And I edit the profile
+    And I remove the tag
+    When I go to the activity stream page
+    Then I should see the "removed tag software" activity
+
+
