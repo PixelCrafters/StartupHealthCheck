@@ -8,6 +8,13 @@ Feature: Activity Stream
     Given an organization named "Brewhouse"
 
   @javascript
+  Scenario: A new user registers
+    Given I login with "Twitter"
+    And I submit an email address
+    When I go to the activity stream page
+    Then I should see the "Twitter User" activity
+
+  @javascript
   Scenario: Org Admin doin' stuff and seeing it on the stream
     Given I am an admin user
     And I edit the profile

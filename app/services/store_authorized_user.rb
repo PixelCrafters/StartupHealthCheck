@@ -13,6 +13,8 @@ class StoreAuthorizedUser
       image: userinfo["info"]["image"],
       email: userinfo["info"]["email"]
     }
-    User.create!(attributes)
+    user = User.create!(attributes)
+    user.create_activity key: "user.create", owner: user
+    user
   end
 end   
