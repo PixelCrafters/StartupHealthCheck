@@ -1,4 +1,6 @@
 class ProfileLink < ActiveRecord::Base
+  include PublicActivity::Common
+
   belongs_to :organization
 
   before_save :add_url_protocol
