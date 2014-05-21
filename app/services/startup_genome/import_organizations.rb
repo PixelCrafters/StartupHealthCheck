@@ -12,8 +12,8 @@ module StartupGenome
     private
 
     def persist(orgs)
-      orgs['response'].each do |org|
-        StartupGenome::UpdateOrganization.call(org[1])
+      orgs.each do |org|
+        StartupGenome::UpdateOrganization.call(org)
       end
     end
   end

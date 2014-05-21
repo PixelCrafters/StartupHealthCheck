@@ -3,8 +3,8 @@ require 'faraday'
 module StartupGenome
   class API
     def initialize
-      @host = 'http://startupgenome.co/api/'
-      @path = 'organizations/city/'
+      @host = 'http://startupgenome.co/api/2/'
+      @path = '/organizations'
       @auth_code = Rails.application.secrets.startup_genome_auth_code
       @location_slug = Rails.application.config.startup_genome_location_slug
       @conn = APIConnection.connect_via_faraday(@host)
@@ -20,7 +20,7 @@ module StartupGenome
     private
 
     def url
-      "#{@host}#{@path}#{@location_slug}"
+      "#{@host}#{@location_slug}#{@path}"
     end
   end
 end 
