@@ -42,8 +42,8 @@ Feature: Organization's profile
   @javascript
   Scenario: Organization admin turns hiring state on and off
     Given I am an admin user
-    And I edit the profile
-    When I toggle the hiring box
-    Then the organization should be hiring
+    When I edit the profile
     And I toggle the hiring box
+    Then the organization should be hiring
+    When I toggle the hiring box
     Then the organization should not be hiring

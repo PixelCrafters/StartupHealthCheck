@@ -1,3 +1,11 @@
+Given "I am an admin user" do
+  step %|I visit the profile page|
+  step %|I claim the profile|
+  step %|I login with "Twitter"|
+  step %|I submit an email address|
+  step %|I visit the profile page|
+end
+
 Given(/^an organization named "(.*?)"$/) do |name|
   @organization = FactoryGirl.create(:organization, name: name)
 end
@@ -27,7 +35,7 @@ Then(/^I should see the organization on my profile$/) do
   page.should have_content(@organization.name)
 end
 
-Given(/^I edit the profile$/) do
+When(/^I edit the profile$/) do
   find('span.glyphicon-edit').click
   current_path.should == edit_organization_path(@organization)
 end
@@ -42,14 +50,6 @@ Then(/^I should see the "(.*?)" link on the profile$/) do |name|
   page.should have_content(name)
 end
 
-Given "I am an admin user" do
-  step %|I visit the profile page|
-  step %|I claim the profile|
-  step %|I login with "Twitter"|
-  step %|I submit an email address|
-  step %|I visit the profile page|
-end
-
 When(/^I delete the link$/) do
   within('.links-table') do
     find('span.glyphicon-remove').click
@@ -61,14 +61,17 @@ Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
   expect(@organization.reload.profile_links).to be_empty
 end
 
-Given(/^I toggle the hiring box$/) do
+When(/^I toggle the hiring box$/) do
   check('hiring')
 end
 
 Then(/^the organization should be hiring$/) do
-  expect(@organization.reload.hiring?).to be_true
+  # visit edit_organization_path(@organization)
+  page.should have_css('#label-hiring')
 end
 
 Then(/^the organization should not be hiring$/) do
-  expect(@organization.reload.hiring?).to be_false
+  binding.pry
+  # visit edit_organization_path(@organization)
+  page.should_not have_css('#label-hiring')
 end
