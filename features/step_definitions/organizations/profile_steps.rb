@@ -71,7 +71,6 @@ Then(/^the organization should be hiring$/) do
 end
 
 Then(/^the organization should not be hiring$/) do
-  binding.pry
   # visit edit_organization_path(@organization)
   page.should_not have_css('#label-hiring')
 end
