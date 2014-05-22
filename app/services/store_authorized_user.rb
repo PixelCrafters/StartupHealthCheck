@@ -14,6 +14,8 @@ class StoreAuthorizedUser
       email: userinfo["info"]["email"],
       email_verified: userinfo["extra"]["raw_info"]["email_verified"]
     }
-    User.create!(attributes)
+    user = User.create!(attributes)
+    user.create_activity key: "user.create", owner: user
+    user
   end
 end   

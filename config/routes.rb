@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :organizations, only: [:index, :show, :edit, :update] do
     get 'claim', on: :member
+    post 'toggle_hiring', on: :member
   end
 
   get "/auth/auth0/callback" => "auth0#callback"
@@ -18,4 +19,6 @@ Rails.application.routes.draw do
 
   get 'tags/:tag', to: 'organizations#index', as: :tag
   delete 'tag/:organization_id/:tag_id', to: 'organizations#destroy_tag', as: "destroy_tag"
+
+  resources :activities, only: [:index]
 end

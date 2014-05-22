@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-body activity">
+    <%= link_to activity.owner.name, user_path(activity.owner.name) %>
+
+    removed tag 
+
+    <%= link_to tag_name(activity), tag_path(tag_name(activity)) if tag_name(activity) %>
+     
+    from
+
+    <%= link_to activity.trackable.name, activity.trackable %>
+  </div>
+</div>

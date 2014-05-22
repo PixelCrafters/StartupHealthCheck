@@ -1,5 +1,10 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
+
+<%= form_tag toggle_hiring_organization_path(@organization), method: :post, remote: true, id: 'toggle-organization-hiring' do %>
+  Hiring <%= check_box_tag :hiring, @organization.hiring?, @organization.hiring? %>
+<% end %>
+
 <%= render "organizations/edit_profile_links" %>
 <%= render "organizations/edit_tags" %>
 <%= render "organizations/profile_description" %>

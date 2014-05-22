@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+  <div class="panel-body activity">
+    <%= link_to activity.owner.name, user_path(activity.owner) %>
+
+    deleted link <%= link_to activity.parameters[:name], activity.parameters[:url] %>
+
+    from <%= link_to activity.parameters[:org_name], organization_path(Organization.find(activity.parameters[:org_id])) %>
+  </div>
+</div>

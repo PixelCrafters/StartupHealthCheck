@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
-  before_filter :check_if_signed_in, only: [:claim, :edit]
-  before_filter :find_organization, only: [:show, :claim, :edit, :update]
+  before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring]
+  before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring]
 
   def index
     if params[:query].present?
@@ -22,6 +22,7 @@ class OrganizationsController < ApplicationController
       @organization.claimed = true
       if @organization.save!
         @organization.users << current_user
+        @organization.create_activity key: "organization.claim", owner: current_user
         redirect_to user_path(@organization.users.first)
       else
         redirect_to organization_path(@organization)
@@ -49,11 +50,21 @@ class OrganizationsController < ApplicationController
     tag = organization.tags.find(params[:tag_id])
     organization.tag_list.remove(tag.name)
     if organization.save!
+      organization.create_activity key: "tag.remove", owner: current_user, parameters: {tag_name: tag.name}
       flash[:success] = "The tag was successfully removed"
     else
       flash[:error] = "There was a problem removing your tag"
     end
     redirect_to edit_organization_path(organization)
+  end
+
+  def toggle_hiring
+    if params[:hiring] == "false"
+      @organization.update(hiring: true)
+    else
+      @organization.update(hiring: false)
+    end
+    redirect_to edit_organization_path(@organization)
   end
 
   private
@@ -62,6 +73,7 @@ class OrganizationsController < ApplicationController
   def save_tags
     params[:organization][:tag_list].split(',').each do |tag_name|
       if @organization.tag_list.add(tag_name)
+        @organization.create_activity key: "tag.add", owner: current_user, parameters: {tag_name: tag_name}
         flash[:success] = "Your tag was saved successfully"
       else
         flash[:error] = "There was a problem saving your tag"
