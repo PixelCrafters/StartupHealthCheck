@@ -12,7 +12,7 @@ Feature: Activity Stream
     Given I login with "Twitter"
     And I submit an email address
     When I go to the activity stream page
-    Then I should see the "Twitter User" activity
+    Then I should see the "J C" activity
 
   @javascript
   Scenario: A user claims an organization profile

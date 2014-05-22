@@ -43,7 +43,7 @@ Feature: Organization's profile
   Scenario: Organization admin turns hiring state on and off
     Given I am an admin user
     When I edit the profile
-    And I toggle the hiring box
+    And I click the hiring box
     Then the organization should be hiring
-    When I toggle the hiring box
+    When I unclick the hiring box
     Then the organization should not be hiring

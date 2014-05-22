@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Thu, 15 May 2014 16:12:58 GMT
+      - Thu, 22 May 2014 23:36:54 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,24 +35,24 @@ http_interactions:
       Pragma:
       - no-cache
       Set-Cookie:
-      - auth0=GGbtJkZF3vaOzVzLH1moLQ.xMFBrwym-WwwvNKoc2oV9iUUYmTCYOweQHxbCo0SUzE.1400170378513.86400000.OZCLta9LVF_NfULZEyBllYQue4Yrz5jzm8H3Wg27DHo;
+      - auth0=k_qXm1oaC6RCcuB8rzVSkg.2LJFC25lHZ4AzqAaPAZXNIYcN3m0K13QZvLKvzSAOsE.1400801814069.86400000.fSlHDUz0MHLaoRTTCLzCOVQo8d5S0fpi0gmPKpnrG_Y;
         path=/; secure; httponly
     body:
       encoding: UTF-8
-      string: '{"access_token":"DO9VCvJHRa8UwoGdnotrpwOomdduCCf7TfM0TmK83Eb6hqCKKe55yr8K3a0DiYhY","token_type":"bearer"}'
+      string: '{"access_token":"6PUnEi2Xbvknwsb1YIur143NGtd2fvxZmCHpDbJTwySGxcEsPcVcrqIaMKTXxIBp","token_type":"bearer"}'
     http_version: 
-  recorded_at: Thu, 15 May 2014 16:12:58 GMT
+  recorded_at: Thu, 22 May 2014 23:36:54 GMT
 - request:
-    method: post
-    uri: https://jncoops.auth0.com/api/users/send_verification_email
+    method: put
+    uri: https://jncoops.auth0.com/api/users/twitter%7C2516461339/email
     body:
       encoding: UTF-8
-      string: '{"email":"twitteruser@example.com","connection":"twitter"}'
+      string: '{"email":"jncoops7@live.com","verify":true}'
     headers:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer DO9VCvJHRa8UwoGdnotrpwOomdduCCf7TfM0TmK83Eb6hqCKKe55yr8K3a0DiYhY
+      - Bearer 6PUnEi2Xbvknwsb1YIur143NGtd2fvxZmCHpDbJTwySGxcEsPcVcrqIaMKTXxIBp
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -67,56 +67,16 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Thu, 15 May 2014 16:12:59 GMT
+      - Thu, 22 May 2014 23:36:54 GMT
       Content-Type:
       - text/plain
       Content-Length:
       - '2'
       Connection:
       - keep-alive
-      X-Powered-By:
-      - Express
     body:
       encoding: UTF-8
       string: OK
     http_version: 
-  recorded_at: Thu, 15 May 2014 16:12:59 GMT
-- request:
-    method: put
-    uri: https://jncoops.auth0.com/api/users/twitter%7C12345/email
-    body:
-      encoding: UTF-8
-      string: '{"email":"twitteruser@example.com","verify":true}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Authorization:
-      - Bearer DO9VCvJHRa8UwoGdnotrpwOomdduCCf7TfM0TmK83Eb6hqCKKe55yr8K3a0DiYhY
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Server:
-      - nginx/1.7.0
-      Date:
-      - Thu, 22 May 2014 18:32:25 GMT
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Www-Authenticate:
-      - Bearer realm="Users", error="invalid_token"
-      - Missing authentication tokens
-    body:
-      encoding: UTF-8
-      string: Unauthorized
-    http_version: 
-  recorded_at: Thu, 22 May 2014 18:32:27 GMT
+  recorded_at: Thu, 22 May 2014 23:36:54 GMT
 recorded_with: VCR 2.9.0

@@ -7,5 +7,5 @@ Then(/^I should see the "(.*?)" activity$/) do |activity|
 end
 
 Then(/^I should see the claim activity$/) do
-  expect(page).to have_content("Twitter User claimed Brewhouse")
+  expect(page).to have_content("J C claimed Brewhouse")
 end
