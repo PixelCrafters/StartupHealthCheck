@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :check_session, only: [:edit, :update, :verify_email]
+  before_filter :check_session, only: [:edit, :update]
 
   def show
     @user = User.find(current_user.id)
@@ -11,19 +11,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.email.nil? && params[:user][:email].present?
-
-      SendVerificationEmail.call(params[:user][:email], session[:current_connection].downcase, @user.uid(session[:current_connection].downcase))
+      SendVerificationEmail.call(params[:user][:email], @user.uid(session[:current_connection].downcase))
     end  
     @user.update(user_params)
     redirect_to user_path(@user)
-  end
-
-  def verify_email_callback
-    if current_user.present?
-      current_user.email_verified = true
-      current_user.save!
-    end
-    flash[:success] = "Thank you! Your email has been verified."
   end
 
   private

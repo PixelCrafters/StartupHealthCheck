@@ -8,11 +8,9 @@ Rails.application.routes.draw do
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/auth0", as: "login"
 
-  resources :users, only: [:show, :update, :edit] do
-    get 'verify_email', on: :member
-  end
+  resources :users, only: [:show, :update, :edit]
 
-  get "/users/verify_email_callback" => "users#verify_email_callback"
+  get "/verify_email_callback" => "auth0#verify_email_callback"
   get "/sessions/set" => "sessions#set", as: "set_session"
   get "/sessions/unset" => "sessions#unset", as: "unset_session"
 
