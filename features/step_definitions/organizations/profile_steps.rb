@@ -61,16 +61,18 @@ Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
   expect(@organization.reload.profile_links).to be_empty
 end
 
-When(/^I toggle the hiring box$/) do
-  check('hiring')
+When(/^I check the hiring box$/) do
+  find(:css, "#hiring").set(true)
+end
+
+When(/^I uncheck the hiring box$/) do
+  find(:css, "#hiring").set(false)
 end
 
 Then(/^the organization should be hiring$/) do
-  # visit edit_organization_path(@organization)
   page.should have_css('#label-hiring')
 end
 
 Then(/^the organization should not be hiring$/) do
-  # visit edit_organization_path(@organization)
   page.should_not have_css('#label-hiring')
 end

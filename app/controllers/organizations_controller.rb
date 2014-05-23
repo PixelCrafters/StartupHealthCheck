@@ -61,8 +61,10 @@ class OrganizationsController < ApplicationController
   def toggle_hiring
     if params[:hiring] == "false"
       @organization.update(hiring: true)
+      @organization.create_activity key: "organization.hiring", owner: current_user
     else
       @organization.update(hiring: false)
+      @organization.create_activity key: "organization.not_hiring", owner: current_user
     end
     redirect_to edit_organization_path(@organization)
   end
