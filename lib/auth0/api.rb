@@ -34,7 +34,8 @@ module Auth0
       end
     end
 
-    def update_email(email, uid)
+    def update_email(email, user, connection)
+      uid = User.find(user.id).uid(connection)
       @conn.put do |request|
         request.url "api/users/#{uid.gsub!('|','%7C')}/email"
         request.headers['Authorization'] = 'Bearer ' + access_token

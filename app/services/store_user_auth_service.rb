@@ -10,7 +10,6 @@ class StoreUserAuthService
 
   def call
     user_auth_service = UserAuthService.where(uid: userinfo["uid"]).first
-
     if user_auth_service.nil?
       user_auth_service = UserAuthService.create!(uid: userinfo["uid"], service_type: provider)
     end

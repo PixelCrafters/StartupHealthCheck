@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.email.nil? && params[:user][:email].present?
-      SendVerificationEmail.call(params[:user][:email], @user.uid(session[:current_connection].downcase))
+      SendVerificationEmail.call(params[:user][:email], @user, session[:current_connection])
     end  
     @user.update(user_params)
     redirect_to user_path(@user)
