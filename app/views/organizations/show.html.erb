@@ -1,7 +1,7 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
-<%= render "organizations/show_profile_links" %>
 <%= render "organizations/show_tags" if @organization.tags.any? %> 
+<%= render "organizations/show_profile_links" %>
 <%= render "organizations/profile_description" %>
 
 <% if @organization.claimed? %>

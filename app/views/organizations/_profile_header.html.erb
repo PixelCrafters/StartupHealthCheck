@@ -11,9 +11,9 @@
       <p><%= @organization.headline %></p>
       <br /><br />
       <% if status == "active" %>
-        <span class="label label-success left status"><%= status %></span>
+        <span class="label label-success left status"><%= status.capitalize %></span>
       <% else %>
-        <span class="label label-danger left status"><%= status %></span>
+        <span class="label label-danger left status"><%= status.capitalize %></span>
       <% end %>
       <% if @organization.hiring? %>
         <span id="label-hiring" class="label label-success left status left-buffer">Hiring</span>
