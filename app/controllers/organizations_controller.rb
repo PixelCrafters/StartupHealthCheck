@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
   before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring]
-  before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring]
+  before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
     if params[:query].present?
@@ -69,6 +69,17 @@ class OrganizationsController < ApplicationController
     redirect_to edit_organization_path(@organization)
   end
 
+  def add_role
+    role = Role.where(name: params[:role_name]).first
+    binding.pry
+    if OrganizationRole.create!(organization_id: @organization.id, user_id: current_user.id, role_id: role.id)
+      flash[:success] = "Your role was saved successfully!"
+    else
+      flash[:error] = "There was a problem saving your role."
+    end
+    redirect_to edit_organization_path(@organization)
+  end
+
   private
 
   # TODO: extract into service
@@ -78,7 +89,7 @@ class OrganizationsController < ApplicationController
         @organization.create_activity key: "tag.add", owner: current_user, parameters: {tag_name: tag_name}
         flash[:success] = "Your tag was saved successfully"
       else
-        flash[:error] = "There was a problem saving your tag"
+        flash[:error] = "There was a problem saving your tag."
       end
     end
   end

@@ -12,5 +12,21 @@
     <% end %>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Organizations</h3>
+    <% if current_user.organizations.any? %>
+      <% current_user.organizations.each do |org| %>
+        <p>
+          <%= link_to org.name, organization_path(org) %>
+          <%= form_tag add_role_organization_path(org), method: :put do %>
+            <%= text_field_tag :role_name %>
+            <%= submit_tag "Submit" %>
+          <% end %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 

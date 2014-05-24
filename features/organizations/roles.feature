@@ -6,10 +6,11 @@ Feature: Organization Roles
   
   Background:
     Given an organization named "Brewhouse"
+    Given a role named "Employee"
 
   Scenario: Organization Admin adds a role
     Given I am an admin user
-    When I go to my profile page
+    When I edit my profile page
     And I add my role "Employee"
     Then I should see my role "Employee"
     When I visit the profile page

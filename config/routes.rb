@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [:index, :show, :edit, :update] do
     get 'claim', on: :member
     post 'toggle_hiring', on: :member
+    put 'add_role', on: :member
   end
 
   get "/auth/auth0/callback" => "auth0#callback"
