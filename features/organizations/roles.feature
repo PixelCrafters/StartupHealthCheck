@@ -9,8 +9,11 @@ Feature: Organization Roles
     Given a role named "Employee"
 
   Scenario: Organization Admin adds a role
-    Given I am an admin user
-    When I edit my profile page
+    When I visit the profile page
+    And I claim the profile
+    And I login with "Twitter"
+    And I submit an email address
+    And I edit my profile page
     And I add my role "Employee"
     Then I should see my role "Employee"
     When I visit the profile page
