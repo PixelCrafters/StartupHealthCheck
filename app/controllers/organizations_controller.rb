@@ -70,14 +70,14 @@ class OrganizationsController < ApplicationController
   end
 
   def add_role
-    role = Role.where(name: params[:role_name]).first
-    binding.pry
-    if OrganizationRole.create!(organization_id: @organization.id, user_id: current_user.id, role_id: role.id)
+    begin
+      role = Role.find(params[:role][:id])
+      OrganizationRoleUser.create!(organization_id: @organization.id, user_id: current_user.id, role_id: role.id)
       flash[:success] = "Your role was saved successfully!"
-    else
-      flash[:error] = "There was a problem saving your role."
+    rescue ActiveRecord::RecordNotUnique => e
+      flash[:error] = "You've already saved the role '#{role.name}' for this organization"
     end
-    redirect_to edit_organization_path(@organization)
+    redirect_to edit_user_path(current_user)
   end
 
   private
