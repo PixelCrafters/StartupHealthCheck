@@ -52,4 +52,4 @@ Feature: Activity Stream
     And I edit the profile
     And I uncheck the hiring box
     And I go to the activity stream page
-    Then I should see the "Brewhouse is nolonger hiring" activity
+    Then I should see the "Brewhouse is no longer hiring" activity
