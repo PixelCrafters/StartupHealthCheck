@@ -5,3 +5,34 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Role.create!([{name: 'Employee'}, {name: 'Founder'}])
+
+Organization.create!([
+  { name: "Example Startup", 
+    slug: "example-startup", 
+    headline: nil, 
+    description: "Blue bullet for my valentine choleric chunky boots are too punk confusion hopeless plastic scene self portraits wailing drive a vespa Emo goth kids goth, but less dark and more harry potter hair should be straight, choppy, glossy and textured hearts and skulls inadequate industrial piercing lip piercing middle class more subtle than goth and punk overly emotional pale rites of spring saturnine i heart emo boys overly sensitive Blue care more about appearance than actual emotions discombobulated empty expressive lyrics heartbroken i don't want to be judge i wish my lawn was emo so it would cut itself long fringe melodramatic morose mutual support plastic scene pretending to be sad shy tears vexed vulnerable self-dramatization star tattoos on my hip i read poems to my emo soul mate", 
+    hiring_url: nil, 
+    active: nil, 
+    approved: nil, 
+    startup_genome_slug: "example-software", 
+    url: "http://startupgenome.co/example-software", 
+    founded: nil, 
+    startup_genome_id: nil, 
+    claimed: false, 
+    hiring: false },
+  { name: "Example Startup2", 
+    slug: "example-startup-2", 
+    headline: nil, 
+    description: "Blue bullet for my valentine choleric chunky boots are too punk confusion hopeless plastic scene self portraits wailing drive a vespa Emo goth kids goth, but less dark and more harry potter hair should be straight, choppy, glossy and textured hearts and skulls inadequate industrial piercing lip piercing middle class more subtle than goth and punk overly emotional pale rites of spring saturnine i heart emo boys overly sensitive Blue care more about appearance than actual emotions discombobulated empty expressive lyrics heartbroken i don't want to be judge i wish my lawn was emo so it would cut itself long fringe melodramatic morose mutual support plastic scene pretending to be sad shy tears vexed vulnerable self-dramatization star tattoos on my hip i read poems to my emo soul mate", 
+    hiring_url: nil, 
+    active: nil, 
+    approved: nil, 
+    startup_genome_slug: "example-software-2", 
+    url: "http://startupgenome.co/example-software-2", 
+    founded: nil, 
+    startup_genome_id: nil, 
+    claimed: false, 
+    hiring: false } 
+])
