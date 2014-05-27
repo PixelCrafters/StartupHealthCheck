@@ -71,10 +71,10 @@ class OrganizationsController < ApplicationController
 
   def add_role
     begin
-      role = Role.find(params[:role][:id])
-      OrganizationRoleUser.create!(organization_id: @organization.id, user_id: current_user.id, role_id: role.id)
+      CreateOrganizationRoleUser.call(params[:role][:id], @organization.id, current_user.id)
       flash[:success] = "Your role was saved successfully!"
     rescue ActiveRecord::RecordNotUnique => e
+      role = Role.find(params[:role][:id])
       flash[:error] = "You've already saved the role '#{role.name}' for this organization"
     end
     redirect_to edit_user_path(current_user)
