@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(current_user.id)
+    @user = current_user
     if @user.email.nil? && params[:user][:email].present?
       SendVerificationEmail.call(params[:user][:email], @user, session[:current_connection])
     end  

@@ -19,7 +19,7 @@ class StoreUserAuthService
         user_auth_service.update!(user: current_user)
       else
         user = StoreAuthorizedUser.call(userinfo)
-        user_auth_service.update!(user: user)  
+        user_auth_service.update!(user: user)
       end
     end
     user_auth_service
