@@ -12,5 +12,24 @@
     <% end %>
   </div>
 </div>
-
-
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Organizations</h3>
+    <% current_user.organizations.each do |org| %>
+    <% if !current_user.current_roles(org).nil? %>
+      <% if roles = current_user.current_roles(org) %>
+        <% roles.each do |role| %>
+          <p><%= role.name %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+      <p>
+        <%= link_to org.name, organization_path(org) %>
+         <%= form_tag add_role_organization_path(org), method: :put do %>
+          <%= collection_select :role, :id, Role.all, :id, :name %>
+          <%= submit_tag "Submit" %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>

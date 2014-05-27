@@ -1,0 +1,7 @@
+<div class="row check">
+  <%= form_tag toggle_hiring_organization_path(@organization), method: :post, remote: true, id: 'toggle-organization-hiring', role: 'form' do %>
+    <div class="checkbox">
+      <%= check_box_tag :hiring, @organization.hiring?, @organization.hiring? %> Hiring
+    </div>
+  <% end %>
+</div>

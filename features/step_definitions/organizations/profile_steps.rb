@@ -61,11 +61,11 @@ Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
   expect(@organization.reload.profile_links).to be_empty
 end
 
-When(/^I click the hiring box$/) do
+When(/^I check the hiring box$/) do
   find(:css, "#hiring").set(true)
 end
 
-When(/^I unclick the hiring box$/) do
+When(/^I uncheck the hiring box$/) do
   find(:css, "#hiring").set(false)
 end
 

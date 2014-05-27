@@ -1,11 +1,17 @@
 <%= render "organizations/claim_header" %>
 <%= render "organizations/profile_header" %>
-<%= render "organizations/show_profile_links" %>
 <%= render "organizations/show_tags" if @organization.tags.any? %> 
+<%= render "organizations/show_profile_links" %>
 <%= render "organizations/profile_description" %>
 
 <% if @organization.claimed? %>
   <p class="claimant">
     This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first) %>
+    <% @organization.users.each do |user| %>
+      <% user.current_roles(@organization).each do |role| %>
+        <%= role.name %>
+        <br />
+      <% end %>
+    <% end %>
   </p>
 <% end %>

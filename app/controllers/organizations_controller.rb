@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
   before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring]
-  before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring]
+  before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
     if params[:query].present?
@@ -61,10 +61,23 @@ class OrganizationsController < ApplicationController
   def toggle_hiring
     if params[:hiring] == "false"
       @organization.update(hiring: true)
+      @organization.create_activity key: "organization.hiring", owner: current_user
     else
       @organization.update(hiring: false)
+      @organization.create_activity key: "organization.not_hiring", owner: current_user
     end
     redirect_to edit_organization_path(@organization)
+  end
+
+  def add_role
+    begin
+      role = Role.find(params[:role][:id])
+      OrganizationRoleUser.create!(organization_id: @organization.id, user_id: current_user.id, role_id: role.id)
+      flash[:success] = "Your role was saved successfully!"
+    rescue ActiveRecord::RecordNotUnique => e
+      flash[:error] = "You've already saved the role '#{role.name}' for this organization"
+    end
+    redirect_to edit_user_path(current_user)
   end
 
   private
@@ -76,7 +89,7 @@ class OrganizationsController < ApplicationController
         @organization.create_activity key: "tag.add", owner: current_user, parameters: {tag_name: tag_name}
         flash[:success] = "Your tag was saved successfully"
       else
-        flash[:error] = "There was a problem saving your tag"
+        flash[:error] = "There was a problem saving your tag."
       end
     end
   end
