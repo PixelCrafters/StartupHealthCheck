@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Thu, 22 May 2014 23:36:54 GMT
+      - Tue, 27 May 2014 23:13:32 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,13 +35,13 @@ http_interactions:
       Pragma:
       - no-cache
       Set-Cookie:
-      - auth0=k_qXm1oaC6RCcuB8rzVSkg.2LJFC25lHZ4AzqAaPAZXNIYcN3m0K13QZvLKvzSAOsE.1400801814069.86400000.fSlHDUz0MHLaoRTTCLzCOVQo8d5S0fpi0gmPKpnrG_Y;
+      - auth0=S3QcO7_olJG6x5P4K98qSA.JiDA3Ebdis7nnlzojoOSyZIxioFEhncWLNwWQpWB_Q0.1401232412843.86400000.avgfdTq8XDM93cib4SYVk7EVYeC9DZrnig53pELGHUg;
         path=/; secure; httponly
     body:
       encoding: UTF-8
-      string: '{"access_token":"6PUnEi2Xbvknwsb1YIur143NGtd2fvxZmCHpDbJTwySGxcEsPcVcrqIaMKTXxIBp","token_type":"bearer"}'
+      string: '{"access_token":"1VsOgRTZhdO8BDfkaqYiv7pPFJvA3XNDbjVsUFMH3S53J8ZV2QL0M94jKzK0Aes8","token_type":"bearer"}'
     http_version: 
-  recorded_at: Thu, 22 May 2014 23:36:54 GMT
+  recorded_at: Tue, 27 May 2014 23:13:33 GMT
 - request:
     method: put
     uri: https://jncoops.auth0.com/api/users/twitter%7C2516461339/email
@@ -52,7 +52,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer 6PUnEi2Xbvknwsb1YIur143NGtd2fvxZmCHpDbJTwySGxcEsPcVcrqIaMKTXxIBp
+      - Bearer 1VsOgRTZhdO8BDfkaqYiv7pPFJvA3XNDbjVsUFMH3S53J8ZV2QL0M94jKzK0Aes8
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -67,7 +67,7 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Thu, 22 May 2014 23:36:54 GMT
+      - Tue, 27 May 2014 23:13:33 GMT
       Content-Type:
       - text/plain
       Content-Length:
@@ -78,122 +78,5 @@ http_interactions:
       encoding: UTF-8
       string: OK
     http_version: 
-  recorded_at: Thu, 22 May 2014 23:36:54 GMT
-- request:
-    method: post
-    uri: https://jncoops.auth0.com/oauth/token
-    body:
-      encoding: UTF-8
-      string: '{"client_id":"N8s02JgamO99vbx7FOsyS6rJN8nbJMIl","client_secret":"gXwlUlAm-pR-KLEQ8jI3yxFnU3J6sFuzJxDzfIZg3GEJfsCO-rZ4cKe2sYDqiZrM","grant_type":"client_credentials"}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.7.0
-      Date:
-      - Fri, 23 May 2014 00:00:22 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Cache-Control:
-      - no-store
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - auth0=huj4O-sdH8Z3GoGz2_atKA.l_RLTrqJMTZGOJQpfSQ-onY9Sjl2qD4yS-Qu9u8xAiI.1400803222072.86400000.lpXGEhQIsNjy4hyg7A_NBd__fYc-3Q8DvQiHx8BKybM;
-        path=/; secure; httponly
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"nFKXxd0bJN4oxJvKD6bzFXMyyXPcRSvWTgtgwlPCwao5ayHm9qgBM7UULknTDfIB","token_type":"bearer"}'
-    http_version: 
-  recorded_at: Fri, 23 May 2014 00:00:22 GMT
-- request:
-    method: put
-    uri: https://jncoops.auth0.com/api/users/email
-    body:
-      encoding: UTF-8
-      string: '{"email":"jncoops7@live.com","verify":true}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Authorization:
-      - Bearer nFKXxd0bJN4oxJvKD6bzFXMyyXPcRSvWTgtgwlPCwao5ayHm9qgBM7UULknTDfIB
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Server:
-      - nginx/1.7.0
-      Date:
-      - Fri, 23 May 2014 00:00:22 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '18'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '"wrong attributes"'
-    http_version: 
-  recorded_at: Fri, 23 May 2014 00:00:22 GMT
-- request:
-    method: put
-    uri: https://jncoops.auth0.com/api/users/twitter%7C12345/email
-    body:
-      encoding: UTF-8
-      string: '{"email":"jncoops7@live.com","verify":true}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Authorization:
-      - Bearer 6PUnEi2Xbvknwsb1YIur143NGtd2fvxZmCHpDbJTwySGxcEsPcVcrqIaMKTXxIBp
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Server:
-      - nginx/1.7.0
-      Date:
-      - Tue, 27 May 2014 18:22:57 GMT
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Www-Authenticate:
-      - Bearer realm="Users", error="invalid_token"
-      - Missing authentication tokens
-    body:
-      encoding: UTF-8
-      string: Unauthorized
-    http_version: 
-  recorded_at: Tue, 27 May 2014 18:22:57 GMT
+  recorded_at: Tue, 27 May 2014 23:13:33 GMT
 recorded_with: VCR 2.9.0

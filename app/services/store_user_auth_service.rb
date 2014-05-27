@@ -10,14 +10,17 @@ class StoreUserAuthService
 
   def call
     user_auth_service = UserAuthService.where(uid: userinfo["uid"]).first
+
     if user_auth_service.nil?
       user_auth_service = UserAuthService.create!(uid: userinfo["uid"], service_type: provider)
     end
 
-    if user_auth_service.user.nil?
-      if current_user
+    if current_user
+      if user_auth_service.user != current_user
         user_auth_service.update!(user: current_user)
-      else
+      end
+    else
+      if user_auth_service.user.nil?
         user = StoreAuthorizedUser.call(userinfo)
         user_auth_service.update!(user: user)
       end
