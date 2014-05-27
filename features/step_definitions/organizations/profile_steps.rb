@@ -1,3 +1,4 @@
+# TODO: check for redirect instead of sleeping
 Given "I am an admin user" do
   step %|I visit the profile page|
   sleep 1
