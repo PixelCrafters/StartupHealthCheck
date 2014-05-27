@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :organizations
 
   def uid(connection)
-    user_auth_services.where(service_type: connection, user_id: self.id).first.uid
+    user_auth_services.where(service_type: connection, user_id: self.id).first!.uid
   end
   
   def current_roles(organization)

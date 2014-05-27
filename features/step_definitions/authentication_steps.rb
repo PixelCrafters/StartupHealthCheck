@@ -3,7 +3,7 @@ require Rails.root + 'spec/support/user_info_hashes'
 def mock_auth_hash
   OmniAuth.config.test_mode = true
   Capybara.default_host = 'http://localhost:3000'
-  OmniAuth.config.add_mock(:auth0, USER_INFO_HASH_TWITTER_2)
+  OmniAuth.config.add_mock(:auth0, USER_INFO_HASH_TWITTER)
 end
 
 Given(/^I login with "(.*?)"$/) do |auth_service|
@@ -22,8 +22,4 @@ end
 
 Then(/^my email address should be present$/) do
   page.should have_content("jncoops7@live.com")
-end
-
-Given(/^I logout$/) do 
-  click_link "Logout"
 end

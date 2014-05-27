@@ -14,16 +14,12 @@ class StoreUserAuthService
       user_auth_service = UserAuthService.create!(uid: userinfo["uid"], service_type: provider)
     end
 
-    if current_user
-      if user_auth_service.user != current_user
-        user_auth_service.user = current_user
-        user_auth_service.save!
-      end
-    else
-      if user_auth_service.user.nil?
+    if user_auth_service.user.nil?
+      if current_user
+        user_auth_service.update!(user: current_user)
+      else
         user = StoreAuthorizedUser.call(userinfo)
-        user_auth_service.user = user
-        user_auth_service.save!
+        user_auth_service.update!(user: user)  
       end
     end
     user_auth_service
