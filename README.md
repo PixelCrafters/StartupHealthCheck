@@ -64,7 +64,7 @@ Start the rails server
   rails server
 ```  
 
-# Running Tests
+### Running Tests
 
   
 After you have your database schema set up, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
