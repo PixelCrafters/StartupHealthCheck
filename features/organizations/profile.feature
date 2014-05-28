@@ -61,5 +61,5 @@ Feature: Organization's profile
     And I submit an email address
     And I add an organization "MyCompany"
     Then I should see "MyCompany" on my profile page
-    When I click on "MyCompany"
+    When I visit the profile page for "MyCompany"
     Then I should be on the profile page for "MyCompany"

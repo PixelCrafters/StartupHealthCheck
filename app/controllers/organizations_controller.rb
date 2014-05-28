@@ -110,7 +110,7 @@ class OrganizationsController < ApplicationController
   end
 
   def organization_params
-    params.require(:organization).permit(:claimed, :user_id)
+    params.require(:organization).permit(:claimed, :user_id, :headline, :description)
   end
 
   def check_if_signed_in

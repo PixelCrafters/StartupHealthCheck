@@ -83,8 +83,8 @@ Then(/^the organization should not be hiring$/) do
 end
 
 When(/^I update the description$/) do
-  fill_in "description", with: "This is the new description"
-  click_button "Save"
+  fill_in "organization_description", with: "This is the new description"
+  click_button "Save Info"
 end
 
 Then(/^I should see my new description$/) do
@@ -101,6 +101,6 @@ Then(/^I should see "(.*?)" on my profile page$/) do |organization_name|
   expect(page).to have_content(organization_name)
 end
 
-When(/^I go to the profile page for "(.*?)"$/) do |organization_name|
+When(/^I visit the profile page for "(.*?)"$/) do |organization_name|
   click_link organization_name
 end
