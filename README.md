@@ -25,8 +25,6 @@ Check the Contributors file for a list of the people & companies that are active
 We are going to be designing and building this out in the open. We are collecting partners and have talked to startup communities in Vancouver, Seattle, Portland, Nanaimo, Victoria, and Toronto. If you are interested in participating, please get in touch or post an [issue](https://github.com/PixelCrafters/StartupHealthCheck/issues).
 
 
-<img src="https://codeclimate.com/github/BrewhouseTeam/startuphealthcheck.png" />[https://codeclimate.com/github/BrewhouseTeam/startuphealthcheck]
-
 ## QUICKSTART
 
 Ensure you have ruby v 2.1.1p76
