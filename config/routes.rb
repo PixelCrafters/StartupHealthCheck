@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'claim', on: :member
     post 'toggle_hiring', on: :member
     put 'add_role', on: :member
+    delete 'destroy_role', on: :member
   end
 
   get "/auth/auth0/callback" => "auth0#callback"

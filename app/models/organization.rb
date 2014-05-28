@@ -7,7 +7,7 @@ class Organization < ActiveRecord::Base
   searchkick
   acts_as_taggable
 
-  has_many :organization_role_users
+  has_many :organization_user_roles
   has_many :addresses
   has_many :profile_links
   has_many :roles

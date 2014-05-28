@@ -71,11 +71,20 @@ class OrganizationsController < ApplicationController
 
   def add_role
     begin
-      CreateOrganizationRoleUser.call(params[:role][:id], @organization.id, current_user.id)
+      CreateOrganizationUserRole.call(params[:role][:id], @organization.id, current_user.id)
       flash[:success] = "Your role was saved successfully!"
     rescue ActiveRecord::RecordNotUnique => e
       role = Role.find(params[:role][:id])
       flash[:error] = "You've already saved the role '#{role.name}' for this organization"
+    end
+    redirect_to edit_user_path(current_user)
+  end
+
+  def destroy_role
+    if OrganizationUserRole.find(params[:id]).destroy!
+      flash[:success] = "Your role was deleted successfully!"
+    else
+      flash[:success] = "There was a problem deleting your role."
     end
     redirect_to edit_user_path(current_user)
   end

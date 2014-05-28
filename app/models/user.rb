@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   include PublicActivity::Common
 
-  has_many :organization_role_users
-  has_many :roles
+  has_many :organization_user_roles
   has_many :user_auth_services
   has_and_belongs_to_many :organizations
 
@@ -11,10 +10,6 @@ class User < ActiveRecord::Base
   end
   
   def current_roles(organization)
-    roles = []
-    organization_role_users.each do |oru|
-      roles << Role.find(oru.role_id)
-    end
-    roles
+    organization_user_roles.where(organization: organization)
   end
 end
