@@ -81,3 +81,26 @@ end
 Then(/^the organization should not be hiring$/) do
   page.should_not have_css('#label-hiring')
 end
+
+When(/^I update the description$/) do
+  fill_in "description", with: "This is the new description"
+  click_button "Save"
+end
+
+Then(/^I should see my new description$/) do
+  expect(page).to have_content("This is the new description")
+end
+
+When(/^I add an organization "(.*?)"$/) do |organization_name|
+  click_button "Add Organization"
+  fill_in "name", with: "MyCompany"
+  fill_in "description", with: "The description of MyCompany"
+end
+
+Then(/^I should see "(.*?)" on my profile page$/) do |organization_name|
+  expect(page).to have_content(organization_name)
+end
+
+When(/^I go to the profile page for "(.*?)"$/) do |organization_name|
+  click_link organization_name
+end

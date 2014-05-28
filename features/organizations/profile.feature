@@ -47,3 +47,19 @@ Feature: Organization's profile
     Then the organization should be hiring
     When I uncheck the hiring box
     Then the organization should not be hiring
+
+  @javascript 
+  Scenario: Organization admin edits data
+    Given I am an admin user
+    When I edit the profile
+    And I update the description
+    Then I should see my new description
+
+  @javascript
+  Scenario: Adding a new organization
+    When I login with "Twitter"
+    And I submit an email address
+    And I add an organization "MyCompany"
+    Then I should see "MyCompany" on my profile page
+    When I click on "MyCompany"
+    Then I should be on the profile page for "MyCompany"
