@@ -92,15 +92,18 @@ Then(/^I should see my new description$/) do
 end
 
 When(/^I add an organization "(.*?)"$/) do |organization_name|
-  click_button "Add Organization"
-  fill_in "name", with: "MyCompany"
-  fill_in "description", with: "The description of MyCompany"
+  click_link "Add New Organization"
+  fill_in "organization_name", with: "MyCompany"
+  fill_in "organization_headline", with: "MyCompany headline"
+  fill_in "organization_description", with: "The description of MyCompany"
+  click_button "Create Organization"
 end
 
-Then(/^I should see "(.*?)" on my profile page$/) do |organization_name|
-  expect(page).to have_content(organization_name)
-end
-
-When(/^I visit the profile page for "(.*?)"$/) do |organization_name|
-  click_link organization_name
+Then(/^I should see the new company info$/) do
+  within('a.edit') do
+    find('span.glyphicon-remove-circle').click
+  end
+  expect(page).to have_content("MyCompany")
+  expect(page).to have_content("MyCompany headline")
+  expect(page).to have_content("The description of MyCompany")
 end

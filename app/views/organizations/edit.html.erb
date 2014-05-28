@@ -66,6 +66,7 @@
           <%= f.label :country %>
           <%= f.text_field :country, class: "form-control" %>
         </div>
+        <%= f.hidden_field :organization_id, :value => @organization.id %>
         <%= f.submit "Save Address", class: "btn btn-primary" %>
       <% end %> 
     </div>

@@ -12,7 +12,8 @@
     <% end %>
   </div>
 </div>
-<h3>Organizations</h3>
+<h4>ORGANIZATIONS</h4>
+<%= link_to "Add New Organization", new_organization_path %>
 <% current_user.organizations.each do |org| %>
   <div class="row">
     <div class="panel panel-default">

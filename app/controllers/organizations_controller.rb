@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring, :destroy_tag, :add_role, :destroy_role]
   before_filter :set_original_url, only: [:add_role, :destroy_role]
+  after_filter :unset_original_url, only: [:add_role, :destroy_role]
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
@@ -13,6 +14,22 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+  end
+
+  def new
+    @organization = Organization.new
+  end
+
+  def create
+    @organization = Organization.new(organization_params)
+    if @organization.save!
+      @organization.users << current_user
+      @organization.create_activity key: "organization.create"
+      flash[:success] = "The organization was added successfully"
+    else
+      flash[:error] = "There was a problem adding your organization"
+    end
+    redirect_to edit_organization_path(@organization)
   end
 
   #TODO: extract into service
@@ -34,12 +51,12 @@ class OrganizationsController < ApplicationController
 
   def edit
     @profile_link = ProfileLink.new
-    @address = @organization.main_address
+    @organization.main_address ? @address = @organization.main_address : @address = Address.new
   end
 
   def update
     save_tags if params[:organization][:tag_list].present?
-    if @organization.update(organization_params)
+    if @organization.update!(organization_params)
       flash[:success] = "The organization was updated successfully"
     else
       flash[:error] = "There was a problem updating your organization"
@@ -110,7 +127,7 @@ class OrganizationsController < ApplicationController
   end
 
   def organization_params
-    params.require(:organization).permit(:claimed, :user_id, :headline, :description)
+    params.require(:organization).permit(:claimed, :user_id, :headline, :description, :name)
   end
 
   def check_if_signed_in
@@ -123,5 +140,9 @@ class OrganizationsController < ApplicationController
 
   def set_original_url
     session[:original_url] = request.referrer
+  end
+
+  def unset_original_url
+    session[:original_url] = nil
   end
 end

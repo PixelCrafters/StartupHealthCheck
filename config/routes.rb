@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => "organizations#index"
 
-  resources :organizations, only: [:index, :show, :edit, :update] do
+  resources :organizations, only: [:index, :show, :edit, :update, :new, :create] do
     get 'claim', on: :member
     post 'toggle_hiring', on: :member
     put 'add_role', on: :member
@@ -24,5 +24,5 @@ Rails.application.routes.draw do
 
   resources :activities, only: [:index]
 
-  resources :addresses, only: [:update]
+  resources :addresses, only: [:update, :create]
 end
