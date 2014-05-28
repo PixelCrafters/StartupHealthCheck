@@ -7,11 +7,8 @@
 <% if @organization.claimed? %>
   <p class="claimant">
     This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first) %>
-    <% @organization.users.each do |user| %>
-      <% user.current_roles(@organization).each do |role| %>
-        <%= role.name %>
-        <br />
-      <% end %>
-    <% end %>
   </p>
+  <% @organization.organization_user_roles.each do |organization_user_role| %>
+    <%= organization_user_role.name %>: <%= organization_user_role.user.name %><br />
+  <% end %>
 <% end %>

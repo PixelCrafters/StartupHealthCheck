@@ -19,20 +19,16 @@
       <div class="panel-body">
         <h5><%= link_to org.name, organization_path(org) %></h5>
         <table class="table table-striped roles-table">
-          <% if !current_user.current_roles(org).nil? %>
-            <% if roles = current_user.current_roles(org) %>
-              <% roles.each do |role| %>
-                <tr>
-                  <td>
-                    <%= role.name %>
-                  </td>
-                  <td>
-                    <%= link_to '<span class="glyphicon glyphicon-remove"></span>
-  '.html_safe, destroy_role_organization_path(role.id), method: :delete, class: "remove-role right" %>
-                  </td>
-                </tr>
-              <% end %>
-            <% end %>
+          <% current_user.organization_user_roles.each do |role| %>
+            <tr>
+              <td>
+                <%= role.name %>
+              </td>
+              <td>
+                <%= link_to '<span class="glyphicon glyphicon-remove"></span>
+'.html_safe, destroy_role_organization_path(role.id), method: :delete, class: "remove-role right" %>
+              </td>
+            </tr>
           <% end %>
         </table>
         <div class="col-sm-4">

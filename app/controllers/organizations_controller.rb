@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
-  before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring]
+  before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring, :destroy_tag, :add_role, :destroy_role]
+  before_filter :set_original_url, only: [:add_role, :destroy_role]
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
@@ -77,7 +78,7 @@ class OrganizationsController < ApplicationController
       role = Role.find(params[:role][:id])
       flash[:error] = "You've already saved the role '#{role.name}' for this organization"
     end
-    redirect_to edit_user_path(current_user)
+    redirect_to session[:original_url]
   end
 
   def destroy_role
@@ -86,7 +87,7 @@ class OrganizationsController < ApplicationController
     else
       flash[:success] = "There was a problem deleting your role."
     end
-    redirect_to edit_user_path(current_user)
+    redirect_to session[:original_url]
   end
 
   private
@@ -117,5 +118,9 @@ class OrganizationsController < ApplicationController
       redirect_to login_path 
       return
     end
+  end
+
+  def set_original_url
+    session[:original_url] = request.referrer
   end
 end

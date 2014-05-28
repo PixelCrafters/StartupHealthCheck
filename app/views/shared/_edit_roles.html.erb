@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h5><%= link_to org.name, organization_path(org) %></h5>
+        <table class="table table-striped roles-table">
+            <% if roles = current_user.current_roles(org) %>
+              <% roles.each do |role| %>
+                <tr>
+                  <td>
+                    <%= role.name %>
+                  </td>
+                  <td>
+                    <%= link_to '<span class="glyphicon glyphicon-remove"></span>
+  '.html_safe, destroy_role_organization_path(role.id), method: :delete, class: "remove-role right" %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+        </table>
+        <div class="col-sm-4">
+          <%= form_tag add_role_organization_path(org), method: :put, role: "form", class: "form-inline" do %>
+            <%= collection_select :role, :id, Role.all, :id, :name, {}, {class: "form-control"}%>
+            <%= submit_tag "Add Role", class: "btn btn-default" %>
+          <% end %>  
+        </div>
+      </div>
+    </div>
+  </div>
