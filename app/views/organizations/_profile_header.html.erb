@@ -5,10 +5,10 @@
         <%= @organization.name %>
         <%= render "organizations/edit_mode" %>
       </h3>
+      <p><%= @organization.headline %></p>
       <% if @organization.main_address %>
         <span class="left"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
       <% end %>
-      <p><%= @organization.headline %></p>
       <br /><br />
       <% if status == "active" %>
         <span class="label label-success left status"><%= status.capitalize %></span>

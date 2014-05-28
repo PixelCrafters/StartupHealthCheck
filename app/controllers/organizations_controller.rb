@@ -34,6 +34,7 @@ class OrganizationsController < ApplicationController
 
   def edit
     @profile_link = ProfileLink.new
+    @address = @organization.main_address
   end
 
   def update

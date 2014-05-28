@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   delete 'tag/:organization_id/:tag_id', to: 'organizations#destroy_tag', as: "destroy_tag"
 
   resources :activities, only: [:index]
+
+  resources :addresses, only: [:update]
 end
