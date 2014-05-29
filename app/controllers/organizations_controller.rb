@@ -1,4 +1,4 @@
-class OrganizationsController < ApplicationController
+class OrganizationsController < ApplicationController  
   before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring, :destroy_tag, :add_role, :destroy_role]
   before_filter :set_original_url, only: [:add_role, :destroy_role]
   after_filter :unset_original_url, only: [:add_role, :destroy_role]
@@ -22,7 +22,7 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
-    if @organization.save!
+    if @organization.save
       @organization.users << current_user
       @organization.create_activity key: "organization.create"
       flash[:success] = "The organization was added successfully"

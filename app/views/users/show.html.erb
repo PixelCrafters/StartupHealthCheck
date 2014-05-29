@@ -9,7 +9,7 @@
     <% if @user.email.present? %>
       <%= @user.email %>
     <% else %>
-      <%= render 'email_modal' %>
+      <%= render "users/email_modal" %>
     <% end %>
   </div>
   <% if current_user.present? %>
