@@ -21,10 +21,9 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = Organization.new(organization_params)
-    if @organization.save
-      @organization.users << current_user
-      @organization.create_activity key: "organization.create"
+    binding.pry
+    @organization = Organization::Create.call(organization_params, current_user)
+    if @organization.persisted?
       flash[:success] = "The organization was added successfully"
     else
       flash[:error] = "There was a problem adding your organization"

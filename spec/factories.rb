@@ -14,4 +14,8 @@ FactoryGirl.define do
     country "Canada"
     zip "V1A2B3"
   end
+
+  factory :user do
+    name "Example User"
+  end
 end
