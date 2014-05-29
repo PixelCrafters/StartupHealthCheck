@@ -21,7 +21,6 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    binding.pry
     @organization = Organization::Create.call(organization_params, current_user)
     if @organization.persisted?
       flash[:success] = "The organization was added successfully"
