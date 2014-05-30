@@ -46,13 +46,18 @@ Change directories into startuphealthcheck
 
 Run Bundler (http://bundler.io)
 ```  
-  bundle
+  bundle install
 ```  
 
 Set up your database. 
 Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file). The following command will create the database, run the migrations and add the seed data to the application.
 ```
   bundle exec rake db:setup
+```
+
+Add data to the search index
+```
+  bundle exec rake searchkick:reindex CLASS=Organization
 ```
 
 Start the rails server
