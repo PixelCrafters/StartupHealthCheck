@@ -7,7 +7,7 @@
       </h3>
       <p><%= @organization.headline %></p>
       <% if @organization.main_address %>
-        <span class="left"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
+        <span class="left"><%= @organization.main_address.address1 %>, <%= @organization.main_address.city %>, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
       <% end %>
       <br /><br />
       <% if status == "active" %>
