@@ -49,15 +49,11 @@ Run Bundler (http://bundler.io)
   bundle
 ```  
 
-Create your database. Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file)
+Set up your database. 
+Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file). The following command will create the database, run the migrations and add the seed data to the application.
 ```
-  bundle exec rake db:create
-```  
-
-Run the migrations
-```  
-  bundle exec rake db:migrate
-```  
+  bundle exec rake db:setup
+```
 
 Start the rails server
 ```  
