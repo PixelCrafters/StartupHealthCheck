@@ -3,9 +3,7 @@ class TagsController < ApplicationController
 
   def create
     params[:tag_list].split(',').each do |tag_name|
-      if @organization.tag_list.add(tag_name)
-        @organization.save
-        @organization.create_activity key: "tag.add", owner: current_user, parameters: {tag_name: tag_name}
+      if Tag::Create.call(tag_name, @organization, current_user)
         flash[:success] = "Your tag was saved successfully"
       else
         flash[:error] = "There was a problem saving your tag."
