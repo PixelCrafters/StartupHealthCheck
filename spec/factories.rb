@@ -5,6 +5,8 @@ FactoryGirl.define do
     description "This is the description"
     founded Date.today
     approved true
+    active true
+    claimed false
   end
 
   factory :address do

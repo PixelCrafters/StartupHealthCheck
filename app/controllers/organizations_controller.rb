@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController  
   before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring, :destroy_tag, :add_role, :destroy_role]
   before_filter :set_original_url, only: [:add_role, :destroy_role]
-  after_filter :unset_original_url, only: [:add_role, :destroy_role]
+  after_filter :unset_original_url, only: [:claim, :add_role, :destroy_role]
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
@@ -33,17 +33,14 @@ class OrganizationsController < ApplicationController
   #TODO: extract into service
   def claim
     if @organization.claimed?
-      redirect_to user_path(current_user)
+      redirect_to user_path(@organization, current_user)
     else
-      @organization.claimed = true
-      if @organization.save!
-        @organization.users << current_user
-        @organization.create_activity key: "organization.claim", owner: current_user
-        redirect_to user_path(@organization.users.first)
+      @organization = Organization::Claim.call(current_user, @organization)
+      if @organization.claimed?
+        redirect_to user_path(current_user)
       else
         redirect_to organization_path(@organization)
       end
-      session[:original_url] = nil if session[:original_url]
     end
   end
 
