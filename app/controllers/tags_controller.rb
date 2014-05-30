@@ -13,10 +13,7 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    tag = @organization.tags.find(params[:tag_id])
-    if @organization.tag_list.remove(tag.name)
-      @organization.save
-      @organization.create_activity key: "tag.remove", owner: current_user, parameters: {tag_name: tag.name}
+    if Tag::Destroy.call(params[:tag_id], @organization, current_user)
       flash[:success] = "The tag was successfully removed"
     else
       flash[:error] = "There was a problem removing your tag"

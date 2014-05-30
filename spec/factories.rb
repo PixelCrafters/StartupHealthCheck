@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :address do
-    association :organization_id, :factory => :organization
+    association :organization_id, factory: :organization
     address1 "123 Example Street"
     state "BC"
     country "Canada"
@@ -19,5 +19,10 @@ FactoryGirl.define do
 
   factory :user do
     name "Example User"
+  end
+
+  factory :tag, class: ActsAsTaggableOn::Tag do
+    sequence(:id) {|n| n}
+    name "startup"
   end
 end

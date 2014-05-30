@@ -30,7 +30,6 @@ class OrganizationsController < ApplicationController
     redirect_to edit_organization_path(@organization)
   end
 
-  #TODO: extract into service
   def claim
     if @organization.claimed?
       redirect_to user_path(@organization, current_user)
