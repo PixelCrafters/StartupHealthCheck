@@ -16,7 +16,7 @@ module StartupGenome
 
     def update_organization(org_hash)
       data = build_data_hash(org_hash)
-      organization = Organization.find_or_initialize_by(startup_genome_id: org_hash["organization_id"])
+      organization = Organization.find_or_initialize_by(startup_genome_slug: org_hash["startup_genome_slug"])
       msg = ""
       if organization.new_record?
         msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
@@ -30,7 +30,7 @@ module StartupGenome
     end
 
     def update_address(org_hash, organization)
-      StartupGenome::UpdateAddress.call(org_hash, organization)
+      StartupGenome::UpdateAddress.call(org_hash["addresses"].first, organization)
     end
 
     def build_data_hash(org_hash)

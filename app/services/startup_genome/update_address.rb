@@ -18,7 +18,7 @@ module StartupGenome
     def update_address(org_hash, organization)
       data = build_address_hash(org_hash)
       address = Address.find_or_initialize_by(organization_id: organization.id)
-      msg = address.update!(data) ? "Successfully created/updated address of #{org_hash['name']}" : "Failed to update address of #{org_hash['name']}"
+      msg = address.update!(data) ? "Successfully created/updated address of #{organization.name}" : "Failed to update address of #{organization.name}"
       puts msg
       address
     end
@@ -26,9 +26,10 @@ module StartupGenome
     def build_address_hash(org_hash)
       { latitude: org_hash["latitude"],
         longitude: org_hash["longitude"],
-        zip: org_hash["zip"],
-        address1: org_hash["address1"], 
-        address2: org_hash["address2"],
+        zip: org_hash["postal_code"],
+        address1: org_hash["line1"], 
+        address2: org_hash["line2"],
+        city: org_hash["location"]["name"],
         state: org_hash["state"],
         country: org_hash["country"] }
     end
