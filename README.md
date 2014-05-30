@@ -46,7 +46,7 @@ Change directories into startuphealthcheck
 
 Run Bundler (http://bundler.io)
 ```  
-  bundle
+  bundle install
 ```  
 
 Set up your database. 
