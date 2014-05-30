@@ -78,8 +78,12 @@ a.edit{
   font-size: 11pt !important;
 }
 
+#tags{
+  margin-bottom: 15px;
+}
+
 .tag{
-  margin: 3px;
+  margin-right: 3px;
   font-size: 11pt !important;
 }
 
@@ -92,9 +96,16 @@ a.edit{
 }
 
 .tag-list{
-  margin: 10px;
 }
 
 a.remove-tag{
   text-decoration: none !important;
+}
+
+.check{
+  margin-left: 20px !important;
+}
+
+#label-hiring{
+  margin-left: 10px !important;
 }

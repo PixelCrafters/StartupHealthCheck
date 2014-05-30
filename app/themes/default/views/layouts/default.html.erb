@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StartupHealthCheck</title>
+  <%= stylesheet_link_tag    "default/all", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "default/all", "data-turbolinks-track" => true %>
+  <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+
+    <div class="container">
+      <%= render 'header' %>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <%= render "shared/flash_message" %>
+          <%= yield %>
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+  </body>
+</html>

@@ -11,12 +11,12 @@ Feature: Organization's tags
 
   @javascript
   Scenario: Adding a tag
-    Given I add a new tag "software"
+    When I add a new tag "software"
     Then the new tag "software" should be applied to my organization
     And I should see my organization when I browse by "software"
 
   @javascript
   Scenario: Removing a tag
-    Given I add a new tag "software"
-    When I remove the tag
+    When I add a new tag "software"
+    And I remove the tag
     Then I should not see the tag "software" on the organization profile 

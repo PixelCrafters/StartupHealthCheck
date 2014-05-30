@@ -1,15 +1,16 @@
 class SendVerificationEmail
   include Service
 
-  attr_reader :email, :connection
+  attr_reader :email, :user, :connection
 
-  def initialize(email, connection)
+  def initialize(email, user, connection)
     @email = email
+    @user = user
     @connection = connection
   end
 
   def call
-    results = Auth0::API.new.send_verification_email(email, connection)
-    Rails.logger.info "Send Email Verification for #{email}, #{connection}: #{results.body}"
+    results = Auth0::API.new.update_email(email, user, connection)
+    Rails.logger.info "Update Email/Send Email Verification for #{email}: #(uid), #{results.body}"
   end
 end

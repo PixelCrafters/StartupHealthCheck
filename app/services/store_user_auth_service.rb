@@ -17,14 +17,12 @@ class StoreUserAuthService
 
     if current_user
       if user_auth_service.user != current_user
-        user_auth_service.user = current_user
-        user_auth_service.save!
+        user_auth_service.update!(user: current_user)
       end
     else
       if user_auth_service.user.nil?
         user = StoreAuthorizedUser.call(userinfo)
-        user_auth_service.user = user
-        user_auth_service.save!
+        user_auth_service.update!(user: user)
       end
     end
     user_auth_service

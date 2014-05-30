@@ -1,0 +1,111 @@
+.jumbotron {
+  text-align: center;
+  background-color: #FFF !important;
+}
+
+#headline  h1 {
+  font-size: 63px;
+  text-align: center;
+}
+
+input#home-page-search {
+  height: 50px;
+  font-size: 20px;
+}
+
+.right{
+  float: right;
+}
+
+.left{
+  float: left;
+}
+
+.top-buffer { 
+  margin-top: 40px; 
+}
+
+.form-group-buffer{
+  position: relative;
+  top: 7px;
+}
+
+.auth-btns{
+  padding-top: 8px;
+  padding-right: 7px;
+}
+
+.modal-form{
+  padding: 20px;
+}
+
+.big-text{
+  font-size: 18pt;
+}
+
+.bg-primary a{
+  text-decoration: underline;
+}
+
+.bg-primary a:hover{
+  color: #FFF;
+}
+
+.no-buffer{
+  padding: 0 !important;
+}
+
+/*** Organization Styles ***/
+
+.claim-header{
+  padding: 15px;
+}
+
+.small-field{
+  height: 30px !important;
+  width: 150px !important;
+}
+
+.claimant{
+  margin-top: 50px;
+}
+
+a.edit{
+  text-decoration: underline;
+}
+
+.status{
+  font-size: 11pt !important;
+}
+
+#tags{
+  margin-bottom: 15px;
+}
+
+.tag{
+  margin-right: 3px;
+  font-size: 11pt !important;
+}
+
+.tag a{
+  color: #FFF;
+}
+
+.tag a:hover{
+  color: #FFF;
+}
+
+.tag-list{
+}
+
+a.remove-tag{
+  text-decoration: none !important;
+}
+
+.check{
+  margin-left: 20px !important;
+}
+
+#label-hiring{
+  margin-left: 10px !important;
+}

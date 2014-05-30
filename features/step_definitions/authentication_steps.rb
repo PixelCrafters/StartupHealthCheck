@@ -16,14 +16,10 @@ Then(/^I should be on the user profile page for "(.*?)"$/) do |name|
 end
 
 Given(/^I submit an email address$/) do
-  fill_in "user_email", with: "twitteruser@example.com"
+  fill_in "user_email", with: "jncoops7@live.com"
   click_button "Submit"
 end
 
 Then(/^my email address should be present$/) do
-  page.should have_content("twitteruser@example.com")
-end
-
-Given(/^I logout$/) do 
-  click_link "Logout"
+  page.should have_content("jncoops7@live.com")
 end

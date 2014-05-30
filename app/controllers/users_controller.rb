@@ -2,16 +2,16 @@ class UsersController < ApplicationController
   before_filter :check_session, only: [:edit, :update]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def edit
   end
 
   def update
-    @user = User.find(current_user.id)
+    @user = current_user
     if @user.email.nil? && params[:user][:email].present?
-      SendVerificationEmail.call(params[:user][:email], session[:current_connection].downcase)
+      SendVerificationEmail.call(params[:user][:email], @user, session[:current_connection])
     end  
     @user.update(user_params)
     redirect_to user_path(@user)

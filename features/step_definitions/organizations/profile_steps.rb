@@ -1,3 +1,16 @@
+# TODO: check for redirect instead of sleeping
+Given "I am an admin user" do
+  step %|I visit the profile page|
+  sleep 1
+  step %|I claim the profile|
+  sleep 1
+  step %|I login with "Twitter"|
+  sleep 1
+  step %|I submit an email address|
+  sleep 1
+  step %|I visit the profile page|
+end
+
 Given(/^an organization named "(.*?)"$/) do |name|
   @organization = FactoryGirl.create(:organization, name: name)
 end
@@ -27,7 +40,7 @@ Then(/^I should see the organization on my profile$/) do
   page.should have_content(@organization.name)
 end
 
-Given(/^I edit the profile$/) do
+When(/^I edit the profile$/) do
   find('span.glyphicon-edit').click
   current_path.should == edit_organization_path(@organization)
 end
@@ -42,14 +55,6 @@ Then(/^I should see the "(.*?)" link on the profile$/) do |name|
   page.should have_content(name)
 end
 
-Given "I am an admin user" do
-  step %|I visit the profile page|
-  step %|I claim the profile|
-  step %|I login with "Twitter"|
-  step %|I submit an email address|
-  step %|I visit the profile page|
-end
-
 When(/^I delete the link$/) do
   within('.links-table') do
     find('span.glyphicon-remove').click
@@ -59,4 +64,46 @@ end
 Then(/^I should not see the "(.*?)" link on the profile$/) do |name|
   page.should_not have_content(name)
   expect(@organization.reload.profile_links).to be_empty
+end
+
+When(/^I check the hiring box$/) do
+  find(:css, "#hiring").set(true)
+end
+
+When(/^I uncheck the hiring box$/) do
+  find(:css, "#hiring").set(false)
+end
+
+Then(/^the organization should be hiring$/) do
+  page.should have_css('#label-hiring')
+end
+
+Then(/^the organization should not be hiring$/) do
+  page.should_not have_css('#label-hiring')
+end
+
+When(/^I update the description$/) do
+  fill_in "organization_description", with: "This is the new description"
+  click_button "Save Info"
+end
+
+Then(/^I should see my new description$/) do
+  expect(page).to have_content("This is the new description")
+end
+
+When(/^I add an organization "(.*?)"$/) do |organization_name|
+  click_link "Add New Organization"
+  fill_in "organization_name", with: "MyCompany"
+  fill_in "organization_headline", with: "MyCompany headline"
+  fill_in "organization_description", with: "The description of MyCompany"
+  click_button "Create Organization"
+end
+
+Then(/^I should see the new company info$/) do
+  within('a.edit') do
+    find('span.glyphicon-remove-circle').click
+  end
+  expect(page).to have_content("MyCompany")
+  expect(page).to have_content("MyCompany headline")
+  expect(page).to have_content("The description of MyCompany")
 end

@@ -22,14 +22,15 @@ module Auth0
       JSON.parse(response.body)["access_token"]
     end
 
-    def send_verification_email(email, connection)
-      @conn.post do |request|
-        request.url 'api/users/send_verification_email' 
+    def update_email(email, user, connection)
+      uid = User.find(user.id).uid(connection)
+      @conn.put do |request|
+        request.url "api/users/#{uid.gsub!('|','%7C')}/email"
         request.headers['Authorization'] = 'Bearer ' + access_token
         request.headers['Content-Type'] = 'application/json'
         request.body = {
                         email: email,
-                        connection: connection
+                        verify: true
                        }.to_json
       end
     end

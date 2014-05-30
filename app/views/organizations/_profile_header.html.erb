@@ -5,15 +5,18 @@
         <%= @organization.name %>
         <%= render "organizations/edit_mode" %>
       </h3>
-      <% if @organization.main_address %>
-        <span class="left"><%= @organization.main_address.address1 %>, Vancouver, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
-      <% end %>
       <p><%= @organization.headline %></p>
+      <% if @organization.main_address %>
+        <span class="left"><%= @organization.main_address.address1 %>, <%= @organization.main_address.city %>, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
+      <% end %>
       <br /><br />
       <% if status == "active" %>
-        <span class="label label-success left status"><%= status %></span>
+        <span class="label label-success left status"><%= status.capitalize %></span>
       <% else %>
-        <span class="label label-danger left status"><%= status %></span>
+        <span class="label label-danger left status"><%= status.capitalize %></span>
+      <% end %>
+      <% if @organization.hiring? %>
+        <span id="label-hiring" class="label label-success left status left-buffer">Hiring</span>
       <% end %>
     </div>
     <br /><br />

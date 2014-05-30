@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Wed, 14 May 2014 22:29:43 GMT
+      - Tue, 27 May 2014 23:13:32 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,24 +35,24 @@ http_interactions:
       Pragma:
       - no-cache
       Set-Cookie:
-      - auth0=Z11a3A3Dp25o_bG6Wbmn4w.gQsoxORbYDG67j4MnHVFydyRT0-MlSfklm91ciHSjxc.1400106583252.86400000.Aj2MIyK1GJSPxyVcO38QBhc8x1UFwvBMGTvqvs82MtM;
+      - auth0=S3QcO7_olJG6x5P4K98qSA.JiDA3Ebdis7nnlzojoOSyZIxioFEhncWLNwWQpWB_Q0.1401232412843.86400000.avgfdTq8XDM93cib4SYVk7EVYeC9DZrnig53pELGHUg;
         path=/; secure; httponly
     body:
       encoding: UTF-8
-      string: '{"access_token":"L6a2687eaqaWyZ8bL1IZDBMcUIyTW6vAgPlpRGn864Gj85UzL4eUOzRXTIgrK3Xj","token_type":"bearer"}'
+      string: '{"access_token":"1VsOgRTZhdO8BDfkaqYiv7pPFJvA3XNDbjVsUFMH3S53J8ZV2QL0M94jKzK0Aes8","token_type":"bearer"}'
     http_version: 
-  recorded_at: Wed, 14 May 2014 22:29:46 GMT
+  recorded_at: Tue, 27 May 2014 23:13:33 GMT
 - request:
-    method: post
-    uri: https://jncoops.auth0.com/api/users/send_verification_email
+    method: put
+    uri: https://jncoops.auth0.com/api/users/twitter%7C2516461339/email
     body:
       encoding: UTF-8
-      string: '{"email":"twitteruser@example.com","connection":"twitter"}'
+      string: '{"email":"jncoops7@live.com","verify":true}'
     headers:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Bearer L6a2687eaqaWyZ8bL1IZDBMcUIyTW6vAgPlpRGn864Gj85UzL4eUOzRXTIgrK3Xj
+      - Bearer 1VsOgRTZhdO8BDfkaqYiv7pPFJvA3XNDbjVsUFMH3S53J8ZV2QL0M94jKzK0Aes8
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -67,18 +67,16 @@ http_interactions:
       Server:
       - nginx/1.7.0
       Date:
-      - Wed, 14 May 2014 22:29:43 GMT
+      - Tue, 27 May 2014 23:13:33 GMT
       Content-Type:
       - text/plain
       Content-Length:
       - '2'
       Connection:
       - keep-alive
-      X-Powered-By:
-      - Express
     body:
       encoding: UTF-8
       string: OK
     http_version: 
-  recorded_at: Wed, 14 May 2014 22:29:46 GMT
+  recorded_at: Tue, 27 May 2014 23:13:33 GMT
 recorded_with: VCR 2.9.0
