@@ -55,6 +55,11 @@ Start by creating a config/database.yml file with your database settings (based 
   bundle exec rake db:setup
 ```
 
+Add data to the search index
+```
+bundle exec rake searchkick:reindex CLASS=Organization
+```
+
 Start the rails server
 ```  
   rails server
