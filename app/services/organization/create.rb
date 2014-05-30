@@ -8,7 +8,6 @@ class Organization::Create
     @current_user = current_user
   end
 
-
   def call
     @organization = Organization.create(params)
     if @organization.persisted?

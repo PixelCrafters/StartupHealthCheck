@@ -2,9 +2,10 @@ require 'spec_helper'
 
 describe Tag::Destroy do
   describe "#call" do
-    let(:current_user) { FactoryGirl.build(:user) }
+    current_user = FactoryGirl.build(:user)
+    organization = FactoryGirl.build(:organization)
+    
     it "should remove the tag from the organization's tag_list" do
-      organization = FactoryGirl.build(:organization)
       organization.tag_list.add('startup')
       organization.save
       tag = ActsAsTaggableOn::Tag.last

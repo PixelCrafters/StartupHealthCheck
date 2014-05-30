@@ -1,7 +1,6 @@
 class OrganizationsController < ApplicationController  
   before_filter :check_if_signed_in, only: [:claim, :edit, :toggle_hiring, :destroy_tag, :add_role, :destroy_role]
-  before_filter :set_original_url, only: [:add_role, :destroy_role]
-  after_filter :unset_original_url, only: [:claim, :add_role, :destroy_role]
+  after_filter :unset_original_url, only: [:claim]
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
@@ -68,26 +67,6 @@ class OrganizationsController < ApplicationController
     redirect_to edit_organization_path(@organization)
   end
 
-  def add_role
-    begin
-      CreateOrganizationUserRole.call(params[:role][:id], @organization.id, current_user.id)
-      flash[:success] = "Your role was saved successfully!"
-    rescue ActiveRecord::RecordNotUnique => e
-      role = Role.find(params[:role][:id])
-      flash[:error] = "You've already saved the role '#{role.name}' for this organization"
-    end
-    redirect_to session[:original_url]
-  end
-
-  def destroy_role
-    if OrganizationUserRole.find(params[:id]).destroy!
-      flash[:success] = "Your role was deleted successfully!"
-    else
-      flash[:success] = "There was a problem deleting your role."
-    end
-    redirect_to session[:original_url]
-  end
-
   private
 
   def find_organization
@@ -96,13 +75,5 @@ class OrganizationsController < ApplicationController
 
   def organization_params
     params.require(:organization).permit(:claimed, :user_id, :headline, :description, :name)
-  end
-
-  def set_original_url
-    session[:original_url] = request.referrer
-  end
-
-  def unset_original_url
-    session[:original_url] = nil
   end
 end

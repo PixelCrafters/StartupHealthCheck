@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
   helper_method :check_if_signed_in
+  helper_method :set_original_url
+  helper_method :unset_original_url
 
   theme "default"
   
@@ -19,5 +21,13 @@ class ApplicationController < ActionController::Base
       redirect_to login_path 
       return
     end
+  end
+
+  def set_original_url
+    session[:original_url] = request.referrer
+  end
+
+  def unset_original_url
+    session[:original_url] = nil
   end
 end

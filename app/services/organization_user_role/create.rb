@@ -1,4 +1,4 @@
-class CreateOrganizationUserRole
+class OrganizationUserRole::Create
   include Service
 
   attr_reader :role_id, :organization_id, :user_id
@@ -8,7 +8,6 @@ class CreateOrganizationUserRole
     @organization_id = organization_id
     @user_id = user_id
   end
-
 
   def call
     role = Role.find(role_id)
