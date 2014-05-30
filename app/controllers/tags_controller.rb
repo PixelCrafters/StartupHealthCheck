@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_filter :check_if_signed_in
   before_filter :find_organization
 
   def create
