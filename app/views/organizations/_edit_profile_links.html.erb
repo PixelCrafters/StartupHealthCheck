@@ -3,12 +3,12 @@
     <div class="panel-body">
       <h4>LINKS</h4>
       <table class="table table-striped links-table">
-        <tr>
-          <td> 
-            <%= link_to "Startup Genome", @organization.url %>
-          </td>
-          <td></td>
-        </tr>
+        <% if @organization.url.present? %>
+          <tr>
+            <td><%= link_to "Startup Genome", @organization.url %></td>
+            <td></td>
+          </tr>
+        <% end %>
         <% @organization.profile_links.each do |profile_link| %>
           <tr>
             <td><%= link_to profile_link.name, profile_link.url %></td>
