@@ -9,19 +9,6 @@ module Auth0
       @conn = APIConnection.connect_via_faraday(@host)
     end
 
-    def access_token
-      response = @conn.post do |request|
-        request.url 'oauth/token' 
-        request.headers['Content-Type'] = 'application/json'
-        request.body = {
-                        client_id: @auth0_client_id,
-                        client_secret: @auth0_secret,
-                        grant_type: 'client_credentials'
-                       }.to_json
-      end
-      JSON.parse(response.body)["access_token"]
-    end
-
     def update_email(email, user, connection)
       uid = User.find(user.id).uid(connection)
       @conn.put do |request|
@@ -33,6 +20,21 @@ module Auth0
                         verify: true
                        }.to_json
       end
+    end
+
+    private
+
+    def access_token
+      response = @conn.post do |request|
+        request.url 'oauth/token' 
+        request.headers['Content-Type'] = 'application/json'
+        request.body = {
+                        client_id: @auth0_client_id,
+                        client_secret: @auth0_secret,
+                        grant_type: 'client_credentials'
+                       }.to_json
+      end
+      JSON.parse(response.body)["access_token"]
     end
   end
 end 
