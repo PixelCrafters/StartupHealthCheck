@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h3>
+      <%= @organization.name %>
+      <%= render "organizations/edit_mode" %>
+    </h3>
+    <p>
+      <% if status == "active" %>
+        <span class="label label-success status"><%= status.capitalize %></span>
+      <% else %>
+        <span class="label label-danger status"><%= status.capitalize %></span>
+      <% end %>
+      <% if @organization.hiring? %>
+        <span id="label-hiring" class="label label-success status left-buffer">Hiring</span>
+      <% end %>
+    </p>
+  </div>
+</div>

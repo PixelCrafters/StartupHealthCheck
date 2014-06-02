@@ -13,12 +13,7 @@
       <%= render 'header' %>
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <% flash.each do |type, message| %>
-            <div class="alert alert-<%= type.to_s %> fade in">
-              <button class="close" data-dismiss="alert">×</button>
-              <%= message %>
-            </div>
-          <% end %>
+          <%= render 'shared/flash_message' %>
           <%= yield %>
         </div>
       </div>
