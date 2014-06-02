@@ -80,3 +80,26 @@ To run RSpec
 ```
   rspec spec
 ```
+
+
+### Adding Custom Styling
+
+We use the [Themes on Rails](https://github.com/yoolk/themes_on_rails) gem for multi-theme support.
+
+Right now the repository has the following themes:
+- Default (app/themes/default)
+- WeAreYVR (app/themes/weareyvr)
+
+To change the theme from 'Default' to 'WeAreYVR', replace the following line in app/controllers/application_controller.rb
+```
+theme "default"
+```
+...with...
+```
+theme "weareyvr"
+```
+After you've made this change, restart your server.
+
+To make changes to view files simply override the views by recreating the view file in app/themes/<theme-name>/views/<file-name>
+
+To create custom themes take a look at the the [Themes on Rails](https://github.com/yoolk/themes_on_rails) documentation.
