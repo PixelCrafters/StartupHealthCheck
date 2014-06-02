@@ -1,8 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-body activity">  
-    <%= link_to activity.trackable.name, activity.trackable %>
+    <% if activity.trackable.present? %>
+      <%= link_to activity.trackable.name, activity.trackable %>
 
-    was just created
+      was just created
+    <% end %>
   </div>
 </div>
  

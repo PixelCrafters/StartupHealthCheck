@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
   before_filter :check_session, only: [:edit, :update]
+  before_filter :set_original_url, only: [:show]
+  after_filter :unset_original_url, only: [:show]
 
   def show
-    @user = User.find(current_user.id)
+    begin
+      @user = User.find(params[:id])
+    rescue
+      ActiveRecord::RecordNotFound
+      flash[:error] = "That user does not exist"
+      redirect_to root_url
+    end
   end
 
   def edit
