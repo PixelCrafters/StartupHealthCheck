@@ -1,13 +1,13 @@
 # TODO: check for redirect instead of sleeping
 Given "I am an admin user" do
   step %|I visit the profile page|
-  sleep 1
+  sleep 2
   step %|I claim the profile|
-  sleep 1
+  sleep 2
   step %|I login with "Twitter"|
-  sleep 1
+  sleep 2
   step %|I submit an email address|
-  sleep 1
+  sleep 2
   step %|I visit the profile page|
 end
 
