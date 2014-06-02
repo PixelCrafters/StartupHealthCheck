@@ -20,7 +20,7 @@
       <div class="panel-body">
         <h5><%= link_to org.name, organization_path(org) %></h5>
         <table class="table table-striped roles-table">
-          <% current_user.organization_user_roles.each do |role| %>
+          <% org.organization_user_roles.each do |role| %>
             <tr>
               <td>
                 <%= role.name %>
