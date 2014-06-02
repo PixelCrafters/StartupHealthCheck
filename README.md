@@ -102,4 +102,4 @@ After you've made this change, restart your server.
 
 To override a view file simple recreate it within your theme directory and make any changes (ie. app/themes/{theme-name}/views/{file-name}).
 
-To create custom themes take a look at the the [Themes on Rails](https://github.com/yoolk/themes_on_rails) documentation.
+To create custom themes have a look at the [Themes on Rails](https://github.com/yoolk/themes_on_rails) documentation.
