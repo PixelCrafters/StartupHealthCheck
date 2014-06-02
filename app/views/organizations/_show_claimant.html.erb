@@ -1,0 +1,8 @@
+<% if @organization.claimed? %>
+  <p class="claimant">
+    This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first) %>
+  </p>
+  <% @organization.organization_user_roles.each do |role| %>
+    <%= role.name %>: <%= role.user.name %><br />
+  <% end %>
+<% end %>

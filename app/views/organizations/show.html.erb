@@ -3,12 +3,4 @@
 <%= render "organizations/show_tags" if @organization.tags.any? %> 
 <%= render "organizations/show_profile_links" %>
 <%= render "organizations/profile_description" %>
-
-<% if @organization.claimed? %>
-  <p class="claimant">
-    This profile was claimed by: <%= link_to @organization.users.first.name, user_path(@organization.users.first) %>
-  </p>
-  <% @organization.organization_user_roles.each do |organization_user_role| %>
-    <%= organization_user_role.name %>: <%= organization_user_role.user.name %><br />
-  <% end %>
-<% end %>
+<%= render "organizations/show_claimant" %>
