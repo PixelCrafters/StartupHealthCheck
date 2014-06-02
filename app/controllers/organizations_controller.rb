@@ -20,7 +20,7 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = Organization::Create.call(organization_params, current_user)
+    @organization = Organization::Create.call(organization_params.merge!(active: true), current_user)
     if @organization.persisted?
       flash[:success] = "The organization was added successfully"
     else
