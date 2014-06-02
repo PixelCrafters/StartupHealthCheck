@@ -86,7 +86,7 @@ To run RSpec
 
 We use the [Themes on Rails](https://github.com/yoolk/themes_on_rails) gem for multi-theme support.
 
-Right now the repository has the following themes:
+Right now Startup HealthCheck has the following themes:
 - Default (app/themes/default)
 - WeAreYVR (app/themes/weareyvr)
 
@@ -100,6 +100,6 @@ theme "weareyvr"
 ```
 After you've made this change, restart your server.
 
-To make changes to view files simply override the views by recreating the view file in app/themes/<theme-name>/views/<file-name>
+To override a view file simple recreate it within your theme directory and make any changes (ie. app/themes/<theme-name>/views/<file-name>).
 
 To create custom themes take a look at the the [Themes on Rails](https://github.com/yoolk/themes_on_rails) documentation.
