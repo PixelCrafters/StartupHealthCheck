@@ -12,7 +12,7 @@ class Organization::Create
     @organization = Organization.create(params)
     if @organization.persisted?
       @organization.users << current_user
-      @organization.create_activity key: "organization.create"
+      @organization.create_activity key: "organization.create", parameters: {org_name: @organization.name}
     end
     @organization
   end

@@ -4,6 +4,8 @@
       <%= link_to activity.trackable.name, activity.trackable %>
 
       was just created
+    <% else %>
+      <%= activity.parameters[:org_name] %> was just created (since removed)
     <% end %>
   </div>
 </div>
