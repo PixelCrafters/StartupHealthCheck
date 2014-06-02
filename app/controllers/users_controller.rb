@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   before_filter :check_session, only: [:edit, :update]
-  before_filter :set_original_url, only: [:show]
-  after_filter :unset_original_url, only: [:show]
 
   def show
     begin
