@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   post ':organization_id/add_role', to: 'organization_user_roles#create', as: "add_role"
   delete ':organization_id/remove_role/:id', to: 'organization_user_roles#destroy', as: "remove_role"
 
+  post ':organization_id/add_type', to: 'types#add_to_organization', as: "add_type"
+  delete ':organization_id/remove_type/:type_id', to: 'types#remove_from_organization', as: "remove_type"
+
   resources :activities, only: [:index]
 
   resources :addresses, only: [:update, :create]
