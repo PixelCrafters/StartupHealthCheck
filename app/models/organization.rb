@@ -12,6 +12,7 @@ class Organization < ActiveRecord::Base
   has_many :profile_links
   has_many :roles
   has_and_belongs_to_many :users
+  has_and_belongs_to_many :types
 
   def search_data
     as_json only: [:name]

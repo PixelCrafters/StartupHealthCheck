@@ -8,6 +8,20 @@
 
 Role.create!([{name: 'Employee'}, {name: 'Founder'}])
 
+Type.create!([
+  {name: "Startups"},
+  {name: "Investors"},
+  {name: "Accelerators/Incubators"},
+  {name: "Community Enablers"},
+  {name: "Academic"},
+  {name: "Government"},
+  {name: "Media"},
+  {name: "Service Providers"},
+  {name: "Web Consulting"},
+  {name: "Established Companies"},
+  {name: "Events"}
+])
+
 if Rails.env.development?
   Organization.create!([
     { name: "Example Startup", 
