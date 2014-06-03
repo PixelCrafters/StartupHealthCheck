@@ -25,4 +25,8 @@ FactoryGirl.define do
     sequence(:id) {|n| n}
     name "startup"
   end
+
+  factory :type do
+    name "Startup"
+  end
 end
