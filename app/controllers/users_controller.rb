@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       SendVerificationEmail.call(params[:user][:email], @user, session[:current_connection])
     end  
     @user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to edit_user_path(@user)
   end
 
   private

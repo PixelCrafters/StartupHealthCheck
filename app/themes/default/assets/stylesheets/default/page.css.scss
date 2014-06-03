@@ -25,6 +25,10 @@ input#home-page-search {
   margin-top: 40px; 
 }
 
+.bottom-buffer{
+  margin-bottom: 20px;
+}
+
 .form-group-buffer{
   position: relative;
   top: 7px;
@@ -40,7 +44,7 @@ input#home-page-search {
 }
 
 .big-text{
-  font-size: 18pt;
+  font-size: 15pt;
 }
 
 .bg-primary a{
@@ -108,4 +112,8 @@ a.remove-tag{
 
 #label-hiring{
   margin-left: 10px !important;
+}
+
+.large-icon{
+  font-size: 18pt;
 }

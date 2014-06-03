@@ -1,38 +1,4 @@
-<div class="row">
-  <div class="col-sm-1">
-    <% if @user.image.present? %>
-      <%= image_tag @user.image, height: '50' %>
-    <% end %>
-  </div>
-  <div class="col-sm-4">
-    <span class="big-text"><%= @user.name %></span><br />
-    <% if @user.email.present? %>
-      <%= @user.email %>
-    <% else %>
-      <%= render "users/email_modal" %>
-    <% end %>
-  </div>
-  <% if current_user.present? %>
-    <div class="col-sm-1 col-sm-offset-10">
-      <%= link_to "edit", edit_user_path(@user) %>
-    </div>
-  <% end %>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <h3>Organizations</h3>
-    <% if current_user.present? %>
-      <%= link_to "Add New Organization", new_organization_path %>
-    <% end %>
-    <% @user.organizations.each do |org| %>
-      <p>
-        <%= link_to org.name, organization_path(org) %>
-      </p>
-      <% if current_user.present? %>
-        <% current_user.current_roles(org).each do |role| %>
-          <%= role.name %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<%= render "users/edit_mode" %>
+<%= render "users/show_header" %>
+<br />
+<%= render "users/show_organizations" %>

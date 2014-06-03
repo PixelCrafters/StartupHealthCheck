@@ -4,12 +4,16 @@ def submit_edit_form
   click_button "Save Changes"
 end
 
-Then(/^I save my changes$/) do
-  click_link "edit"
+When(/^I edit my profile$/) do
+  find('span.glyphicon-edit').click
+end
+
+When(/^I save my changes$/) do
   submit_edit_form
 end
 
 Then(/^I should see my changes on my profile page$/) do
-  page.should have_content("New Name")
-  page.should have_content("newemail@example.com")
+  find('span.glyphicon-remove-circle').click
+  expect(page).to have_content("New Name")
+  expect(page).to have_content("newemail@example.com")
 end

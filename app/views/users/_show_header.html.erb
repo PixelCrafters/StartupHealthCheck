@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-1">
+    <% if @user.image.present? %>
+      <%= image_tag @user.image, height: '50' %>
+    <% end %>
+  </div>
+  <div class="col-sm-11">
+    <span class="big-text"><%= @user.name %></span>
+    <br />
+    <% if @user.email.present? %>
+      <%= @user.email %>
+    <% else %>
+      <%= render "users/email_modal" %>
+    <% end %>
+  </div>
+</div>

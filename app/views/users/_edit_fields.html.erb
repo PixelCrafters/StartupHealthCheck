@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-sm-1">
+        <%= image_tag current_user.image, height: '50' %>
+      </div>
+      <div class="col-sm-4">
+        <%= form_for current_user, html: {role: "form"} do |f| %>
+          <div class="form-group">
+            <%= f.text_field "name", class: "form-control" %>
+            <%= f.text_field "email", class: "form-control" %>
+          </div>
+          <%= f.submit "Save Changes", class: "btn btn-default btn-sm" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

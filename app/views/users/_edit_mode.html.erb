@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-sm-12">
+    <% if current_user %>
+      <% if current_page?(edit_user_path(current_user)) %>
+        <%= link_to '<span class="glyphicon glyphicon-remove-circle large-icon"></span>
+      '.html_safe, user_path(current_user), class: "edit right" %>
+      <% else %>
+        <%= link_to '<span class="glyphicon glyphicon-edit large-icon"></span>
+      '.html_safe, edit_user_path(current_user), class: "edit right" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
