@@ -36,6 +36,8 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
+Capybara.default_wait_time = 5
+
 Before do
   Capybara.reset_session!
 end

@@ -7,11 +7,6 @@ When(/^I add my role "(.*?)"$/) do |role_name|
   click_button "Add Role"
 end
 
-When(/^I edit my profile page$/) do
-  visit user_path(@organization.users.first)
-  click_link "edit"
-end
-
 When(/^I remove my role "(.*?)"$/) do |role_name|
   within('.roles-table') do
     first('span.glyphicon-remove').click

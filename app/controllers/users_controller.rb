@@ -18,9 +18,12 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.email.nil? && params[:user][:email].present?
       SendVerificationEmail.call(params[:user][:email], @user, session[:current_connection])
-    end  
-    @user.update(user_params)
-    redirect_to edit_user_path(@user)
+      @user.update(user_params)
+      redirect_to user_path(@user)
+    else  
+      @user.update(user_params)
+      redirect_to edit_user_path(@user)
+    end
   end
 
   private

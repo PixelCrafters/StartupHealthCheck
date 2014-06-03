@@ -7,19 +7,22 @@ def mock_auth_hash
 end
 
 Given(/^I login with "(.*?)"$/) do |auth_service|
+  sleep 5
   mock_auth_hash
   visit login_path
+  expect(page).to have_css(".auth-btns")
 end
 
 Then(/^I should be on the user profile page for "(.*?)"$/) do |name|
-  page.should have_content(name)
+  expect(page).to have_content(name)
 end
 
 Given(/^I submit an email address$/) do
+  expect(page).to have_css(".modal")
   fill_in "user_email", with: "jncoops7@live.com"
   click_button "Submit"
 end
 
 Then(/^my email address should be present$/) do
-  page.should have_content("jncoops7@live.com")
+  expect(page).to have_content("jncoops7@live.com")
 end

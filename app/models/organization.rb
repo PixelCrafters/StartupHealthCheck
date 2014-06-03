@@ -13,7 +13,6 @@ class Organization < ActiveRecord::Base
   has_many :roles
   has_and_belongs_to_many :users
 
-
   def search_data
     as_json only: [:name]
   end

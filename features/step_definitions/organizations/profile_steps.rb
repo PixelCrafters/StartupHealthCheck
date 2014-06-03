@@ -1,13 +1,9 @@
 # TODO: check for redirect instead of sleeping
 Given "I am an admin user" do
   step %|I visit the profile page|
-  sleep 2
   step %|I claim the profile|
-  sleep 2
   step %|I login with "Twitter"|
-  sleep 2
   step %|I submit an email address|
-  sleep 2
   step %|I visit the profile page|
 end
 
@@ -18,17 +14,20 @@ end
 When(/^I visit the profile page$/) do
   FactoryGirl.create(:address, organization_id: @organization.id)
   visit organization_path(@organization)
+  expect(current_path).to eq organization_path(@organization)
+  expect(page).to have_css('#profile-header')
 end
 
 Then(/^I should see the organization's profile$/) do
-  page.should have_content(@organization.name)
+  expect(page).to have_content(@organization.name)
 end
 
 Then(/^I should see the organization's address$/) do
-  page.should have_content(@organization.main_address.address1)
+  expect(page).to have_content(@organization.main_address.address1)
 end
 
 When(/^I claim the profile$/) do
+  expect(page).to have_css(".claim-header")
   click_link "click here"
 end
 
@@ -42,7 +41,7 @@ end
 
 When(/^I edit the profile$/) do
   find('span.glyphicon-edit').click
-  current_path.should == edit_organization_path(@organization)
+  expect(current_path).to eq edit_organization_path(@organization)
 end
 
 When(/^I add a profile link for "(.*?)" with name "(.*?)"$/) do |url, name|
