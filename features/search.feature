@@ -17,3 +17,8 @@ Feature: Search
     When I search for "Web"
     Then I should see search results for "Web"
     And I should see 2 result(s)
+
+  Scenario: Searching by organization type
+    When I select the type "Startup"
+    Then I should see search results for "Startup"
+    And I should see 2 result(s)
