@@ -19,6 +19,6 @@ Feature: Search
     And I should see 2 result(s)
 
   Scenario: Searching by organization type
-    When I select the type "Startup"
-    Then I should see search results for "Startup"
-    And I should see 2 result(s)
+    Given a type named "Startups"
+    When I select the type "Startups"
+    Then I should see 1 result(s)

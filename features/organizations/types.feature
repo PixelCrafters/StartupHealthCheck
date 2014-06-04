@@ -6,16 +6,16 @@ Feature: Organization Types
   
   Background:
     Given an organization named "Brewhouse"
-    And a type named "Startup"
+    And a type named "Startups"
     And I am an admin user
 
   Scenario: Adding a type
     When I edit the profile
-    And I add a type "Startup"
-    Then I should see the type "Startup" on my profile
+    And I add a type "Startups"
+    Then I should see the type "Startups" on my profile
 
   Scenario: Removing a type
     When I edit the profile
-    And I add a type "Startup"
+    And I add a type "Startups"
     And I remove the type
-    Then I should not see the type "Startup" on my profile
+    Then I should not see the type "Startups" on my profile
