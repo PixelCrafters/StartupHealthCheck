@@ -1,5 +1,4 @@
 .jumbotron {
-  text-align: center;
   background-color: #FFF !important;
 }
 
@@ -57,6 +56,10 @@ input#home-page-search {
 
 .no-buffer{
   padding: 0 !important;
+}
+
+div.submit{
+  text-align: center;
 }
 
 /*** Organization Styles ***/
