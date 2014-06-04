@@ -14,7 +14,7 @@ Then(/^the new tag "(.*?)" should be applied to my organization$/) do |tag_name|
 end
 
 Then(/^I should see my organization when I browse by "(.*?)"$/) do |tag_name|
-  visit tag_path(@organization.tags.first.name)
+  visit tag_path(@organization.reload.tags.first.name)
   page.should have_content(@organization.name)
 end
 
