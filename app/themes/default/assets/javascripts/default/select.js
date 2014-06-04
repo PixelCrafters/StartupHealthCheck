@@ -1,4 +1,6 @@
-$(document).ready(function() {
+var ready;
+
+ready = function() {
   $('.multiselect').multiselect({
     buttonClass: 'btn btn-link',
     nonSelectedText: 'Filter by organization type',
@@ -7,4 +9,7 @@ $(document).ready(function() {
     filterPlaceholder: 'Search Types',
     dropLeft: true
   });
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
