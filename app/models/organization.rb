@@ -15,7 +15,10 @@ class Organization < ActiveRecord::Base
   has_and_belongs_to_many :types
 
   def search_data
-    as_json only: [:name]
+    {
+      name: name,
+      type_ids: types.map(&:id)
+    }
   end
 
   # temporary addition. will be replaced by 'main_address' once we acquire what the main address is from a person

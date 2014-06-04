@@ -4,7 +4,7 @@ class OrganizationsController < ApplicationController
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
-    if params[:query].present?
+    if params[:query].present? || params[:type].present?
       results = Organization::Search.call(params)
       @organizations = results if results.any?
     elsif params[:tag].present?

@@ -5,6 +5,9 @@
         <div class="form-group">
           <%= text_field_tag "query", params[:query], class: "form-control", type: "search", placeholder: "Search for Organizations", id: "home-page-search" %>
         </div>
+        <div class="form-group">
+          <%= collection_select :type, :ids, Type.all, :id, :name, {}, {class: "form-control", :multiple => true} %>
+        </div>
         <%= submit_tag "Search", class: "btn btn-lg btn-primary" %>
       <% end %>
     </div>
