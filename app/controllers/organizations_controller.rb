@@ -5,7 +5,7 @@ class OrganizationsController < ApplicationController
 
   def index
     if params[:query].present?
-      results = Organization.search params[:query], {misspellings: false}
+      results = Organization::Search.call(params)
       @organizations = results if results.any?
     elsif params[:tag].present?
       @organizations = Organization.tagged_with(params[:tag])
