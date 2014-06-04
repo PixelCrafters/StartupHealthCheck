@@ -1,5 +1,4 @@
 .jumbotron {
-  text-align: center;
   background-color: #FFF !important;
 }
 
@@ -23,6 +22,10 @@ input#home-page-search {
 
 .top-buffer { 
   margin-top: 40px; 
+}
+
+.bottom-buffer{
+  margin-bottom: 20px;
 }
 
 .form-group-buffer{
@@ -53,6 +56,10 @@ input#home-page-search {
 
 .no-buffer{
   padding: 0 !important;
+}
+
+div.submit{
+  text-align: center;
 }
 
 /*** Organization Styles ***/
@@ -108,4 +115,8 @@ a.remove-tag{
 
 #label-hiring{
   margin-left: 10px !important;
+}
+
+.large-icon{
+  font-size: 18pt;
 }

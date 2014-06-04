@@ -18,6 +18,7 @@ Given(/^a type named "(.*?)"$/) do |type_name|
 end
 
 When(/^I search for "(.*?)"$/) do |keywords|
+  visit "/"
   search_for_keywords(keywords)
 end
 

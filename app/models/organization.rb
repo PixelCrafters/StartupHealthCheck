@@ -17,7 +17,8 @@ class Organization < ActiveRecord::Base
   def search_data
     {
       name: name,
-      type_ids: types.map(&:id)
+      type_ids: types.map(&:id),
+      tag_names: tags.map(&:name)
     }
   end
 

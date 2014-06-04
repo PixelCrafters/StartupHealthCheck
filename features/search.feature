@@ -22,3 +22,10 @@ Feature: Search
     Given a type named "Startups"
     When I select the type "Startups"
     Then I should see 1 result(s)
+
+  @javascript @auth0
+  Scenario: Searching by organization tag
+    Given I can edit the profile
+    When I add a new tag "software"
+    And I search for "software"
+    Then I should see 1 result(s)

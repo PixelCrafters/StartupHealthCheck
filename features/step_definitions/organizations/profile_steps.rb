@@ -1,10 +1,14 @@
-# TODO: check for redirect instead of sleeping
 Given "I am an admin user" do
   step %|I visit the profile page|
   step %|I claim the profile|
   step %|I login with "Twitter"|
   step %|I submit an email address|
   step %|I visit the profile page|
+end
+
+Given "I can edit the profile" do
+  step %|I am an admin user|
+  step %|I edit the profile|
 end
 
 Given(/^an organization named "(.*?)"$/) do |name|
