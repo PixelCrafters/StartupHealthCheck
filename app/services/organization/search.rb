@@ -8,17 +8,41 @@ class Organization::Search
   end
 
   def call
-    if params[:type]
-      params[:type][:ids].shift
-      if !params[:query].empty? && params[:type][:ids].any?
-        Organization.search params[:query], where: {type_ids: params[:type][:ids]}
-      elsif !params[:query].empty? && !params[:type][:ids].any?
-         Organization.search params[:query]
-      elsif params[:query].empty? && params[:type][:ids].any?
-        Organization.search "*", where: {type_ids: params[:type][:ids]}
-      end
-    else
-      Organization.search params[:query]
+    shift_params
+    get_results
+  end
+
+  private
+
+  def shift_params
+    params[:type][:ids].shift
+    params[:tag][:names].shift
+  end
+
+  def get_results
+    types = params[:type][:ids]
+    tags = params[:tag][:names]
+    keyword = params[:query]
+
+    any_types = params[:type][:ids].any?
+    any_tags = params[:tag][:names].any?
+    any_keyword = params[:query].present?
+
+    case
+    when any_keyword && any_types && any_tags
+      Organization.search keyword, where: {type_ids: types, tag_names: tags}
+    when any_keyword && any_types
+      Organization.search keyword, where: {type_ids: types}
+    when any_keyword && any_tags
+      Organization.search keyword, where: {tag_names: tags}
+    when any_types && any_tags
+      Organization.search "*", where: {type_ids: types, tag_names: tags}
+    when any_keyword
+      Organization.search keyword
+    when any_types
+      Organization.search "*", where: {type_ids: types}
+    when any_tags
+      Organization.search "*", where: {tag_names: tags}
     end
   end
 end
