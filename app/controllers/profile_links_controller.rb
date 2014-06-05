@@ -1,20 +1,8 @@
 class ProfileLinksController < ApplicationController
   def create
     profile_link = ProfileLink.new(profile_link_params)
-    name = profile_link.name
-    url = profile_link.url
-    org = profile_link.organization
-    if profile_link.save!
-      profile_link.create_activity(
-        key: "profile_link.create", 
-        owner: current_user, 
-        parameters: {
-          name: name,
-          url: url,
-          org_name: org.name,
-          org_id: org.id
-        }
-      )
+    if profile_link.save
+      ProfileLink::Activity::Create.call(profile_link, current_user)
       flash[:success] = "Your link was created successfully!"
     else
       flash[:error] = "Your link was not created successfully."
@@ -24,24 +12,11 @@ class ProfileLinksController < ApplicationController
 
   def destroy
     profile_link = ProfileLink.find(params[:id])
-    name = profile_link.name
-    url = profile_link.url
-    org = profile_link.organization
-    organization = profile_link.organization
     if ProfileLink.destroy(params[:id])
-      profile_link.create_activity(
-        key: "profile_link.delete", 
-        owner: current_user, 
-        parameters: {
-          name: name,
-          url: url, 
-          org_name: org.name,
-          org_id: org.id
-        }
-      )
+      ProfileLink::Activity::Delete.call(profile_link, current_user)
       flash[:success] = "Your link was deleted successfully"
     end
-    redirect_to edit_organization_path(organization)
+    redirect_to edit_organization_path(profile_link.organization)
   end
 
   private
