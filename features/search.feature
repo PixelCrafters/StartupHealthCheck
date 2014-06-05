@@ -29,3 +29,8 @@ Feature: Search
     When I add a new tag "software"
     And I search for "software"
     Then I should see 1 result(s)
+
+  Scenario: Searching by user's name
+    Given I login with "Twitter"
+    When I search for "J C"
+    Then I should see 1 result(s)

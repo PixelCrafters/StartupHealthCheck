@@ -38,11 +38,13 @@ class Organization::Search
     when any_types && any_tags
       Organization.search "*", where: {type_ids: types, tag_names: tags}
     when any_keyword
-      Organization.search keyword
+      Organization.search(keyword).results + User.search(keyword).results
     when any_types
       Organization.search "*", where: {type_ids: types}
     when any_tags
       Organization.search "*", where: {tag_names: tags}
+    else 
+      Organization.search "*"
     end
   end
 end

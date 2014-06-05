@@ -11,6 +11,7 @@ Given(/^I login with "(.*?)"$/) do |auth_service|
   mock_auth_hash
   visit login_path
   expect(page).to have_css(".auth-btns")
+  User.reindex
 end
 
 Then(/^I should be on the user profile page for "(.*?)"$/) do |name|

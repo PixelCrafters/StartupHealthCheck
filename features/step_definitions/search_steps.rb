@@ -1,4 +1,5 @@
 def search_for_keywords(keywords)
+  User.reindex
   visit "/"
   fill_in "home-page-search", :with => keywords
   click_button "Search"
@@ -18,7 +19,6 @@ Given(/^a type named "(.*?)"$/) do |type_name|
 end
 
 When(/^I search for "(.*?)"$/) do |keywords|
-  visit "/"
   search_for_keywords(keywords)
 end
 

@@ -1,0 +1,18 @@
+<%= render "shared/headline" %>
+<%= render "shared/search" %>
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <% if @results.present? %>
+      <div id="organizations">
+        <% @results.each do |result| %>
+          <p class="search-result">
+            <%= link_to result.name, organization_path(result) if result.is_a?(Organization) %>
+            <%= link_to result.name, user_path(result) if result.is_a?(User) %>
+          </p>
+          <br />
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>  
