@@ -8,7 +8,7 @@ class Organization::Search
   end
 
   def call
-    shift_params
+    shift_params if params[:type] || params[:tag]
     get_results
   end
 
@@ -20,28 +20,23 @@ class Organization::Search
   end
 
   def get_results
-    types = params[:type][:ids]
-    tags = params[:tag][:names]
-    keyword = params[:query]
+    params[:type] && params[:type][:ids].any? ? types = params[:type][:ids] : types = false
+    params[:tag] && params[:tag][:names].any? ? tags = params[:tag][:names] : tags = false
+    !params[:query].empty? ? keyword = params[:query] : keyword = false
 
-    any_types = params[:type][:ids].any?
-    any_tags = params[:tag][:names].any?
-    any_keyword = params[:query].present?
-
-    case
-    when any_keyword && any_types && any_tags
+    if keyword && types && tags
       Organization.search keyword, where: {type_ids: types, tag_names: tags}
-    when any_keyword && any_types
+    elsif keyword && types
       Organization.search keyword, where: {type_ids: types}
-    when any_keyword && any_tags
+    elsif keyword && tags
       Organization.search keyword, where: {tag_names: tags}
-    when any_types && any_tags
+    elsif types && tags
       Organization.search "*", where: {type_ids: types, tag_names: tags}
-    when any_keyword
+    elsif keyword
       Organization.search(keyword).results + User.search(keyword).results
-    when any_types
+    elsif types
       Organization.search "*", where: {type_ids: types}
-    when any_tags
+    elsif tags
       Organization.search "*", where: {tag_names: tags}
     else 
       Organization.search "*"

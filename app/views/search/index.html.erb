@@ -7,8 +7,11 @@
       <div id="organizations">
         <% @results.each do |result| %>
           <p class="search-result">
-            <%= link_to result.name, organization_path(result) if result.is_a?(Organization) %>
-            <%= link_to result.name, user_path(result) if result.is_a?(User) %>
+            <% if result.is_a?(Organization) %>
+              <%= link_to result.name, organization_path(result) %> (Organization)
+            <% elsif result.is_a?(User) %>
+              <%= link_to result.name, user_path(result) %> (User)
+            <% end %>
           </p>
           <br />
         <% end %>
