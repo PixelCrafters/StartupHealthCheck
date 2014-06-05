@@ -1,4 +1,4 @@
-class Organization::Search
+class Search
   include Service
 
   attr_reader :params
