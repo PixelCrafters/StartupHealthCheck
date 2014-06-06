@@ -27,24 +27,34 @@ We are going to be designing and building this out in the open. We are collectin
 
 ## QUICKSTART
 
-Ensure you have ruby v 2.1.1p76
+Startup HealthCheck requires ruby version 2.1.1.
+To install ruby we like to use [RVM](http://rvm.io/rvm/install) (but you can use any version manager of your choosing).
+```
+  rvm install 2.1.1
+```
 
-Install Elastic Search (using Homebrew or package manager of your choosing)
+We use [ElasticSearch](http://www.elasticsearch.org/) as our full-text search engine.
+Install ElasticSearch (using [Homebrew](http://brew.sh/) or a package manager of your choosing).
 ```
   brew install elasticsearch
 ```  
 
-Clone the repository from git:
+To start ElasticSearch, try this:
 ```
-  git clone git@github.com:BrewhouseTeam/startuphealthcheck.git
+  elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
 
-Change directories into startuphealthcheck
+Clone the repository from git:
+```
+  git clone git@github.com:PixelCrafters/StartupHealthCheck.git
+```
+
+Change directories into startuphealthcheck:
 ```
   cd startuphealthcheck
 ```  
 
-Run Bundler (http://bundler.io)
+Run Bundler (http://bundler.io):
 ```  
   bundle install
 ```  
@@ -55,12 +65,12 @@ Start by creating a config/database.yml file with your database settings (based 
   bundle exec rake db:setup
 ```
 
-Add data to the search index
+After you've setup your database, you will have two example organizations in the database (Example Startup and Example Startup2). In order to access these organizations via search add data to the search index.
 ```
   bundle exec rake searchkick:reindex CLASS=Organization
 ```
 
-Start the rails server
+Start the rails server:
 ```  
   rails server
 ```  
@@ -71,12 +81,12 @@ Start the rails server
 After you have your database schema set up, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
 
 
-To run Cucumber
+To run Cucumber:
 ```
   cucumber
 ```
 
-To run RSpec
+To run RSpec:
 ```
   rspec spec
 ```
@@ -92,11 +102,11 @@ Right now Startup HealthCheck has the following themes:
 
 To change the theme from 'Default' to 'WeAreYVR', replace the following line in app/controllers/application_controller.rb
 ```
-theme "default"
+  theme "default"
 ```
 ...with...
 ```
-theme "weareyvr"
+  theme "weareyvr"
 ```
 After you've made this change, restart your server.
 
