@@ -18,5 +18,5 @@
 .DS_Store
 
 config/database.yml
-config/auth0.yml
-config/startup_genome.yml
+config/initializers/env/development.env
+config/initializers/env/test.env
