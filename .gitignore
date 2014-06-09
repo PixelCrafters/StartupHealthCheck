@@ -20,3 +20,4 @@
 config/database.yml
 config/initializers/env/development.env
 config/initializers/env/test.env
+config/initializers/startup_healthcheck.rb

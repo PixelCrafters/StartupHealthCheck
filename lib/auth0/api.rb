@@ -3,9 +3,9 @@ require 'faraday'
 module Auth0
   class API
     def initialize
-      @host = "https://" + Rails.application.secrets.auth0_domain
-      @auth0_client_id = Rails.application.secrets.auth0_client_id
-      @auth0_secret = Rails.application.secrets.auth0_secret
+      @host = "https://" + Rails.application.config.auth0_domain
+      @auth0_client_id = Rails.application.config.auth0_client_id
+      @auth0_secret = Rails.application.config.auth0_secret
       @conn = APIConnection.connect_via_faraday(@host)
     end
 
