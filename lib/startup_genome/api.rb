@@ -17,10 +17,17 @@ module StartupGenome
       @conn.get url, {}, {'auth-code' => @auth_code}
     end
 
+    def put_organization
+      @conn.put 
+    end
+
     private
 
     def url
       "#{@host}#{@location_slug}#{@path}"
+    end
+
+    def organization_url
     end
   end
 end 

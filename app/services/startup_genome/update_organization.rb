@@ -26,11 +26,18 @@ module StartupGenome
       end
       puts msg
       update_address(org_hash, organization)
+      org_hash["categories"].each do |type_hash|
+        store_type(type_hash, organization)
+      end
       organization
     end
 
     def update_address(org_hash, organization)
       StartupGenome::UpdateAddress.call(org_hash["addresses"].first, organization)
+    end
+
+    def store_type(type_hash, organization)
+      StartupGenome::StoreType.call(type_hash, organization)
     end
 
     def build_data_hash(org_hash)

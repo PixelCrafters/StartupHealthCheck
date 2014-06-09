@@ -64,6 +64,12 @@ ADDRESS_HASH = {
     "primary" => false
 }
 
+TYPE_HASH = {
+    "plural_name" => "Startups",
+    "singular_name" => "Startup",
+    "slug" => "startups"
+}
+
 ORG_HASH_API_V1 = {
     "id" => "127239",
     "name" => "285 Digital Media",
