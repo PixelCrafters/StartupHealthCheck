@@ -93,10 +93,15 @@ To run RSpec:
 
 ### Configuring the Application for Development and Test Environments
 
-Since Heroku requires us to commit secrets.yml, you can add your keys/sensitive information to: ```config/initializers/env/development.env```
-```config/initializers/env/test.env``` 
+Since Heroku requires us to commit secrets.yml, you can add your keys/sensitive information to: 
+```
+config/initializers/env/development.env
+```
+```
+config/initializers/env/test.env
+``` 
 
-See ```config/initializers/env/development.env.sample``` and ```config/initializers/env/test.env.sample``` to get started.
+See config/initializers/env/development.env.sample and config/initializers/env/test.env.sample to get started.
 
 ### Adding Custom Styling
 
