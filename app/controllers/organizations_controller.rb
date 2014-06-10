@@ -5,9 +5,10 @@ class OrganizationsController < ApplicationController
 
   def index
     if params[:tag].present?
-      @organizations = Organization.tagged_with(params[:tag])
+      @organizations = Organization.tagged_with(params[:tag]).page
+
     else
-      @organizations = Organization.all
+      @organizations = Organization.all.page
     end
   end
 

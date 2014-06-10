@@ -35,6 +35,7 @@ gem 'acts-as-taggable-on', '3.2.3'
 gem 'public_activity'
 gem 'rails_12factor'
 gem 'themes_on_rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'
