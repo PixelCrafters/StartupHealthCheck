@@ -31,12 +31,14 @@
         </ul>
         
         <div class="navbar-right">
-          <%= form_tag search_path, method: "get", html: {role: "form", class: "navbar-form"} do %>
-            <div class="form-group form-group-buffer">
-              <%= text_field_tag "query", params[:query], class: "form-control", type: "search", placeholder: "Search" %>
-            </div>
-          <% end %>
           <%= render 'shared/auth_buttons' %>
+          <% if not (current_page?(search_path)) %>
+            <%= form_tag search_path, method: "get", role: "form", class: "navbar-form pull-right" do %>
+              <div class="form-group form-group-buffer">
+                <%= text_field_tag "query", params[:query], class: "form-control", type: "search", placeholder: "Search" %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </nav>
     </div>

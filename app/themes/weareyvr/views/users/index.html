@@ -1,0 +1,19 @@
+<div class="row">
+    <h3 class="top-heading"><i class='wr-icon wr-icon-lg wr-icon-founder-av'></i>People</h3>
+    <% if @users.present? %>
+      <div class="col-sm-12 col-offset-1">
+        <% @users.each do |user| %>
+          <p class="search-result">
+            <%= link_to image_tag(user.image, height: '30'), user_path(user) %>
+            <%= link_to user.name, user_path(user) %>
+          </p>
+          <br />
+        <% end %>
+      </div>
+    <% end %>
+</div>  
+<div class="row">
+  <div class="col-sm-11">
+  <%= paginate @users %>
+  </div>
+</div>

@@ -6446,9 +6446,9 @@ section section section {
   margin-left: 1px;
 }
 .input-group > .input-group-btn:first-of-type:not(:first-child) .btn:first-of-type,
-.input-group > .input-group-btn:first-of-type:not(:first-child) .btn-group:first-of-type {
+/*.input-group > .input-group-btn:first-of-type:not(:first-child) .btn-group:first-of-type {
   border-left-style: none;
-}
+}*/
 .input-group > .input-group-btn:last-of-type:not(:last-child) .btn,
 .input-group > .input-group-btn:last-of-type:not(:last-child) .btn-group {
   margin-right: 1px;
