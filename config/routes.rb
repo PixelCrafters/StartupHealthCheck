@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "search#index"
+  root to: "activities#index"
 
   get "/search", to: "search#index"
 
