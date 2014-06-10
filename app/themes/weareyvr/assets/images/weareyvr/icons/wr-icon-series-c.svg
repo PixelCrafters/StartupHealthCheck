@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>wr-icon-series-c</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="16"></rect>
+        <radialGradient cx="50%" cy="64.1865495%" fx="50%" fy="64.1865495%" r="100%" id="radialGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </radialGradient>
+        <path d="M6.34441936,4.08377285 C-1.02727131,8.09694155 -2.94056766,15.0067896 5.5573852,15.9776 L7.4423852,15.9776 C15.9010068,15.0113087 14.0448587,8.16114414 6.75795019,4.14000468 L8.99988532,1.70986688 L5.49988521,9.64800506e-09 C4.95120907,0.781873631 5.94492933,3.19232934 6.34441936,4.08377285 Z" id="path-4"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Money" sketch:type="MSLayerGroup" transform="translate(0.000000, -72.000000)">
+            <g id="Series-C" transform="translate(0.000000, 72.000000)">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g id="Moneybag" mask="url(#mask-2)">
+                    <g transform="translate(1.000000, 0.000000)">
+                        <ellipse id="Shadow" opacity="0.3" fill="#000000" sketch:type="MSShapeGroup" cx="8.5" cy="14.5" rx="6.5" ry="1.5"></ellipse>
+                        <g id="Moneybag">
+                            <use fill="#EED2BE" sketch:type="MSShapeGroup" xlink:href="#path-4"></use>
+                            <use fill-opacity="0.8" fill="url(#radialGradient-3)" xlink:href="#path-4"></use>
+                        </g>
+                    </g>
+                </g>
+                <path d="M10.0510254,11.324707 L10.0598145,11.3510742 C10.0715333,12.0395542 9.86133029,12.5852031 9.42919922,12.9880371 C8.99706815,13.3908712 8.39722063,13.5922852 7.62963867,13.5922852 C6.85912701,13.5922852 6.23364498,13.344729 5.75317383,12.8496094 C5.27270268,12.3544897 5.0324707,11.7172891 5.0324707,10.9379883 L5.0324707,9.66796875 C5.0324707,8.89159768 5.26684336,8.25439702 5.7355957,7.75634766 C6.20434805,7.25829829 6.81371695,7.00927734 7.5637207,7.00927734 C8.35474028,7.00927734 8.97289816,7.21215617 9.41821289,7.61791992 C9.86352762,8.02368367 10.0803223,8.57665666 10.0686035,9.27685547 L10.0598145,9.30322266 L8.81176758,9.30322266 C8.81176758,8.88134555 8.71069437,8.55835073 8.50854492,8.33422852 C8.30639547,8.1101063 7.99145722,7.99804688 7.5637207,7.99804688 C7.17992972,7.99804688 6.87524527,8.15405117 6.6496582,8.46606445 C6.42407114,8.77807773 6.3112793,9.17577883 6.3112793,9.65917969 L6.3112793,10.9379883 C6.3112793,11.4272485 6.42993045,11.8278793 6.66723633,12.1398926 C6.9045422,12.4519059 7.22533978,12.6079102 7.62963867,12.6079102 C8.03100787,12.6079102 8.32763576,12.5002452 8.51953125,12.2849121 C8.71142674,12.069579 8.80737305,11.7495138 8.80737305,11.324707 L10.0510254,11.324707 Z" id="C" fill="#601EBD" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

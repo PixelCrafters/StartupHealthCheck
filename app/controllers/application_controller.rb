@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :set_original_url
   helper_method :unset_original_url
 
-  theme "default"
+  theme "weareyvr"
   
   private
 
