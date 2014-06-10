@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-body activity">  
+    <% if activity.trackable.present? %>
+      <%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
+
+      was just created
+    <% else %>
+      <%= activity.parameters[:org_name] %> was just created (since removed)
+    <% end %>
+  </div>
+</div>
