@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>wr-icon-founder</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="16"></rect>
+        <path id="path-3" d="M9.15,3.573 L8,0 L11.07,3.573 L13.657,2.343 L12.427,4.931 L16,8 L12.427,6.851 L13.657,13.657 L11.07,8.208 L8,16 L9.15,8.208 L2.343,13.657 L7.792,6.851 L0,8 L7.792,4.931 L2.343,2.343 L9.15,3.573"></path>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50%" id="radialGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFE126" offset="50.6098533%"></stop>
+            <stop stop-color="#FFAF00" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="People" sketch:type="MSLayerGroup">
+            <g id="Founder">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g id="Starburst" mask="url(#mask-2)">
+                    <mask id="mask-4" sketch:name="Star" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Star" fill="#FFAF00" sketch:type="MSShapeGroup" xlink:href="#path-3"></use>
+                    <circle id="Gradient" fill="url(#radialGradient-5)" sketch:type="MSShapeGroup" mask="url(#mask-4)" cx="10.0999999" cy="5.90000153" r="2.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

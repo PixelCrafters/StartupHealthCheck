@@ -1,0 +1,17 @@
+.wr-navbar .navbar-brand .weareyvr-mark {
+  z-index: 13;
+  margin: 0 1em 0 0;
+  display: inline-block;
+  position: relative;
+  top: -35px;
+  width: 127px;
+  height: 100px;
+}
+.wr-navbar .navbar-brand .weareyvr-mark > span {
+  /* fallback text if SVG doesn't load */
+  font-size: 26px;
+  line-height: 0;
+  position: absolute;
+  top: 46px;
+}
+/*# sourceMappingURL=wr_logo.css.map */
