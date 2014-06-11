@@ -8,16 +8,54 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
-
+   <!-- master nav -->
+  <nav class="navbar navbar-default wr-navbar">
     <div class="container">
-      <%= render 'header' %>
-      <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="#">
+           <div class="weareyvr-mark" data-height="100" data-colour="#10988b" data-text="black">
+             <span>WeAreYVR</span>
+           </div>
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Organizations", organizations_path %></li>
+          <li><%= link_to "People", users_path %></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        
+        <div class="navbar-right">
+          <%= render 'shared/auth_buttons' %>
+          <% if not (current_page?(search_path)) %>
+            <%= form_tag search_path, method: "get", role: "form", class: "navbar-form pull-right" do %>
+              <div class="form-group form-group-buffer">
+                <%= text_field_tag "query", params[:query], class: "form-control", type: "search", placeholder: "Search" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </nav>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <%= render "shared/flash_message" %>
           <%= yield %>
         </div>
-      </div>
-    </div><!-- /.container -->
+    </div>
 
+  </div><!-- /.container -->
+ 
   </body>
 </html>

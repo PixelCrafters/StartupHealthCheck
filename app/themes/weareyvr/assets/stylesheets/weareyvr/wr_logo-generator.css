@@ -1,0 +1,227 @@
+@-webkit-keyframes refresh {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes refresh {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes reset {
+  from {
+    -webkit-transform: rotate(0deg) scaleX(-1);
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    -webkit-transform: rotate(-359deg) scaleX(-1);
+    transform: rotate(-359deg) scaleX(-1);
+  }
+}
+@keyframes reset {
+  from {
+    -webkit-transform: rotate(0deg) scaleX(-1);
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    -webkit-transform: rotate(-359deg) scaleX(-1);
+    transform: rotate(-359deg) scaleX(-1);
+  }
+}
+body.logo-generator {
+  background-color: #f2f5f5;
+}
+body.logo-generator .header.row {
+  padding-top: 1.25em;
+  padding-bottom: 1em;
+}
+body.logo-generator h1,
+body.logo-generator .h1 {
+  font-weight: normal;
+  margin: 0;
+  color: #506563;
+  font-family: "Arnhem Pro", ArnhemPro, Arnhem, Georgia, serif;
+  -moz-font-feature-settings: "onum" 1;
+  -ms-font-feature-settings: "onum" 1;
+  -o-font-feature-settings: "onum" 1;
+  -webkit-font-feature-settings: "onum" 1;
+  font-feature-settings: "onum" 1;
+}
+@media screen and (max-width: 767px) {
+  body.logo-generator h1,
+  body.logo-generator .h1 {
+    font-size: 2.2em;
+  }
+}
+body.logo-generator .row {
+  border-top-color: rgba(255, 255, 255, 0.75);
+}
+@media screen and (max-width: 991px) {
+  body.logo-generator h3,
+  body.logo-generator .h3 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 992px) {
+  body.logo-generator input[type="range"] {
+    width: 200px;
+  }
+}
+body.logo-generator .form-control {
+  background-color: #fff;
+}
+body.logo-generator .row#mark-controls {
+  display: block;
+  overflow: hidden;
+}
+@media screen and (min-width: 992px) {
+  body.logo-generator .row#mark-controls {
+    padding-top: 3em;
+  }
+}
+body.logo-generator .row#mark-controls,
+body.logo-generator .row#mark-controls > div {
+  min-height: 300px;
+  position: relative;
+}
+body.logo-generator .row#mark-controls .weareyvr-mark > svg {
+  margin: 0 auto;
+  display: block;
+}
+@media screen and (max-width: 991px) {
+  body.logo-generator .row#mark-controls label {
+    width: 48%;
+    margin: 0;
+  }
+  body.logo-generator .row#mark-controls label[for=topLeft],
+  body.logo-generator .row#mark-controls label[for=topRight] {
+    margin-bottom: 15px;
+  }
+  body.logo-generator .row#mark-controls label[for=topLeft],
+  body.logo-generator .row#mark-controls label[for=bottomLeft] {
+    float: left;
+  }
+  body.logo-generator .row#mark-controls label[for=topRight],
+  body.logo-generator .row#mark-controls label[for=bottomRight] {
+    float: right;
+  }
+}
+@media screen and (min-width: 992px) {
+  body.logo-generator .row#mark-controls label {
+    position: absolute;
+  }
+  body.logo-generator .row#mark-controls label[for=topLeft] {
+    top: 15px;
+    left: 15px;
+  }
+  body.logo-generator .row#mark-controls label[for=topRight] {
+    top: 15px;
+    right: 15px;
+  }
+  body.logo-generator .row#mark-controls label[for=bottomLeft] {
+    bottom: 15px;
+    left: 15px;
+  }
+  body.logo-generator .row#mark-controls label[for=bottomRight] {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+body.logo-generator .row#mark-controls label span {
+  float: right;
+}
+body.logo-generator .slider-value {
+  -moz-font-feature-settings: "tnum" 1, "lnum" 1;
+  -ms-font-feature-settings: "tnum" 1, "lnum" 1;
+  -o-font-feature-settings: "tnum" 1, "lnum" 1;
+  -webkit-font-feature-settings: "tnum" 1, "lnum" 1;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  float: right;
+}
+@media screen and (min-width: 992px) {
+  body.logo-generator .slider-value {
+    font-size: 2em;
+    font-weight: normal;
+  }
+}
+body.logo-generator .row#pattern {
+  display: block;
+  height: 500px;
+  overflow: hidden;
+  background-color: #fff;
+}
+body.logo-generator .row#pattern .weareyvr-mark > svg {
+  margin: 0 auto;
+  display: block;
+}
+@media screen and (max-width: 991px) {
+  body.logo-generator #radius-text > label {
+    display: block;
+  }
+}
+body.logo-generator .checklist label {
+  display: block;
+  padding: 0.375em 0;
+  margin: 0;
+}
+body.logo-generator .checklist label small {
+  font-weight: normal;
+  color: #92aaa7;
+}
+body.logo-generator .checklist input[type="radio"],
+body.logo-generator .checklist input[type="checkbox"] {
+  display: inline;
+  width: auto;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  line-height: 0;
+}
+body.logo-generator #size-px .form-control {
+  -moz-font-feature-settings: "tnum" 1, "lnum" 1;
+  -ms-font-feature-settings: "tnum" 1, "lnum" 1;
+  -o-font-feature-settings: "tnum" 1, "lnum" 1;
+  -webkit-font-feature-settings: "tnum" 1, "lnum" 1;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  text-rendering: optimizeSpeed;
+  letter-spacing: 1px;
+}
+body.logo-generator .form-control#height-other {
+  display: none;
+}
+body.logo-generator #reset .glyphicon-repeat {
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+body.logo-generator #reset:hover .glyphicon-repeat {
+  -webkit-animation: reset 0.6s ease-in-out;
+  animation: reset 0.6s ease-in-out;
+}
+body.logo-generator #reshuffle:hover .glyphicon-refresh {
+  -webkit-animation: refresh 0.4s ease-in-out;
+  animation: refresh 0.4s ease-in-out;
+}
+body.logo-generator section.row#downloads {
+  border-top-style: none;
+}
+body.logo-generator #download-use-chrome {
+  display: none;
+  text-align: center;
+  margin: 0.5em 0;
+}
+body.logo-generator #download-use-chrome.show {
+  display: block;
+}
+/*# sourceMappingURL=wr_logo-generator.css.map */

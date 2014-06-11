@@ -1,9 +1,9 @@
 <% if current_user && (current_user == @organization.users.first) %>
   <% if current_page?(edit_organization_path(@organization)) %>
     <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span>
-  '.html_safe, organization_path(@organization), class: "edit right" %>
+  '.html_safe, organization_path(@organization), class: "edit pull-right" %>
   <% else %>
     <%= link_to '<span class="glyphicon glyphicon-edit"></span>
-  '.html_safe, edit_organization_path(@organization), class: "edit right" %>
+  '.html_safe, edit_organization_path(@organization), class: "edit pull-right" %>
   <% end %>
 <% end %>

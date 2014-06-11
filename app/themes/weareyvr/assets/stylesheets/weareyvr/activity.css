@@ -1,0 +1,26 @@
+#activity-feed .panel {
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  border-style: none;
+  border-top-style: solid;
+  margin-top: 23px;
+}
+#activity-feed .panel > .panel-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.activity {
+  position: relative;
+}
+.activity > i.wr-icon:first-child {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  float: right;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -16px;
+}
+/*# sourceMappingURL=activity.css.map */

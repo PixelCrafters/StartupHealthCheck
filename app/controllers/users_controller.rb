@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_filter :check_session, only: [:edit, :update]
+  def index
+    @users = User.all.page
+  end
 
   def show
     begin

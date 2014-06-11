@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>wr-icon-founder-av</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="16"></rect>
+        <rect id="path-3" x="0" y="0" width="4" height="5"></rect>
+        <path d="M5,10 L0,10 L0,0 L16,0 L16,10 L11,10 L11,5 L5,5 L5,10 Z" id="path-5"></path>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="87.4900351%" id="radialGradient-7">
+            <stop stop-color="#FFD714" offset="0%"></stop>
+            <stop stop-color="#FFD714" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="People---Avatars" sketch:type="MSLayerGroup">
+            <g id="Founder-Avatar">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g id="Founder" mask="url(#mask-2)">
+                    <g transform="translate(0.000000, 1.000000)">
+                        <g id="Body" transform="translate(0.000000, 5.000000)">
+                            <path d="M4,5.13905041 L4,9 L12,9 L12,5.13905041 L12.4018913,5.13905041 C12.4509459,3.13905036 9.78170715,2 7.95094563,2 C6.12018411,2 3.5,3.13905048 3.5,5.13905041 L4,5.13905041 Z" id="Back-of-Hoodie" fill="#3E7494" sketch:type="MSShapeGroup"></path>
+                            <g id="T-Shirt" transform="translate(6.000000, 5.000000)">
+                                <mask id="mask-4" sketch:name="Rectangle 44" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <use id="Rectangle-44" sketch:type="MSShapeGroup" xlink:href="#path-3"></use>
+                                <path d="M6.45094563,9.23760262e-16 C5.50000022,1.04006167 3.83076152,2 2,2 C0.169238479,2 -1.5,1.04006159 -2.45094563,0 L-2.5,7 L6.5,7 L6.45094563,9.23760262e-16 Z" id="Path-14" stroke="#DAD8CF" fill="#F2F0E6" sketch:type="MSShapeGroup" mask="url(#mask-4)"></path>
+                            </g>
+                            <g id="Hoodie">
+                                <path d="M10,10 L14.9991283,10 C15.5518945,10 16,9.5536886 16,9.00245535 L16,6.24853196 C15.1993126,5.21594562 13.9620176,4.35822128 12.4509456,3.78391263 C11.7993527,4.61675788 10.9665638,5.25877905 10,5.63248819 L10,10 Z M6,10 L1.00087166,10 C0.444630861,10 -6.43929354e-15,9.55338405 -6.43929354e-15,9.00245535 L-2.27373675e-13,6.24853196 C0.800687443,5.21594562 2.03798241,4.35822128 3.54905437,3.78391263 C4.20064728,4.61675788 5.03343617,5.25877905 6,5.63248819 L6,10 Z" id="Shoulders" fill="#4095C5" sketch:type="MSShapeGroup"></path>
+                                <g id="Drawstrings">
+                                    <mask id="mask-6" sketch:name="Mask" fill="white">
+                                        <use xlink:href="#path-5"></use>
+                                    </mask>
+                                    <use id="Mask" sketch:type="MSShapeGroup" xlink:href="#path-5"></use>
+                                    <path d="M3.54905437,5 C3.54905437,3.00000008 6.16923848,1.86094959 8,1.86094959 C9.83076152,1.86094959 12.5000002,2.99999996 12.4509456,5" id="Path-3" stroke="#004C78" stroke-width="0.5" sketch:type="MSShapeGroup" mask="url(#mask-6)"></path>
+                                    <path d="M12.4509456,4.5 C11.5000002,5.50000008 9.83076152,6.42296304 8,6.42296304 C6.16923848,6.42296304 4.5,5.5 3.54905437,4.5" id="Path-12" stroke="#004C78" sketch:type="MSShapeGroup" mask="url(#mask-6)"></path>
+                                    <g id="Hanging-Strings" mask="url(#mask-6)" fill="#004C78" sketch:type="MSShapeGroup">
+                                        <g transform="translate(4.000000, 6.000000)">
+                                            <rect id="Rectangle-133" x="0.5" y="-0.5" width="7" height="3"></rect>
+                                            <rect id="Rectangle-134" x="0" y="2" width="8" height="1" rx="0.5"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Face" transform="translate(4.000000, 0.000000)">
+                            <g id="Person-Face" sketch:type="MSShapeGroup">
+                                <path d="M4,10 C6.34033203,10 8,7.762 8,5 C8,2.238 8,0 4,0 C0,0 0,2.238 0,5 C0,7.762 1.65966797,10 4,10 Z" id="Outer-Frame" fill-opacity="0.65" fill="#D9D9D9"></path>
+                                <path d="M4,1 C6.66961542,1 7,1.59783089 7,5 C7,7.31386274 5.68154504,9 4,9 C2.31845496,9 1,7.31386274 1,5 C1,1.59783089 1.33038458,1 4,1 Z" id="Inner-Fill" fill="#FCFCFC"></path>
+                            </g>
+                            <path d="M4,10 C6.34033203,10 8,7.762 8,5 C8,2.238 8,0 4,0 C0,0 0,2.238 0,5 C0,7.762 1.65966797,10 4,10 Z M4,1 C6.66961542,1 7,1.59783089 7,5 C7,7.31386274 5.68154504,9 4,9 C2.31845496,9 1,7.31386274 1,5 C1,1.59783089 1.33038458,1 4,1 Z" id="Face-Glow" fill="url(#radialGradient-7)" sketch:type="MSShapeGroup"></path>
+                            <path d="M3.07142857,4 L3.36095428,5.01334 C3.43774711,5.28211489 3.73193359,5.5 4,5.5 C4.27614237,5.5 4.55955982,5.29154062 4.63904572,5.01334 L4.92857143,4 L3.07142857,4 L3.07142857,4 Z M3.07142857,4 L2.84975147,3.22413015 C2.65625,2.546875 3.06183231,2 3.75488758,2 L4.24511242,2 C4.93572295,2 5.34341093,2.54806174 5.15024853,3.22413015 L4.92857143,4 L3.07142857,4 L3.07142857,4 Z M4,8 C4.55228475,8 5,7.66421356 5,7.25 C5,6.83578644 4.55228475,6.5 4,6.5 C3.44771525,6.5 3,6.83578644 3,7.25 C3,7.66421356 3.44771525,8 4,8 Z" id="!-Mark" fill="#FFAF00" sketch:type="MSShapeGroup"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

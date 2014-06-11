@@ -1,0 +1,18 @@
+<div class="auth-btns pull-right">
+  <% if current_user.nil? %>
+    <script type="text/javascript">
+
+      var widget = new Auth0Widget({
+        domain:         '<%= Rails.application.config.auth0_domain %>',
+        clientID:       '<%= Rails.application.config.auth0_client_id %>',
+        callbackURL:    '<%= Rails.application.config.auth0_callback_url %>'
+      });
+      
+    </script>
+    <button onclick="widget.signin({ scope: 'openid profile' })" class="btn btn-primary" >Login</button>
+  <% end %>
+  <% if current_user %>
+    <%= link_to image_tag(current_user.image, height: '30'), user_path(current_user) %>
+    <%= link_to "Logout", unset_session_path, class: "btn btn-primary" %>
+  <% end %>
+</div>

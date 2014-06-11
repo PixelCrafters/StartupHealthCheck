@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>wr-icon-startup</title>
+    <description>Created with Sketch.</description>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="16"></rect>
+        <radialGradient cx="0%" cy="0%" fx="0%" fy="0%" r="129.349238%" id="radialGradient-3">
+            <stop stop-color="#00EE87" offset="0%"></stop>
+            <stop stop-color="#00C972" offset="100%"></stop>
+        </radialGradient>
+        <path id="path-4" d="M0,-0.5 C0.915758349,2.858 4.0553514,5.354 7.83482143,5.472 C6.91906308,2.114 3.77947002,-0.382 0,-0.5 Z"></path>
+        <radialGradient cx="100%" cy="0%" fx="100%" fy="0%" r="141.421356%" id="radialGradient-6">
+            <stop stop-color="#00EE87" offset="0%"></stop>
+            <stop stop-color="#00C972" offset="100%"></stop>
+        </radialGradient>
+        <path id="path-7" d="M0.428571429,10 C0.248404447,9.36140351 0.428571429,8.69674185 0.428571429,8.00701754 C0.428571429,3.66516291 4.23528974,0.139348371 8.98484507,0 C9.27112267,6.33383459 5.17812676,9.86065163 0.428571429,10 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Organizations" sketch:type="MSLayerGroup">
+            <g id="Startup">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g id="Leaf" mask="url(#mask-2)">
+                    <g id="Small-Leaf" transform="translate(0.000000, 6.000000)">
+                        <mask id="mask-5" sketch:name="Leaf" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <g id="Leaf">
+                            <use fill="#00C972" sketch:type="MSShapeGroup" xlink:href="#path-4"></use>
+                            <use fill="url(#radialGradient-3)" xlink:href="#path-4"></use>
+                        </g>
+                        <path d="M3.04509116,1.82108473 L7.83482143,5.472" id="Small-Vein" stroke="#00EE87" stroke-width="0.5" sketch:type="MSShapeGroup" mask="url(#mask-5)"></path>
+                    </g>
+                    <path d="M7.5,10 L7.5,16" id="Stem" stroke="#00D779" sketch:type="MSShapeGroup"></path>
+                    <g id="Big-Leaf" transform="translate(7.000000, 0.000000)">
+                        <mask id="mask-8" sketch:name="Leaf" fill="white">
+                            <use xlink:href="#path-7"></use>
+                        </mask>
+                        <g id="Leaf">
+                            <use fill="#00C972" sketch:type="MSShapeGroup" xlink:href="#path-7"></use>
+                            <use fill="url(#radialGradient-6)" xlink:href="#path-7"></use>
+                        </g>
+                        <path d="M0.428571429,10.004 C0.428571429,10.004 3.66077287,5.83641106 5.56258788,3.75261659" id="Big-Vein" stroke="#00EE87" stroke-width="0.5" fill="#00C972" sketch:type="MSShapeGroup" mask="url(#mask-8)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
