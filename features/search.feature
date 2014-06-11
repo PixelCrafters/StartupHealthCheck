@@ -18,6 +18,7 @@ Feature: Search
     Then I should see search results for "Web"
     And I should see 2 result(s)
 
+  @javascript
   Scenario: Searching by organization type
     Given a type named "Startups"
     When I select the type "Startups"

@@ -129,8 +129,8 @@ p .wr-icon {
 }
 .disabled .wr-icon,
 .wr-icon.disabled {
-  -webkit-filter: grayscale();
-  filter: grayscale();
+  -webkit-filter: grayscale;
+  filter: grayscale;
   opacity: 0.5;
 }
 .wr-icon-sm {

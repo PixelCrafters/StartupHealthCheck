@@ -21,6 +21,7 @@ module Startuphealthcheck
     # config.i18n.default_locale = :de
     config.autoload_paths += %W(#{config.root}/lib)
 
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("app", "assets", "icons")
   end
 end
