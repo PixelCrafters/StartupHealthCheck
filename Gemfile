@@ -42,7 +42,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-debugger'
-  #gem 'dotenv-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do
