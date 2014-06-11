@@ -19,3 +19,4 @@
 
 config/database.yml
 config/initializers/startup_healthcheck.rb
+config/secrets.yml
