@@ -117,7 +117,7 @@ a.remove-tag{
 
 .search-result a{
   background-image: none;
-  vertical-align: middle;
+  vertical-align: middle !important;
   margin-top: 5px;
   margin-left: 5px;
 }
