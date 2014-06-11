@@ -5,8 +5,8 @@ module StartupGenome
     def initialize
       @host = 'http://startupgenome.co/api/2/'
       @path = '/organizations'
-      @auth_code = Rails.application.config.startup_genome_auth_code
-      @location_slug = Rails.application.config.startup_genome_location_slug
+      @auth_code = ENV['STARTUP_GENOME_AUTH_CODE'] || Rails.application.secrets.startup_genome_auth_code
+      @location_slug = ENV['STARTUP_GENOME_LOCATION_SLUG'] || Rails.application.secrets.startup_genome_location_slug
       @conn = APIConnection.connect_via_faraday(@host)
 
       raise 'You must provide a Startup Genome Authorization Code' if @auth_code.nil?
