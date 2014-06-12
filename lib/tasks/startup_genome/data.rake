@@ -3,4 +3,9 @@ namespace :data do
   task import: :environment do
     StartupGenome::ImportOrganizations.call
   end
+
+  desc "push organization data to Startup Genome"
+  task push: :environment do
+    StartupGenome::PushOrganizationData.call
+  end
 end 
