@@ -93,9 +93,7 @@ To run RSpec:
 
 ### Configuring the Application for Development and Test Environments
 
-Since Heroku requires us to commit secrets.yml, you can create a file in config/initializers/ called startup_healthcheck.rb, and add your configuration options there. 
-
-See config/initializers/startup_healthcheck.rb.sample to get started.
+We use the [dotenv-rails gem](https://github.com/bkeepers/dotenv) to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
 
 ### Adding Custom Styling
 

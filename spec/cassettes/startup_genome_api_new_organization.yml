@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://startupgenome.co/api/2/brewhouse
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Auth-Code:
+      - 4434f477c545df93fbeee3c1c05d1ffc
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 12 Jun 2014 21:00:03 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - session=23f880f90fdb4104759f8c63971c6ef7d0bf8f7e%7EYToyOntzOjk6ImF1dGhfdXNlciI7czo2OiIxMjM0OTgiO3M6MTE6Imxhc3RfYWN0aXZlIjtpOjE0MDI2MDY4MDM7fQ%3D%3D;
+        expires=Sat, 12-Jul-2014 21:00:03 GMT; path=/
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.3.10-1ubuntu3.11
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        {"error":"404","message":"sorry we couldn't find that"}
+    http_version: 
+  recorded_at: Thu, 12 Jun 2014 20:58:57 GMT
+- request:
+    method: post
+    uri: http://startupgenome.co/api/2/brewhouse
+    body:
+      encoding: UTF-8
+      string: description=Dedicated+to+building+superb+software.+Our+office+is+located+in+the+heart+of+Vancouver%27s+historic+Gastown+district.+Stop+by+for+a+cup+of+coffee+sometime.&name=Brewhouse&type=organization
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Auth-Code:
+      - 4434f477c545df93fbeee3c1c05d1ffc
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 12 Jun 2014 20:55:42 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - session=d1d8fd02d832c698d8771df4165256a488ee7994%7EYToyOntzOjk6ImF1dGhfdXNlciI7czo2OiIxMjM0OTgiO3M6MTE6Imxhc3RfYWN0aXZlIjtpOjE0MDI2MDY1NDI7fQ%3D%3D;
+        expires=Sat, 12-Jul-2014 20:55:42 GMT; path=/
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.3.10-1ubuntu3.11
+      Content-Length:
+      - '341'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        {"type":"organization","url":"http:\/\/startupgenome.co\/brewhouse","slug":"brewhouse","image":"https:\/\/s3.amazonaws.com\/startupgenome-avatars\/organizations\/brewhouse.png","investments_made":[],"addresses":[],"categories":[],"industries":[],"name":"Brewhouse","employees":0,"description":"Dedicated to building superb software. Our office is located in the heart of Vancouver's historic Gastown district. Stop by for a cup of coffee sometime.","joinUrl":"http:\/\/startupgenome.co\/organizations\/join\/brewhouse","hiringUrl":null,"founded":null,"investments_received":[]}
+    http_version: 
+  recorded_at: Thu, 12 Jun 2014 20:58:58 GMT
+recorded_with: VCR 2.9.0

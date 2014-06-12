@@ -26,4 +26,12 @@ class Organization < ActiveRecord::Base
   def main_address
     addresses.first
   end
+
+  def updated_last_24_hours?
+    updated_at > Time.now - 24.hours
+  end
+
+  def created_last_24_hours?
+    created_at > Time.now - 24.hours
+  end
 end

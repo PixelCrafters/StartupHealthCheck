@@ -18,4 +18,4 @@
 .DS_Store
 
 config/database.yml
-config/initializers/startup_healthcheck.rb
+.env

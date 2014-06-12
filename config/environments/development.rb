@@ -37,4 +37,6 @@ Rails.application.configure do
 
   # this allows WEBrick to handle pipe symbols in query parameters
   URI::DEFAULT_PARSER = URI::Parser.new(:UNRESERVED => URI::REGEXP::PATTERN::UNRESERVED + '|')
+
+  config.assets.raise_runtime_errors = false
 end

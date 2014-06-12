@@ -1,7 +1,7 @@
 def search_for_keywords(keywords)
   User.reindex
-  visit "/"
-  fill_in "home-page-search", :with => keywords
+  visit search_path
+  fill_in "search-orgs", :with => keywords
   click_button "Search"
 end
 
@@ -27,8 +27,9 @@ When(/^I click on the first result for "(.*?)"$/) do |name|
 end
 
 When(/^I select the type "(.*?)"$/) do |type_name|
-  visit "/"
-  select type_name, from: "type_ids"
+  visit search_path
+  click_button "Filter by organization type"
+  find('.checkbox', :text => 'Startups').click
   click_button "Search"
 end
 
