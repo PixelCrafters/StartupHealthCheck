@@ -14,13 +14,49 @@ module StartupGenome
     end
 
     def get_organizations
-      @conn.get url, {}, {'auth-code' => @auth_code}
+      @conn.get url, {}, auth_code_header
+    end
+
+    def update_organization(organization)
+      slug = organization.startup_genome_slug
+      url = @host + slug
+      @conn.put url, organization_payload(organization), auth_code_header
+    end
+
+    def new_organization(organization)
+      url = @host + organization.slug
+      puts "***********URL: #{url}"
+      return if slug_unavailable(organization, url)
+      response = @conn.post url, organization_payload(organization), auth_code_header
+      Rails.logger.debug "Post Response: #{response.inspect}"
     end
 
     private
 
     def url
       "#{@host}#{@location_slug}#{@path}"
+    end
+
+    def organization_payload(organization)
+      {
+        "type" => "organization",
+        "description" => organization.description
+      }.to_json
+    end
+
+    def auth_code_header
+      {'auth-code' => @auth_code}
+    end
+
+    def slug_unavailable(organization, url)
+      response = @conn.get url, {}, auth_code_header
+      body = JSON.parse(response.body)
+      puts "***********Slug Available? Response #{response.inspect}"
+      if body["error"] != "404"
+        true
+      else
+        false
+      end
     end
   end
 end 
