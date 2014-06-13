@@ -47,15 +47,19 @@
   </nav>
 
   <div class="container">
-
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <%= render "shared/flash_message" %>
-          <%= yield %>
-        </div>
+      <div class="col-sm-8 col-sm-offset-2">
+        <%= render "shared/flash_message" %>
+        <%= yield %>
+      </div>
     </div>
-
   </div><!-- /.container -->
- 
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <p>&copy; WeAreYVR 2014</p>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>
