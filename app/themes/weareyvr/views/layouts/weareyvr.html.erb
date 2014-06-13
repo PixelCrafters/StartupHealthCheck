@@ -47,10 +47,13 @@
   </nav>
 
   <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
+      <div class="row">
         <%= render "shared/flash_message" %>
-        <%= yield %>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div><!-- /.container -->
