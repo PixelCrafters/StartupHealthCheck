@@ -1,5 +1,5 @@
 module StartupGenome
-  class UpdateAddress
+  class StoreAddress
     include Service
 
     attr_reader :org_hash, :organization
@@ -10,12 +10,12 @@ module StartupGenome
     end
 
     def call
-      update_address(org_hash, organization)
+      store_address(org_hash, organization)
     end
 
     private
 
-    def update_address(org_hash, organization)
+    def store_address(org_hash, organization)
       data = build_address_hash(org_hash)
       address = Address.find_or_initialize_by(organization_id: organization.id)
       msg = address.update!(data) ? "Successfully created/updated address of #{organization.name}" : "Failed to update address of #{organization.name}"

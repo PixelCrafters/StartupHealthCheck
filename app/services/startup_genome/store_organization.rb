@@ -25,15 +25,15 @@ module StartupGenome
         msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
       end
       puts msg
-      update_address(org_hash, organization)
+      store_address(org_hash, organization)
       org_hash["categories"].each do |type_hash|
         store_type(type_hash, organization)
       end
       organization
     end
 
-    def update_address(org_hash, organization)
-      StartupGenome::UpdateAddress.call(org_hash["addresses"].first, organization)
+    def store_address(org_hash, organization)
+      StartupGenome::StoreAddress.call(org_hash["addresses"].first, organization)
     end
 
     def store_type(type_hash, organization)
