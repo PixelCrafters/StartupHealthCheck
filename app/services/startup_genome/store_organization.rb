@@ -9,7 +9,10 @@ module StartupGenome
     end
 
     def call
-      store_organization(org_hash)
+      organization = store_organization(org_hash)
+      store_address(org_hash, organization)
+      store_types(organization)
+      organization
     end
 
     private
@@ -21,23 +24,21 @@ module StartupGenome
       if organization.new_record?
         msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
         organization.create_activity key: "organization.create"
-      else
+      elsif !organization.claimed?
         msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
       end
       puts msg
-      store_address(org_hash, organization)
-      org_hash["categories"].each do |type_hash|
-        store_type(type_hash, organization)
-      end
       organization
+    end
+
+    def store_types(organization)
+      org_hash["categories"].each do |type_hash|
+        StartupGenome::StoreType.call(type_hash, organization)
+      end
     end
 
     def store_address(org_hash, organization)
       StartupGenome::StoreAddress.call(org_hash["addresses"].first, organization)
-    end
-
-    def store_type(type_hash, organization)
-      StartupGenome::StoreType.call(type_hash, organization)
     end
 
     def build_data_hash(org_hash)
