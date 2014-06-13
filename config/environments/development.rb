@@ -39,4 +39,14 @@ Rails.application.configure do
   URI::DEFAULT_PARSER = URI::Parser.new(:UNRESERVED => URI::REGEXP::PATTERN::UNRESERVED + '|')
 
   config.assets.raise_runtime_errors = false
+
+  #action_mailer
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    user_name:            '<%= ENV["GMAIL_USERNAME"] %>',
+    password:             '<%= ENV["GMAIL_PASSWORD"] %>',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end

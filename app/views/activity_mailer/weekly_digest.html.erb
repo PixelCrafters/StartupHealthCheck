@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.name %>!</h1>
+    <h3>Welcome to your weekly email digest compliments of WeAreYVR</h3>
+    <h3>Activity Feed</h3>
+    <%= render_activities(@activities) %>
+  </body>
+</html>
