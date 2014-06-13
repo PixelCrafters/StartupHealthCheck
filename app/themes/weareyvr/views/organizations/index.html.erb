@@ -1,7 +1,7 @@
 <div class="row">
   <h3 class="top-heading"><i class="wr-icon wr-icon-community"></i>Organizations</h3>
   <% if @organizations.present? %>
-    <div id="organizations" class="col-sm-12 col-offset-1">
+    <div class="col-sm-12 col-offset-1">
       <% @organizations.each do |org| %>
         <p class="search-result">
           <i class="wr-icon wr-icon-md wr-icon-founder-av"></i><%= link_to org.name, organization_path(org) %>
