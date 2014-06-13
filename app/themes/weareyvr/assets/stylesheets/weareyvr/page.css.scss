@@ -28,11 +28,8 @@
 }
 
 .bg-primary a{
-  text-decoration: underline;
-}
-
-.bg-primary a:hover{
-  color: #FFF;
+  text-shadow: none;
+  color: #FFF !important;
 }
 
 .no-buffer{
