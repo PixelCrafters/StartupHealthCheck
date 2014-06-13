@@ -13,7 +13,7 @@ module StartupGenome
 
     def persist(orgs)
       orgs.each do |org|
-        StartupGenome::UpdateOrganization.call(org)
+        StartupGenome::StoreOrganization.call(org)
       end
     end
   end

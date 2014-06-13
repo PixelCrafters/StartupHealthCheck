@@ -1,5 +1,5 @@
 module StartupGenome
-  class UpdateOrganization
+  class StoreOrganization
     include Service 
 
     attr_reader :org_hash
@@ -9,12 +9,12 @@ module StartupGenome
     end
 
     def call
-      update_organization(org_hash)
+      store_organization(org_hash)
     end
 
     private
 
-    def update_organization(org_hash)
+    def store_organization(org_hash)
       data = build_data_hash(org_hash)
       organization = Organization.find_or_initialize_by(name: org_hash["name"])
       msg = ""
