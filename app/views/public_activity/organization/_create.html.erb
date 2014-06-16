@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-body activity">  
     <% if activity.trackable.present? %>
-      <%= link_to activity.trackable.name, activity.trackable %>
+      <%= link_to activity.trackable.name, organization_url(activity.trackable) %>
 
       was just created
     <% else %>

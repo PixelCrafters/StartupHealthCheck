@@ -1,13 +1,13 @@
 <div class="panel panel-default">
   <div class="panel-body activity">  
-    <%= link_to activity.owner.name, user_path(activity.owner) %>
+    <%= link_to activity.owner.name, user_url(activity.owner) %>
 
     added tag 
 
-    <%= link_to tag_name(activity), tag_path(tag_name(activity)) if tag_name(activity) %>
+    <%= link_to activity.parameters[:tag_name], tag_url(activity.parameters[:tag_name]) if activity.parameters[:tag_name] %>
      
     to 
 
-    <%= link_to activity.trackable.name, activity.trackable %>
+    <%= link_to activity.trackable.name, organization_url(activity.trackable) %>
   </div>
 </div>

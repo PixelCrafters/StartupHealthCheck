@@ -1,10 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-body activity">  
-    <%= link_to activity.owner.name, user_path(activity.owner) %>
+    <%= link_to activity.owner.name, user_url(activity.owner) %>
 
     claimed 
 
-    <%= link_to activity.trackable.name, activity.trackable %>
+    <%= link_to activity.trackable.name, organization_url(activity.trackable) %>
   </div>
 </div>
  

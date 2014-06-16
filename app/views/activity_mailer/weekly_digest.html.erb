@@ -5,8 +5,10 @@
   </head>
   <body>
     <h1>Hi <%= @user.name %>!</h1>
-    <h3>Welcome to your weekly email digest compliments of WeAreYVR</h3>
-    <h3>Activity Feed</h3>
+    <h3>Welcome to your weekly email digest, compliments of WeAreYVR.</h3>
+    <h3 style="text-decoration: underline;">Activity Feed</h3>
     <%= render_activities(@activities) %>
+    <br />
+    <%= link_to "See All", activities_url %>
   </body>
 </html>
