@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   resources :activities, only: [:index]
 
   resources :addresses, only: [:update, :create]
+
+  post "users/:id/email_digest_subscription", to: "users#toggle_email_digest_subscription", as: "toggle_email_digest_subscription"
 end

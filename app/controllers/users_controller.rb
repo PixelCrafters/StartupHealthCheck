@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :check_session, only: [:edit, :update]
+  before_filter :check_session, only: [:edit, :update, :toggle_email_digest_subscription]
   def index
     @users = User.all.page
   end
@@ -27,6 +27,15 @@ class UsersController < ApplicationController
       @user.update(user_params)
       redirect_to edit_user_path(@user)
     end
+  end
+
+  def toggle_email_digest_subscription
+    if current_user.email_digest?
+      current_user.update(email_digest: false)
+    else
+      current_user.update(email_digest: true)
+    end
+    redirect_to edit_user_path(current_user)
   end
 
   private

@@ -15,7 +15,17 @@ When(/^I edit my profile page$/) do
   find('span.glyphicon-edit').click
 end
 
+When(/^I unsubscribe from the email digest$/) do
+  find("#email_digest").set(false)
+end
+
 Then(/^I should see my changes on my profile page$/) do
   expect(page).to have_content("New Name")
   expect(page).to have_content("newemail@example.com")
 end
+
+Then(/^I should be unsubscribed$/) do
+  checkbox = find('#email_digest')
+  expect(checkbox).to_not be_checked
+end
+  

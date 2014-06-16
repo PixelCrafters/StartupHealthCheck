@@ -1,8 +1,7 @@
 <div class="row">
   <span class="big-text">ORGANIZATIONS</span>
-  <%= link_to "Add New Organization", new_organization_path, class: "right" %>
+  <%= link_to "Add New Organization", new_organization_path, class: "pull-right" %>
 </div>
-<br />
 <% current_user.organizations.each do |org| %>
   <div class="row">
     <div class="col-sm-12">
