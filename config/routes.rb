@@ -36,4 +36,6 @@ Rails.application.routes.draw do
   resources :addresses, only: [:update, :create]
 
   post "users/:id/email_digest_subscription", to: "users#toggle_email_digest_subscription", as: "toggle_email_digest_subscription"
+
+  get "users/unsubscribe/:signature", to: "users#unsubscribe", as: "unsubscribe"
 end

@@ -42,7 +42,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = {
-    host: "localhost:3000",
+    host: "http://localhost:3000",
     only_path: false
   }
   config.action_mailer.delivery_method = :smtp
@@ -52,5 +52,4 @@ Rails.application.configure do
     user_name:            ENV["GMAIL_USERNAME"],
     password:             ENV["GMAIL_PASSWORD"],
     authentication:       'plain' }
-  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
 end
