@@ -5,7 +5,7 @@
     <% if activity.trackable %>
       <%= link_to activity.trackable.name, activity.trackable.url, class: "entity entity-link" %>  
       to 
-      <%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-org wr-link-startup" %>
+      <%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.parameters[:org_name], organization_path(activity.parameters[:org_id]), class: "entity entity-org wr-link-startup" %>
     <% else %>
       <%= link_to activity.parameters[:name], activity.parameters[:url], class: "entity entity-link" %>
       to
