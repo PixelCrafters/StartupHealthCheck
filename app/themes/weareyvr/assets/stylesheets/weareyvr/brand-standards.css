@@ -294,6 +294,7 @@ h4.swatch-colour,
 .swatch-icon {
   width: 32px;
   height: 32px;
+  -webkit-background-size: 32px 32px;
   background-size: 32px 32px;
   width: 48px;
   height: 48px;
