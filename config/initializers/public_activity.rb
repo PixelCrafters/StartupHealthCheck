@@ -5,6 +5,10 @@ PublicActivity::Activity.class_eval do
   scope :user, -> { where(trackable_type: "User") }
   scope :hiring, -> { where(trackable_type: "Organization").select { |activity| activity.key == ("organization.hiring" || "organization.not_hiring") } }
 
+  def self.combined_distinct
+    distinct_organization_distinct_owner + distinct_activities("tag") + distinct_activities("profile_link") + distinct_activities("user") + distinct_activities("hiring")
+  end
+
   def self.distinct_organization_distinct_owner
     organization.uniq { |activity| activity[:owner_id] }
   end
@@ -12,10 +16,6 @@ PublicActivity::Activity.class_eval do
   def self.distinct_activities(type)
     activities = sort_activities(eval(type)).uniq { |activity| activity[:trackable_id] }
     activities.select {|activity| activity.created_at > Date.today - 1.week}
-  end
-
-  def self.combined_distinct
-    distinct_organization_distinct_owner + distinct_activities("tag") + distinct_activities("profile_link") + distinct_activities("user") + distinct_activities("hiring")
   end
 
   def self.sort_activities(activities)

@@ -1,8 +1,4 @@
-<div class="panel panel-default">
-  <div class="panel-body activity">  
-    <%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.owner.name, user_path(activity.owner), class: "entity entity-user wr-link-founder" %>
-    claimed 
-    <%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
-  </div>
-</div>
- 
+<%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.owner.name, user_path(activity.owner), class: "entity entity-user wr-link-founder" %>
+claimed 
+<%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
+
