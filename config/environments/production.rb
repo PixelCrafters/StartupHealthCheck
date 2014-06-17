@@ -91,4 +91,6 @@ Rails.application.configure do
     domain: 'weareyvr.herokuapp.com'
   }
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: "weareyvr.herokuapp.com" }
+
 end
