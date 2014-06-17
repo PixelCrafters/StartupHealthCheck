@@ -44,6 +44,15 @@
     </div>
   </nav>
 
+  <% if current_page?(root_url) %>
+  <header class="jumbotron wr-jumbotron wr-jumbotron-dark" style="background-image: url(<%= asset_path('weareyvr/img/7653923950_ef85676a03_h.jpg') %>); background-position: bottom center;">
+      <h1 class="jumbotron-heading">Opening channels for Vancouver&rsquo;s startup community</h1>
+    <div class="image-credit">
+      Photo: <a href="https://www.flickr.com/photos/patdryburgh/7653923950">Pat Dryburgh</a>
+    </div>
+  </header>
+  <% end %>
+
   <div class="container">
     <% if current_page?(root_url) %>
     <section class="row">
