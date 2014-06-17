@@ -10,5 +10,7 @@
     <%= render_activities(@activities) %>
     <br />
     <%= link_to "See All", activities_url %>
+    <br />
+    <p>To unsubscribe from this email digest, <%= link_to 'click here', unsubscribe_url(@user.access_token) %>. 
   </body>
 </html>

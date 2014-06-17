@@ -38,6 +38,16 @@ class UsersController < ApplicationController
     redirect_to edit_user_path(current_user)
   end
 
+  def unsubscribe
+    if user = User.read_access_token(params[:signature])
+      user.update(email_digest: false)
+      flash[:success] = "You have been unsubscribed"
+    else
+      flash[:error] = "Invalid Link"
+    end
+    redirect_to root_path
+  end
+
   private
 
   def check_session

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WeAreYVR</title>
+  <title><%= yield(:title) %>WeAreYVR</title>
   <%= stylesheet_link_tag    "weareyvr/all", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "weareyvr/all", "data-turbolinks-track" => true %>
-  <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
   <body>
@@ -13,23 +11,23 @@
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="<%= root_url %>">
-           <div class="weareyvr-mark" data-height="100" data-colour="#10988b" data-text="black">
+           <div class="weareyvr-mark" data-height="100">
              <span>WeAreYVR</span>
            </div>
         </a>
       </div>
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Organizations", organizations_path %></li>
-          <li><%= link_to "People", users_path %></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li<%= current_page?(organizations_path) ? ' class=active' : '' %>><%= link_to "Organizations", organizations_path %></li>
+          <li<%= current_page?(users_path) ? ' class=active' : '' %>><%= link_to "People", users_path %></li>
+          <li<%= current_page?(about_path) ? ' class=active' : '' %>><%= link_to "About", about_path %></li>
+          <li<%= current_page?(contact_path) ? ' class=active' : '' %>><%= link_to "Contact", contact_path %></li>
         </ul>
         
         <div class="navbar-right">
@@ -46,23 +44,39 @@
     </div>
   </nav>
 
+  <% if current_page?(root_url) %>
+  <header class="jumbotron wr-jumbotron wr-jumbotron-dark" style="background-image: url(<%= asset_path('weareyvr/img/7653923950_ef85676a03_h.jpg') %>); background-position: bottom center;">
+      <h1 class="jumbotron-heading">Opening channels for Vancouver&rsquo;s startup community</h1>
+    <div class="image-credit">
+      Photo: <a href="https://www.flickr.com/photos/patdryburgh/7653923950">Pat Dryburgh</a>
+    </div>
+  </header>
+  <% end %>
+
   <div class="container">
-      <div class="row">
-        <%= render "shared/flash_message" %>
+    <% if current_page?(root_url) %>
+    <section class="row">
+      <div class="col-md-8 text-content  col-sm-offset-2">
+        <p class="lead">WeAreYVR is an information hub for the Vancouver startup community. It is a collaborative project — startup accelerators, the city of Vancouver, and members of the community are all helping to put each other on the map.</p>
+        <p class="lead">Follow us on <a href="http://twitter.com/WeAreYVR">Twitter</a> and <a href="http://facebook.com/WeAreYVR">Facebook</a> as we get ready for launch.</p>
       </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <%= yield %>
-        </div>
+    </section>
+    <% end %>
+    <div class="row">
+      <%= render "shared/flash_message" %>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <%= yield %>
       </div>
     </div>
   </div><!-- /.container -->
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <div class="row">
-        <p>&copy; WeAreYVR 2014</p>
-      </div>
+      WeAreYVR — A community project by <a href="http://launchacademy.ca">Launch Academy</a> &copy; 2014 &#8226; Thanks to <a href="http://startupgenome.com">StartupGenome</a>
     </div>
   </footer>
+  <%= javascript_include_tag "weareyvr/all", "data-turbolinks-track" => true %>
+  <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
   </body>
 </html>

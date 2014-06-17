@@ -1,10 +1,5 @@
-<div class="panel panel-default">
-  <div class="panel-body activity">  
-    <%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.owner.name, user_path(activity.owner), class: "entity entity-user wr-link-founder" %>
-    added tag 
-    <%= link_to tag_name(activity), tag_path(tag_name(activity)), class: "entity entity-tag" if tag_name(activity) %>
-    to 
-    <%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
-  </div>
-</div>
-  
+<%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.owner.name, user_path(activity.owner), class: "entity entity-user wr-link-founder" %>
+added tag 
+<%= link_to tag_name(activity), tag_path(tag_name(activity)), class: "entity entity-tag" if tag_name(activity) %>
+to 
+<%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
