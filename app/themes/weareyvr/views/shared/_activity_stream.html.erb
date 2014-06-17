@@ -1,5 +1,5 @@
     <div id="activity-feed">  
-      <h2><i class="wr-icon wr-icon-activity"></i>Activity Feed</h2>
+      <h2><i class="wr-icon wr-icon-activity"></i>Recent Activity</h2>
       <% @activities.each do |activity| %>
         <%= render 'public_activity/activity', activity: activity %>
       <% end %>
