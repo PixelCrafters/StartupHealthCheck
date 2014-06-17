@@ -26,8 +26,8 @@
       </div>
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Organizations", organizations_path %></li>
-          <li><%= link_to "People", users_path %></li>
+          <li<%= current_page?(organizations_path) ? ' class=active' : '' %>><%= link_to "Organizations", organizations_path %></li>
+          <li<%= current_page?(users_path) ? ' class=active' : '' %>><%= link_to "People", users_path %></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
