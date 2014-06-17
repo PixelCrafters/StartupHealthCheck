@@ -45,6 +45,14 @@
   </nav>
 
   <div class="container">
+    <% if current_page?(root_url) %>
+    <section class="row">
+      <div class="col-md-8 text-content  col-sm-offset-2">
+        <p class="lead">WeAreYVR is an information hub for the Vancouver startup community. It is a collaborative project — startup accelerators, the city of Vancouver, and members of the community are all helping to put each other on the map.</p>
+        <p class="lead">Follow us on <a href="http://twitter.com/WeAreYVR">Twitter</a> and <a href="http://facebook.com/WeAreYVR">Facebook</a> as we get ready for launch.</p>
+      </div>
+    </section>
+    <% end %>
     <div class="row">
       <%= render "shared/flash_message" %>
     </div>
