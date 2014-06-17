@@ -200,6 +200,9 @@ body.logo-generator #size-px .form-control {
 body.logo-generator .form-control#height-other {
   display: none;
 }
+body.logo-generator .form-control#height-other.show {
+  display: block;
+}
 body.logo-generator #reset .glyphicon-repeat {
   -webkit-transform: scaleX(-1);
   -ms-transform: scaleX(-1);

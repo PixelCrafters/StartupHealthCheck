@@ -16,6 +16,7 @@
 .activity > i.wr-icon:first-child {
   width: 32px;
   height: 32px;
+  -webkit-background-size: 32px 32px;
   background-size: 32px 32px;
   float: right;
   position: absolute;

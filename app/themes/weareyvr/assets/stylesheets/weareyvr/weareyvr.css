@@ -5966,8 +5966,12 @@ button.close {
 }
 .btn-default {
   background-color: rgba(219, 240, 238, 0.9);
-  color: #10988b;
   border-color: rgba(135, 204, 197, 0.5);
+}
+.btn-default,
+.btn-default:link,
+.btn-default:visited {
+  color: #10988b;
 }
 .btn-default:hover {
   border-color: rgba(16, 152, 139, 0.85);
@@ -6004,6 +6008,10 @@ button.close {
 .btn-primary {
   background-color: #10988b;
   border-color: #0e8176;
+}
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited {
   color: #ffffff;
 }
 .btn-primary:hover {
@@ -6047,6 +6055,10 @@ button.close {
 .btn-success {
   background-color: #33cc7f;
   border-color: #2eb872;
+}
+.btn-success,
+.btn-success:link,
+.btn-success:visited {
   color: #ffffff;
 }
 .btn-success:hover {
@@ -6090,6 +6102,10 @@ button.close {
 .btn-info {
   background-color: #5aaddd;
   border-color: #45a3d9;
+}
+.btn-info,
+.btn-info:link,
+.btn-info:visited {
   color: #ffffff;
 }
 .btn-info:hover {
@@ -6133,6 +6149,10 @@ button.close {
 .btn-warning {
   background-color: #efbc4d;
   border-color: #edb335;
+}
+.btn-warning,
+.btn-warning:link,
+.btn-warning:visited {
   color: #ffffff;
 }
 .btn-warning:hover {
@@ -6176,6 +6196,10 @@ button.close {
 .btn-danger {
   background-color: #d9534f;
   border-color: #d43f3a;
+}
+.btn-danger,
+.btn-danger:link,
+.btn-danger:visited {
   color: #ffffff;
 }
 .btn-danger:hover {
@@ -6446,9 +6470,9 @@ section section section {
   margin-left: 1px;
 }
 .input-group > .input-group-btn:first-of-type:not(:first-child) .btn:first-of-type,
-/*.input-group > .input-group-btn:first-of-type:not(:first-child) .btn-group:first-of-type {
+.input-group > .input-group-btn:first-of-type:not(:first-child) .btn-group:first-of-type {
   border-left-style: none;
-}*/
+}
 .input-group > .input-group-btn:last-of-type:not(:last-child) .btn,
 .input-group > .input-group-btn:last-of-type:not(:last-child) .btn-group {
   margin-right: 1px;
@@ -9084,6 +9108,10 @@ p .wr-link-brown a:visited {
 .btn-wr-spruce {
   background-color: #10988b;
   border-color: #0e8176;
+}
+.btn-wr-spruce,
+.btn-wr-spruce:link,
+.btn-wr-spruce:visited {
   color: #ffffff;
 }
 .btn-wr-spruce:hover {
@@ -9127,6 +9155,10 @@ p .wr-link-brown a:visited {
 .btn-wr-red {
   background-color: #af1639;
   border-color: #981332;
+}
+.btn-wr-red,
+.btn-wr-red:link,
+.btn-wr-red:visited {
   color: #ffffff;
 }
 .btn-wr-red:hover {
@@ -9170,6 +9202,10 @@ p .wr-link-brown a:visited {
 .btn-wr-pink {
   background-color: #ff769f;
   border-color: #ff5d8d;
+}
+.btn-wr-pink,
+.btn-wr-pink:link,
+.btn-wr-pink:visited {
   color: #ffffff;
 }
 .btn-wr-pink:hover {
@@ -9213,6 +9249,10 @@ p .wr-link-brown a:visited {
 .btn-wr-orange {
   background-color: #ffaf00;
   border-color: #e69d00;
+}
+.btn-wr-orange,
+.btn-wr-orange:link,
+.btn-wr-orange:visited {
   color: #ffffff;
 }
 .btn-wr-orange:hover {
@@ -9256,6 +9296,10 @@ p .wr-link-brown a:visited {
 .btn-wr-green {
   background-color: #00d679;
   border-color: #00bd6b;
+}
+.btn-wr-green,
+.btn-wr-green:link,
+.btn-wr-green:visited {
   color: #ffffff;
 }
 .btn-wr-green:hover {
@@ -9299,6 +9343,10 @@ p .wr-link-brown a:visited {
 .btn-wr-blue {
   background-color: #4095c5;
   border-color: #3787b5;
+}
+.btn-wr-blue,
+.btn-wr-blue:link,
+.btn-wr-blue:visited {
   color: #ffffff;
 }
 .btn-wr-blue:hover {
@@ -9342,6 +9390,10 @@ p .wr-link-brown a:visited {
 .btn-wr-purple {
   background-color: #6d22d6;
   border-color: #621fc0;
+}
+.btn-wr-purple,
+.btn-wr-purple:link,
+.btn-wr-purple:visited {
   color: #ffffff;
 }
 .btn-wr-purple:hover {
@@ -9385,6 +9437,10 @@ p .wr-link-brown a:visited {
 .btn-wr-brown {
   background-color: #8b572a;
   border-color: #774b24;
+}
+.btn-wr-brown,
+.btn-wr-brown:link,
+.btn-wr-brown:visited {
   color: #ffffff;
 }
 .btn-wr-brown:hover {
@@ -9428,6 +9484,10 @@ p .wr-link-brown a:visited {
 .btn-black {
   background-color: #000000;
   border-color: #000000;
+}
+.btn-black,
+.btn-black:link,
+.btn-black:visited {
   color: #ffffff;
 }
 .btn-black:hover {
@@ -9471,6 +9531,10 @@ p .wr-link-brown a:visited {
 .btn-white {
   background-color: #ffffff;
   border-color: #999999;
+}
+.btn-white,
+.btn-white:link,
+.btn-white:visited {
   color: #222222;
 }
 .btn-white:hover {
@@ -11038,8 +11102,12 @@ a.lmo-co-find-jobs:not(.btn-link).active {
 }
 a.lmo-co-find-jobs-default {
   background-color: rgba(219, 240, 238, 0.9);
-  color: #10988b;
   border-color: rgba(135, 204, 197, 0.5);
+}
+a.lmo-co-find-jobs-default,
+a.lmo-co-find-jobs-default:link,
+a.lmo-co-find-jobs-default:visited {
+  color: #10988b;
 }
 a.lmo-co-find-jobs-default:hover {
   border-color: rgba(16, 152, 139, 0.85);
@@ -11076,6 +11144,10 @@ a.lmo-co-find-jobs-default.active {
 a.lmo-co-find-jobs-primary {
   background-color: #10988b;
   border-color: #0e8176;
+}
+a.lmo-co-find-jobs-primary,
+a.lmo-co-find-jobs-primary:link,
+a.lmo-co-find-jobs-primary:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-primary:hover {
@@ -11119,6 +11191,10 @@ a.lmo-co-find-jobs-primary.active {
 a.lmo-co-find-jobs-success {
   background-color: #33cc7f;
   border-color: #2eb872;
+}
+a.lmo-co-find-jobs-success,
+a.lmo-co-find-jobs-success:link,
+a.lmo-co-find-jobs-success:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-success:hover {
@@ -11162,6 +11238,10 @@ a.lmo-co-find-jobs-success.active {
 a.lmo-co-find-jobs-info {
   background-color: #5aaddd;
   border-color: #45a3d9;
+}
+a.lmo-co-find-jobs-info,
+a.lmo-co-find-jobs-info:link,
+a.lmo-co-find-jobs-info:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-info:hover {
@@ -11205,6 +11285,10 @@ a.lmo-co-find-jobs-info.active {
 a.lmo-co-find-jobs-warning {
   background-color: #efbc4d;
   border-color: #edb335;
+}
+a.lmo-co-find-jobs-warning,
+a.lmo-co-find-jobs-warning:link,
+a.lmo-co-find-jobs-warning:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-warning:hover {
@@ -11248,6 +11332,10 @@ a.lmo-co-find-jobs-warning.active {
 a.lmo-co-find-jobs-danger {
   background-color: #d9534f;
   border-color: #d43f3a;
+}
+a.lmo-co-find-jobs-danger,
+a.lmo-co-find-jobs-danger:link,
+a.lmo-co-find-jobs-danger:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-danger:hover {
@@ -11291,6 +11379,10 @@ a.lmo-co-find-jobs-danger.active {
 a.lmo-co-find-jobs-wr-spruce {
   background-color: #10988b;
   border-color: #0e8176;
+}
+a.lmo-co-find-jobs-wr-spruce,
+a.lmo-co-find-jobs-wr-spruce:link,
+a.lmo-co-find-jobs-wr-spruce:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-spruce:hover {
@@ -11334,6 +11426,10 @@ a.lmo-co-find-jobs-wr-spruce.active {
 a.lmo-co-find-jobs-wr-red {
   background-color: #af1639;
   border-color: #981332;
+}
+a.lmo-co-find-jobs-wr-red,
+a.lmo-co-find-jobs-wr-red:link,
+a.lmo-co-find-jobs-wr-red:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-red:hover {
@@ -11377,6 +11473,10 @@ a.lmo-co-find-jobs-wr-red.active {
 a.lmo-co-find-jobs-wr-pink {
   background-color: #ff769f;
   border-color: #ff5d8d;
+}
+a.lmo-co-find-jobs-wr-pink,
+a.lmo-co-find-jobs-wr-pink:link,
+a.lmo-co-find-jobs-wr-pink:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-pink:hover {
@@ -11420,6 +11520,10 @@ a.lmo-co-find-jobs-wr-pink.active {
 a.lmo-co-find-jobs-wr-orange {
   background-color: #ffaf00;
   border-color: #e69d00;
+}
+a.lmo-co-find-jobs-wr-orange,
+a.lmo-co-find-jobs-wr-orange:link,
+a.lmo-co-find-jobs-wr-orange:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-orange:hover {
@@ -11463,6 +11567,10 @@ a.lmo-co-find-jobs-wr-orange.active {
 a.lmo-co-find-jobs-wr-green {
   background-color: #00d679;
   border-color: #00bd6b;
+}
+a.lmo-co-find-jobs-wr-green,
+a.lmo-co-find-jobs-wr-green:link,
+a.lmo-co-find-jobs-wr-green:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-green:hover {
@@ -11506,6 +11614,10 @@ a.lmo-co-find-jobs-wr-green.active {
 a.lmo-co-find-jobs-wr-blue {
   background-color: #4095c5;
   border-color: #3787b5;
+}
+a.lmo-co-find-jobs-wr-blue,
+a.lmo-co-find-jobs-wr-blue:link,
+a.lmo-co-find-jobs-wr-blue:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-blue:hover {
@@ -11549,6 +11661,10 @@ a.lmo-co-find-jobs-wr-blue.active {
 a.lmo-co-find-jobs-wr-purple {
   background-color: #6d22d6;
   border-color: #621fc0;
+}
+a.lmo-co-find-jobs-wr-purple,
+a.lmo-co-find-jobs-wr-purple:link,
+a.lmo-co-find-jobs-wr-purple:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-purple:hover {
@@ -11592,6 +11708,10 @@ a.lmo-co-find-jobs-wr-purple.active {
 a.lmo-co-find-jobs-wr-brown {
   background-color: #8b572a;
   border-color: #774b24;
+}
+a.lmo-co-find-jobs-wr-brown,
+a.lmo-co-find-jobs-wr-brown:link,
+a.lmo-co-find-jobs-wr-brown:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-wr-brown:hover {
@@ -11635,6 +11755,10 @@ a.lmo-co-find-jobs-wr-brown.active {
 a.lmo-co-find-jobs-black {
   background-color: #000000;
   border-color: #000000;
+}
+a.lmo-co-find-jobs-black,
+a.lmo-co-find-jobs-black:link,
+a.lmo-co-find-jobs-black:visited {
   color: #ffffff;
 }
 a.lmo-co-find-jobs-black:hover {
@@ -11678,6 +11802,10 @@ a.lmo-co-find-jobs-black.active {
 a.lmo-co-find-jobs-white {
   background-color: #ffffff;
   border-color: #999999;
+}
+a.lmo-co-find-jobs-white,
+a.lmo-co-find-jobs-white:link,
+a.lmo-co-find-jobs-white:visited {
   color: #222222;
 }
 a.lmo-co-find-jobs-white:hover {
