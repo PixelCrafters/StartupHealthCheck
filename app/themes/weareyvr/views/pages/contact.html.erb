@@ -1,0 +1,33 @@
+<% content_for :title, "Contact - " %>
+<h2>Contact</h2>
+<p>WeAreYVR is managed by our lead Community Coordinator, <a href="http://twitter.com/claire_atkin">Claire</a>. We&rsquo;d love to hear from you &ndash; we&rsquo;re looking for sponsors, curators, and helpers of all kinds.</p>
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Full name</label>
+    <label for="first-name" class="sr-only">First name</label>
+    <label for="last-name" class="sr-only">Last name</label>
+    <div class="col-sm-4">
+      <div class="segmented-input-vertical">
+        <input type="text" class="form-control" id="first-name" placeholder="First name">
+        <input type="text" class="form-control" id="last-name" placeholder="Last name">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="contact-email" class="col-sm-2 control-label">Email address</label>
+    <div class="col-sm-4">
+      <input type="email" class="form-control" id="contact-email" placeholder="me@example.com">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="message" class="col-sm-2 control-label">Message</label>
+    <div class="col-sm-7">
+     <textarea class="form-control" id="message" rows=5></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2 col-sm-offset-2">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

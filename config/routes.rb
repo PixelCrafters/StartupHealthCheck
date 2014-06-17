@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get "/search", to: "search#index"
 
+  get "/about", to: 'pages#about'
+  get "/contact", to: 'pages#contact'
+
   resources :organizations, only: [:index, :show, :edit, :update, :new, :create] do
     get "claim", on: :member
     post "toggle_hiring", on: :member
