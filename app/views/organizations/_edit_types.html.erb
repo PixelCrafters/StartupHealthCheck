@@ -3,21 +3,21 @@
     <div class="panel-body">
       <h4>TYPES</h4>
       <table class="table table-striped types-table">
-        <tr>
-          <td>
-            <div class="types-list">
-              <% @organization.types.each do |type| %>
+        <div class="types-list">
+          <% @organization.types.each do |type| %>
+            <tr>
+              <td>
                 <span class="label label-primary tag">
                   <%= type.name %>
                   <%= link_to '<span class="glyphicon glyphicon-remove"></span>
     '.html_safe, remove_type_path(@organization.id, type.id), method: :delete, class: "remove-tag" %>
                 </span>
-              <% end %>
-            </div>
-          </td>
-        </tr>
+              </td>
+            </tr>
+          <% end %>
+        </div>
       </table>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <%= form_tag add_type_path(@organization.id), method: :post, role: "form", class: "form-inline" do %>
           <%= collection_select :type, :id, Type.all, :id, :name, {}, {class: "form-control"}%>
           <%= submit_tag "Add Type", class: "btn btn-default" %>
