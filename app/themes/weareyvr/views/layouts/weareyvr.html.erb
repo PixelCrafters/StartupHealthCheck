@@ -3,6 +3,9 @@
 <head>
   <title><%= yield(:title) %>WeAreYVR</title>
   <%= stylesheet_link_tag    "weareyvr/all", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "weareyvr/all", "data-turbolinks-track" => true %>
+  <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
+  
   <%= csrf_meta_tags %>
 </head>
   <body>
@@ -76,7 +79,5 @@
       WeAreYVR — A community project by <a href="http://launchacademy.ca">Launch Academy</a> &copy; 2014 &#8226; Thanks to <a href="http://startupgenome.com">StartupGenome</a>
     </div>
   </footer>
-  <%= javascript_include_tag "weareyvr/all", "data-turbolinks-track" => true %>
-  <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
   </body>
 </html>
