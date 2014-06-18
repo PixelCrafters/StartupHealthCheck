@@ -19,7 +19,7 @@ describe StartupGenome::API do
     end
   end
 
-  # TODO: change these to use faraday mocks
+  # TODO: change the specs below to use faraday mocks
   describe "#new_organization" do
     it "sends a success response" do
       organization = FactoryGirl.create(:organization, name: "Brewhouse", description: "Dedicated to building superb software. Our office is located in the heart of Vancouver's historic Gastown district. Stop by for a cup of coffee sometime.")
