@@ -1,0 +1,5 @@
+<% if !@user.claimed? && current_user.nil? %>
+  <div class="bg-primary claim-header">
+    This profile was generated via <%= link_to "Startup Genome", "http://startupgenome.com/", class: "bg-primary", target: "_blank" %>. If you would like to claim this profile, <%= link_to "click here", claim_user_path(@user), class: "bg-primary" %>.
+  </div>
+<% end %>

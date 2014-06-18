@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_filter :check_session, only: [:edit, :update, :toggle_email_digest_subscription]
+  before_filter :sign_in_before_claim, only: [:claim]
+
   def index
     @users = User.all.page
   end
@@ -48,7 +50,27 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def claim
+    @user = User.find(params[:id])
+    if @user.update!(claimed: true)
+      flash[:success] = "You have been successfully claimed this profile"
+    else
+      flash[:error] = "The profile could not be claimed"
+    end
+    redirect_to user_path(@user)
+  end
+
   private
+
+  def sign_in_before_claim
+    user = User.find(params[:id])
+    if current_user.nil?
+      session[:original_url] = request.original_url
+      session[:claimed_user_id] = user.id
+      redirect_to login_path 
+      return
+    end
+  end
 
   def check_session
     redirect_to unset_session_path if session[:expires_at] < Time.current

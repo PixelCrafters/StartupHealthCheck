@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-sm-1">
     <% if @user.image.present? %>
-      <%= image_tag @user.image, height: '50' %>
+      <%= image_tag @user.image, height: "50" %>
+    <% elsif @user.startup_genome_image.present? %>
+      <%= image_tag @user.startup_genome_image, height: "50" %>
+    <% else %>
+      <span class="glyphicon glyphicon-user"></span>
     <% end %>
   </div>
   <div class="col-sm-11">

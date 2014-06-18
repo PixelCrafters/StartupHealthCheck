@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get "/auth/auth0/callback", to: "auth0#callback"
   get "/auth/auth0", as: "login"
 
-  resources :users, only: [:show, :update, :edit]
+  resources :users, only: [:show, :update, :edit] do
+    get "claim", on: :member
+  end
 
   get "/people", to: "users#index", as: "users"
 

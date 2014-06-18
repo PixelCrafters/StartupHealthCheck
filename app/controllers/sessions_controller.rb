@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   def set
     userinfo = session[:userinfo]
-    user_auth_service = StoreUserAuthService.call(userinfo, current_user)
+    claimed_user = session[:claimed_user_id]
+    user_auth_service = StoreUserAuthService.call(userinfo, current_user, claimed_user)
     set_session_variables(user_auth_service)
     if session[:original_url]
       redirect_to session[:original_url]

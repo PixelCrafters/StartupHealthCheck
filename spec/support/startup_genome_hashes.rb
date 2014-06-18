@@ -99,3 +99,43 @@ ORG_HASH_API_V1 = {
     "state" => "British Columbia",
     "country" => "Canada"
   }
+
+  PERSON_HASH = {
+        "type" => "person",
+        "url" => "http://startupgenome.co/example-user",
+        "slug" => "example-user",
+        "image" => "https://s3.amazonaws.com/startupgenome-avatars/people/example-user.png",
+        "investments_made" => [],
+        "addresses" => [
+            {
+                "line1" => nil,
+                "line2" => nil,
+                "postal_code" => nil,
+                "location" => {
+                    "name" => "Vancouver",
+                    "url" => "http://startupgenome.co/vancouver-britishcolumbia-can",
+                    "slug" => "vancouver-britishcolumbia-can",
+                    "abbreviation" => nil,
+                    "full_name" => "Vancouver, British Columbia, CAN",
+                    "type" => "city",
+                    "parent" => "britishcolumbia-can",
+                    "latitude" => "49.2612305",
+                    "longitude" => "-123.1139297"
+                },
+                "latitude" => "49.2612305",
+                "longitude" => "-123.1139297",
+                "formatted" => "Vancouver, British Columbia, CAN",
+                "primary" => false
+            }
+        ],
+        "categories" => [
+            {
+                "plural_name" => "Accelerators",
+                "singular_name" => "Accelerator",
+                "slug" => "accelerators"
+            }
+        ],
+        "industries" => [],
+        "name" => "Example User",
+        "curates" => []
+    }

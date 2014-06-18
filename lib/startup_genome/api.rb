@@ -55,7 +55,7 @@ module StartupGenome
     end
 
     # fields added here should match the structure expected by Startup Genome
-    # see spec/support/org_hash.rb for an example
+    # see spec/support/startup_genome_hashes.rb for an example
     def organization_payload(organization)
       {
         type: 'organization',
