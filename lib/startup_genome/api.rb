@@ -4,7 +4,6 @@ module StartupGenome
   class API
     def initialize
       @host = 'http://startupgenome.co/api/2/'
-      @path = '/organizations'
       @auth_code = Rails.application.secrets.startup_genome_auth_code
       @location_slug = Rails.application.secrets.startup_genome_location_slug
       @conn = APIConnection.connect_via_faraday(@host)
@@ -14,7 +13,11 @@ module StartupGenome
     end
 
     def get_organizations
-      @conn.get url, {}, {'auth-code' => @auth_code}
+      @conn.get organizations_url, {}, {'auth-code' => @auth_code}
+    end
+
+    def get_people
+      @conn.get people_url, {}, {'auth-code' => @auth_code}
     end
 
     def update_organization(organization)
@@ -41,8 +44,14 @@ module StartupGenome
 
     private
 
-    def url
-      "#{@host}#{@location_slug}#{@path}"
+    def organizations_url
+      path = '/organizations'
+      "#{@host}#{@location_slug}#{path}"
+    end
+
+    def people_url
+      path = '/people'
+      "#{@host}#{@location_slug}#{path}"
     end
 
     # fields added here should match the structure expected by Startup Genome

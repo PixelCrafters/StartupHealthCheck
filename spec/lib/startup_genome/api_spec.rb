@@ -11,6 +11,14 @@ describe StartupGenome::API do
     end
   end
 
+  describe "#get_people" do
+    it "sends a success response" do
+      VCR.use_cassette 'startup_genome_api_get_people' do
+        expect(sg.get_people.status).to eq(200) 
+      end
+    end
+  end
+
   # TODO: change these to use faraday mocks
   describe "#new_organization" do
     it "sends a success response" do
