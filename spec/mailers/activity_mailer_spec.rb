@@ -6,7 +6,8 @@ describe ActivityMailer do
     let(:mail) { ActivityMailer.weekly_digest(user) }
  
     it 'renders the subject' do
-      expect(mail.subject).to eql('Your Email Digest for #{Date.today}')
+      date = I18n.localize(Date.today, format: :long)
+      expect(mail.subject).to eql("Your Email Digest for #{date}")
     end
  
     it 'renders the receiver email' do
