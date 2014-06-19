@@ -26,9 +26,10 @@ Rails.application.routes.draw do
 
   resources :profile_links, only: [:create, :update, :destroy]
 
-  get "tags/:tag", to: "organizations#index", as: :tag
   post "tag/:organization_id", to: "tags#create", as: "create_tag"
   delete "tag/:organization_id/:tag_id", to: "tags#destroy", as: "destroy_tag"
+  post "user_tag/:user_id", to: "tags#create_user_tag", as: "create_user_tag"
+  delete "user_tag/:user_id/:tag_id", to: "tags#destroy_user_tag", as: "destroy_user_tag"
 
   post ":organization_id/add_role", to: "organization_user_roles#create", as: "add_role"
   delete ":organization_id/remove_role/:id", to: "organization_user_roles#destroy", as: "remove_role"
