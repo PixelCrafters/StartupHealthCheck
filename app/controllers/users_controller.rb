@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :sign_in_before_claim, only: [:claim]
 
   def index
-    @users = User.all.page
+    @users = User.all.page(params[:page])  
   end
 
   def show
@@ -52,10 +52,14 @@ class UsersController < ApplicationController
 
   def claim
     @user = User.find(params[:id])
-    if @user.update!(claimed: true)
-      flash[:success] = "You have been successfully claimed this profile"
+    if @user.email.nil?
+      flash[:error] = "You've already claimed a profile"
     else
-      flash[:error] = "The profile could not be claimed"
+      if @user.update!(claimed: true)
+        flash[:success] = "You have been successfully claimed this profile"
+      else
+        flash[:error] = "The profile could not be claimed"
+      end
     end
     redirect_to user_path(@user)
   end

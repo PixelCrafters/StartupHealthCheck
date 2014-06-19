@@ -8,7 +8,7 @@ class OrganizationsController < ApplicationController
       @organizations = Organization.tagged_with(params[:tag]).page
 
     else
-      @organizations = Organization.all.page
+      @organizations = Organization.all.page(params[:page]) 
     end
   end
 
