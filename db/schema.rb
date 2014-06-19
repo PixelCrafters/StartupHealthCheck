@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618180415) do
+ActiveRecord::Schema.define(version: 20140619163237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,15 +141,17 @@ ActiveRecord::Schema.define(version: 20140618180415) do
   add_index "user_auth_services", ["uid"], name: "index_user_auth_services_on_uid", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string  "email"
-    t.string  "name"
-    t.string  "image"
-    t.boolean "email_verified",       default: false
-    t.boolean "email_digest",         default: true
-    t.string  "startup_genome_slug"
-    t.string  "startup_genome_image"
-    t.string  "startup_genome_url"
-    t.boolean "claimed",              default: false
+    t.string   "email"
+    t.string   "name"
+    t.string   "image"
+    t.boolean  "email_verified",       default: false
+    t.boolean  "email_digest",         default: true
+    t.string   "startup_genome_slug"
+    t.string   "startup_genome_image"
+    t.string   "startup_genome_url"
+    t.boolean  "claimed",              default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
