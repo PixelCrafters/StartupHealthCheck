@@ -1,5 +1,12 @@
-<%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.owner.name, user_path(activity.owner), class: "entity entity-user wr-link-founder" %>
-added tag 
-<%= link_to tag_name(activity), tag_path(tag_name(activity)), class: "entity entity-tag" if tag_name(activity) %>
-to 
-<%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
+<% if activity.owner.nil? %>
+  <%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-founder" %>
+  added tag
+  <%= link_to tag_name(activity), search_path(tag: {names: [tag_name(activity)]}), class: "entity entity-tag" if tag_name(activity) %>
+  to their profile
+<% else %>
+  <%= link_to "<i class='wr-icon wr-icon-founder-av'></i>".html_safe + activity.owner.name, user_path(activity.owner), class: "entity entity-user wr-link-founder" %>
+  added tag 
+  <%= link_to tag_name(activity), search_path(tag: {names: [tag_name(activity)]}), class: "entity entity-tag" if tag_name(activity) %>
+  to 
+  <%= link_to "<i class='wr-icon wr-icon-startup'></i>".html_safe + activity.trackable.name, activity.trackable, class: "entity entity-user wr-link-startup" %>
+<% end %>
