@@ -15,6 +15,8 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     session[:userinfo] = nil
     session[:current_connection] = nil
+    session[:claimed_user_id] = nil
+    reset_session
     redirect_to root_path
   end
 
