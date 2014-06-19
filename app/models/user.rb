@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include PublicActivity::Common
 
   searchkick
+  acts_as_taggable
 
   has_many :organization_user_roles
   has_many :user_auth_services
@@ -9,7 +10,8 @@ class User < ActiveRecord::Base
 
   def search_data
     {
-      name: name
+      name: name,
+      tag_names: tags.map(&:name)
     }
   end
 
