@@ -4,12 +4,7 @@ class OrganizationsController < ApplicationController
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
-    if params[:tag].present?
-      @organizations = Organization.tagged_with(params[:tag]).page
-
-    else
-      @organizations = Organization.all.order("name ASC").page(params[:page]) 
-    end
+    @organizations = Organization.all.order("name ASC").page(params[:page]) 
   end
 
   def show
