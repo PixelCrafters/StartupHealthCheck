@@ -62,6 +62,7 @@ class UsersController < ApplicationController
         flash[:error] = "The profile could not be claimed"
       end
     end
+    session[:claimed_user_id] = nil
     redirect_to user_path(@user)
   end
 
