@@ -1,0 +1,8 @@
+<div class="col-sm-10 no-buffer">
+  <%= form_tag create_user_tag_path(@user.id), class: "form-inline", role: "form" do %>
+    <div class="form-group">
+      <%= text_field_tag :tag_list, nil, class: "form-control" %>
+    </div>
+    <%= submit_tag "Add Tag", class: "btn btn-sm btn-default" %>
+  <% end %>
+</div>
