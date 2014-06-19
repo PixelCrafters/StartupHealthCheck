@@ -4,7 +4,7 @@
       <div class="tag-list">
         <% @organization.tags.each do |tag| %>
           <span class="label label-primary tag">
-            <%= link_to tag.name, tag_path(tag.name) %>
+            <%= link_to tag.name, search_path(tag: {names: [tag.name]}) %>
           </span>
         <% end %>
       </div>

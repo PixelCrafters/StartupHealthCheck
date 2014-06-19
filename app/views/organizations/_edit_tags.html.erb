@@ -9,7 +9,7 @@
               <div class="tag-list">
                 <% @organization.tags.each do |tag| %>
                   <span class="label label-primary tag">
-                    <%= link_to tag.name, tag_path(tag.name) %>
+                    <%= link_to tag.name, search_path(tag: {names: [tag.name]}) %>
                     <%= link_to '<span class="glyphicon glyphicon-remove"></span>
       '.html_safe, destroy_tag_path(@organization.id, tag.id), method: :delete, class: "remove-tag" %>
                   </span>

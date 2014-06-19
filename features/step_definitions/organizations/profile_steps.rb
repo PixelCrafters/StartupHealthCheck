@@ -45,7 +45,6 @@ end
 
 When(/^I edit the profile$/) do
   find('span.glyphicon-edit').click
-  expect(current_path).to eq edit_organization_path(@organization)
 end
 
 When(/^I add a profile link for "(.*?)" with name "(.*?)"$/) do |url, name|

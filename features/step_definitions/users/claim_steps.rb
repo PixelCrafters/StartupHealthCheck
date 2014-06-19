@@ -1,5 +1,6 @@
 Given(/^there is a user available$/) do
-  @user1 = FactoryGirl.create(:user, name: "Example User")
+  @user = FactoryGirl.create(:user, name: "Example User")
+  User.reindex
 end
 
 When(/^I claim the user profile$/) do
@@ -12,5 +13,5 @@ When(/^I visit the user profile page for "(.*?)"$/) do |user_name|
 end
 
 Then(/^I should own the profile$/) do
-  expect(UserAuthService.first.user).to eq(@user1)
+  expect(UserAuthService.first.user).to eq(@user)
 end

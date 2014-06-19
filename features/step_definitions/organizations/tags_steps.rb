@@ -15,10 +15,11 @@ Then(/^the new tag "(.*?)" should be applied to my organization$/) do |tag_name|
 end
 
 Then(/^I should see my organization when I browse by "(.*?)"$/) do |tag_name|
-  visit tag_path(@organization.reload.tags.first.name)
+  visit search_path(tag: {names: ["", @organization.reload.tags.first.name]})
   page.should have_content(@organization.name)
 end
 
 Then(/^I should not see the tag "(.*?)" on the organization profile$/) do |tag_name|
   expect(page).to_not have_content(tag_name)
 end
+  
