@@ -51,7 +51,8 @@ module StartupGenome
         startup_genome_slug: org_hash["slug"],
         url: org_hash["url"],
         founded: org_hash["founded"].to_i,
-        startup_genome_id: org_hash["organization_id"] }
+        startup_genome_id: org_hash["organization_id"],
+        image: org_hash["image"] }
     end
   end
 end
