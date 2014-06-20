@@ -23,8 +23,13 @@
   padding: 20px;
 }
 
+.top-header{  
+  margin-bottom: 15px;
+}
+
 .big-text{
-  font-size: 15pt;
+  font-size: 14pt;
+  font-weight: bold;
 }
 
 .bg-primary a{
@@ -73,10 +78,12 @@ a.edit{
 
 #tags{
   margin-bottom: 15px;
+  height: 160px;
 }
 
 .tag{
   margin-right: 3px;
+  margin-bottom: 5px !important;
   font-size: 11pt !important;
 }
 
@@ -88,7 +95,8 @@ a.edit{
   color: #FFF;
 }
 
-.tag-list{
+.tag a:visited{
+  color: #FFF;
 }
 
 a.remove-tag{
@@ -120,16 +128,6 @@ a.remove-tag{
   margin-left: 5px;
 }
 
-.footer{
-  position: relative;
-  width: 100%;
-  margin-top: 100px;
-  height: 150px;
-  clear:both;
-  box-shadow: inset 0 1px 2px rgba(146, 170, 167, 0.5);
-  border-top: 1px solid #ccc;
-}
-
 /*** Activity Styles ***/
 
 .time-ago{
@@ -142,4 +140,15 @@ a.remove-tag{
 
 span.glyphicon-user{
   font-size: 3em;
+}
+
+.user_details{
+  margin-bottom: 10px;
+}
+
+.placeholder{
+  padding: 30px !important;
+  box-shadow: 0 1px 1px 1px rgba(146, 170, 167, 0.5);
+  border-top: 1px solid #ccc;
+  margin: 0 10px 10px 10px;
 }
