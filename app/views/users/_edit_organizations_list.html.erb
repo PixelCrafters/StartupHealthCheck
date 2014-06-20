@@ -1,34 +1,34 @@
 <div class="row">
-  <span class="big-text">ORGANIZATIONS</span>
-  <%= link_to "Add New Organization", new_organization_path, class: "pull-right" %>
-</div>
-<% current_user.organizations.each do |org| %>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h5><%= link_to org.name, organization_path(org) %></h5>
-          <table class="table table-striped roles-table">
-            <% org.organization_user_roles.each do |role| %>
-              <tr>
-                <td>
-                  <%= role.name %>
-                </td>
-                <td>
-                  <%= link_to '<span class="glyphicon glyphicon-remove"></span>
-          '.html_safe, remove_role_path(org.id, role.id), method: :delete, class: "remove-role right" %>
-                </td>
-              </tr>
-            <% end %>
-          </table>
-          <div class="col-sm-4">
-            <%= form_tag add_role_path(org.id), method: :post, role: "form", class: "form-inline" do %>
-              <%= collection_select :role, :id, Role.all, :id, :name, {}, {class: "form-control"}%>
-              <%= submit_tag "Add Role", class: "btn btn-default" %>
-            <% end %>  
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span class="big-text">ORGANIZATIONS</span>
+      <%= link_to "Add New Organization", new_organization_path, class: "pull-right" %>
+      <% current_user.organizations.each do |org| %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h5><%= link_to org.name, organization_path(org) %></h5>
+            <table class="table table-striped roles-table">
+              <% org.organization_user_roles.each do |role| %>
+                <tr>
+                  <td>
+                    <%= role.name %>
+                  </td>
+                  <td>
+                    <%= link_to '<span class="glyphicon glyphicon-remove"></span>
+            '.html_safe, remove_role_path(org.id, role.id), method: :delete, class: "remove-role pull-right" %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+            <div class="col-sm-6">
+              <%= form_tag add_role_path(org.id), method: :post, role: "form", class: "form-inline" do %>
+                <%= collection_select :role, :id, Role.all, :id, :name, {}, {class: "form-control"}%>
+                <%= submit_tag "Add Role", class: "btn btn-default" %>
+              <% end %>  
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
