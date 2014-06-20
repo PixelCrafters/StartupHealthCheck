@@ -1,16 +1,16 @@
 <div class="row">
-  <span class="big-text">EMAIL SETTINGS</span>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <div class="panel panel-default">
-      <div class="panel-body">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span class="big-text">EMAIL SETTINGS</span>
+      <div class="panel panel-default">
+        <div class="panel-body">
         <h5>Weekly Digest</h5>
         <%= form_tag toggle_email_digest_subscription_path(current_user), method: :post, remote: true, id: 'toggle-email-digest-subscription', role: 'form' do %>
           <div class="checkbox">
             <%= check_box_tag :email_digest, current_user.email_digest?, current_user.email_digest? %> Subscribe?
           </div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
