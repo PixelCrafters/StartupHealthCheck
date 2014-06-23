@@ -1,7 +1,9 @@
 <%= render "organizations/claim_header" %>
+<br />
+<%= render "organizations/edit_mode" %>
 <%= render "organizations/profile_header" %>
 <%= render "organizations/show_tags" if @organization.tags.any? %> 
-<%= render "organizations/show_profile_links" %>
-<%= render "organizations/show_types" %>
-<%= render "organizations/profile_description" %>
-<%= render "organizations/show_claimant" %>
+<%= render "organizations/show_profile_links" if @organization.profile_links.any? %>
+<%= render "organizations/show_types" if @organization.types.any? %>
+<%= render "organizations/profile_description" if @organization.description? %>
+<%= render "organizations/show_claimant" if @organization.claimed? %>

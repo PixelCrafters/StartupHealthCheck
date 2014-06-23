@@ -1,24 +1,21 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div id="profile-header">
-      <h3>
-        <%= @organization.name %>
-        <%= render "organizations/edit_mode" %>
-      </h3>
-      <p><%= @organization.headline %></p>
-      <% if @organization.main_address %>
-        <span class="left"><%= @organization.main_address.address1 %>, <%= @organization.main_address.city %>, <%= @organization.main_address.state %>, <%= @organization.main_address.zip %></span>
-      <% end %>
-      <br /><br />
-      <% if status == "active" %>
-        <span class="label label-success left status"><%= status.capitalize %></span>
-      <% else %>
-        <span class="label label-danger left status"><%= status.capitalize %></span>
-      <% end %>
-      <% if @organization.hiring? %>
-        <span id="label-hiring" class="label label-success left status left-buffer">Hiring</span>
-      <% end %>
-    </div>
-    <br /><br />
+<div class="col-sm-4">
+  <div class="header-image">
+    <% if @organization.image.present? %>
+      <%= image_tag @organization.image, height: "220" %>
+    <% elsif @organization.image.present? %>
+      <%= image_tag @organization.image, height: "220", class: "pull-left" %>
+    <% else %>
+      <span class="glyphicon glyphicon-user"></span>
+    <% end %>
   </div>
+</div>
+<div class="col-sm-8">
+  <span class="big-text"><%= @organization.name %></span>
+  <p><%= @organization.headline %></p>
+  <% if @organization.main_address %>
+    <div class="pull-left"><%= display_address %></div>
+  <% end %>
+  <% if @organization.hiring? %>
+    <span id="label-hiring" class="label label-success pull-left status">Hiring</span>
+  <% end %>
 </div>
