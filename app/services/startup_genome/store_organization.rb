@@ -23,7 +23,6 @@ module StartupGenome
       msg = ""
       if organization.new_record?
         msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
-        organization.create_activity key: "organization.create"
       elsif !organization.claimed?
         msg = organization.update!(data) ? "Successfully created/updated #{org_hash['name']}" : "Failed to update #{org_hash['name']}"
       end
