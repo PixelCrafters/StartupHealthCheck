@@ -94,7 +94,7 @@ Then(/^I should see my new description$/) do
 end
 
 When(/^I add an organization "(.*?)"$/) do |organization_name|
-  click_link "Add New Organization"
+  click_link "Create New Organization"
   fill_in "organization_name", with: "MyCompany"
   fill_in "organization_headline", with: "MyCompany headline"
   fill_in "organization_description", with: "The description of MyCompany"
