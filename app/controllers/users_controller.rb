@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   def claim
     @user = User.find(params[:id])
     if @user.email.nil?
-      flash[:error] = "You've already claimed a profile"
+      flash[:error] = "You already have a profile."
     else
       if @user.update!(claimed: true)
         flash[:success] = "You have been successfully claimed this profile"
