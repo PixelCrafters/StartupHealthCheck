@@ -63,7 +63,7 @@ class UsersController < ApplicationController
       end
     end
     session[:claimed_user_id] = nil
-    redirect_to user_path(@user)
+    redirect_to @user
   end
 
   private
