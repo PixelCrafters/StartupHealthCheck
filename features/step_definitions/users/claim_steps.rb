@@ -4,7 +4,7 @@ Given(/^there is a user available$/) do
 end
 
 When(/^I claim the user profile$/) do
-  click_link "click here"
+  click_link "clicking here"
 end
 
 When(/^I visit the user profile page for "(.*?)"$/) do |user_name|

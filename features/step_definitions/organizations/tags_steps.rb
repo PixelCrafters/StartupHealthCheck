@@ -4,6 +4,7 @@ Given(/^I add a new tag "(.*?)"$/) do |tag_name|
 end
 
 When(/^I remove the tag$/) do
+  sleep 1
   within(".tag-list") do
     first("a.remove-tag").click
   end
@@ -15,6 +16,7 @@ Then(/^the new tag "(.*?)" should be applied to my organization$/) do |tag_name|
 end
 
 Then(/^I should see my organization when I browse by "(.*?)"$/) do |tag_name|
+  Organization.reindex
   tag_name = @organization.reload.tags.first.name
   visit search_path(tag: {names: [tag_name]})
   page.should have_content(@organization.name)

@@ -39,9 +39,9 @@ end
 
 Then(/^I should see (\d+) result\(s\)$/) do |count|
   if count.to_i > 0
-    page.should have_css("#organizations > .search-result", :count => count.to_i)
+    page.should have_css(".search-result", :count => count.to_i)
   else
-    page.should_not have_css("#organizations")
+    page.should_not have_css(".search-result")
   end
 end
 

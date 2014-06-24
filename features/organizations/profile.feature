@@ -44,8 +44,10 @@ Feature: Organization's profile
     Given I am an admin user
     When I edit the profile
     And I check the hiring box
+    And I visit the profile page
     Then the organization should be hiring
-    When I uncheck the hiring box
+    When I edit the profile
+    And I uncheck the hiring box
     Then the organization should not be hiring
 
   @javascript 

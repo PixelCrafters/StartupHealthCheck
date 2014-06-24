@@ -19,7 +19,6 @@ When(/^I visit the profile page$/) do
   FactoryGirl.create(:address, organization_id: @organization.id)
   visit organization_path(@organization)
   expect(current_path).to eq organization_path(@organization)
-  expect(page).to have_css('#profile-header')
 end
 
 Then(/^I should see the organization's profile$/) do
@@ -102,9 +101,7 @@ When(/^I add an organization "(.*?)"$/) do |organization_name|
 end
 
 Then(/^I should see the new company info$/) do
-  within('a.edit') do
-    find('span.glyphicon-remove-circle').click
-  end
+  find('span.glyphicon-remove-circle').click
   expect(page).to have_content("MyCompany")
   expect(page).to have_content("MyCompany headline")
   expect(page).to have_content("The description of MyCompany")

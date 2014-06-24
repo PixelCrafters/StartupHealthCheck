@@ -5,7 +5,6 @@ class TypesController < ApplicationController
     type = Type.find(params[:type][:id])
     begin
       @organization.types << type
-      Organization.reindex
       flash[:success] = "You've successfully added the type #{type.name}"
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "You've already added type #{type.name} to #{@organization.name}"
