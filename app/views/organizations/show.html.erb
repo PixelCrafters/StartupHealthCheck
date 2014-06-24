@@ -15,6 +15,7 @@
   </div>
   <div class="col-sm-8">
     <%= render "organizations/profile_header" %>
+    <%= render "organizations/show_hiring" if @organization.hiring? %>
     <%= render "organizations/show_tags" if @organization.tags.any? %> 
     <%= render "organizations/show_types" if @organization.types.any? %>
     <%= render "organizations/profile_description" if @organization.description? %>
