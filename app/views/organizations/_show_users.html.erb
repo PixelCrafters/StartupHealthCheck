@@ -1,16 +1,10 @@
-<div class="row">
-  <div id="people">
-  <% @organization.organization_user_roles.each do |role| %>
-    <%= image_tag role.user.image %>
-    <%= role.name %>: <%= link_to role.user.name, user_path(role.user) %>
+<h4>PEOPLE</h4>
+<% @organization.organization_user_roles.each do |role| %>
+  <div class="person pull-left">
+  <%= image_tag role.user.image, height: "50", class: "pull-left" %>
+  <%= role.name %><br /><%= link_to role.user.name, user_path(role.user) %>
+  <% if user_is_current_user?(role.user) || organization_admin_user? %>
+    <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, remove_role_path(@organization.id, role.id), method: :delete, class: "remove-role remove-role-org-page pull-right" %>
   <% end %>
-</div>
-<div class="row">
-  <p>Are you affiliated with this company? Add your role:</p>
-  <div class="col-sm-4">
-    <%= form_tag add_role_path(@organization.id), method: :post, role: "form", class: "form-inline" do %>
-      <%= collection_select :role, :id, Role.all, :id, :name, {}, {class: "form-control"}%>
-      <%= submit_tag "Add Role", class: "btn btn-default" %>
-    <% end %>  
   </div>
-</div>
+<% end %>

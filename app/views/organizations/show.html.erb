@@ -1,11 +1,29 @@
-<%= render "organizations/claim_header" %>
-<br />
-<%= render "organizations/edit_mode" %>
-<%= render "organizations/profile_header" %>
-<%= render "organizations/show_tags" if @organization.tags.any? %> 
-<%= render "organizations/show_profile_links" if @organization.profile_links.any? %>
-<%= render "organizations/show_types" if @organization.types.any? %>
-<%= render "organizations/profile_description" if @organization.description? %>
-<%= render "organizations/show_users" if @organization.users.any? %>
-<%= render "organizations/show_claimant" if @organization.claimed? %>
+<div class="row">
+  <%= render "organizations/claim_header" %>
+</div>
+<div class="row">
+  <%= render "organizations/show_roles_form_header" %>
+</div>
+<div class="row">
+  <%= render "organizations/edit_mode" %>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <%= render "organizations/image" %>
+    <%= render "organizations/show_address" if @organization.main_address.present? %>
+    <%= render "organizations/show_profile_links" if @organization.profile_links.any? %>
+  </div>
+  <div class="col-sm-8">
+    <%= render "organizations/profile_header" %>
+    <%= render "organizations/show_tags" if @organization.tags.any? %> 
+    <%= render "organizations/show_types" if @organization.types.any? %>
+    <%= render "organizations/profile_description" if @organization.description? %>
+    <%= render "organizations/show_users" if @organization.organization_user_roles.any? %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <%= render "organizations/show_claimant" if @organization.claimed? %>
+  </div>
+</div>
 

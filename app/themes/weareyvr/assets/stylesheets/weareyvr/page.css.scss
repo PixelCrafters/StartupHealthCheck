@@ -57,6 +57,14 @@ div.submit{
 
 .claim-header{
   padding: 15px;
+  background-color: #10988b !important;
+  margin-bottom: 15px;
+  color: #FFF !important;
+}
+
+.claim-header a{
+  color: #FFF !important;
+  text-decoration: underline !important;
 }
 
 .small-field{
@@ -78,7 +86,6 @@ a.edit{
 
 #tags{
   margin-bottom: 15px;
-  height: 160px;
 }
 
 .tag{
@@ -103,6 +110,10 @@ a.remove-tag{
   text-decoration: none !important;
 }
 
+a.remove-role-org-page{
+  color: red;
+}
+
 .check{
   margin-left: 20px !important;
 }
@@ -117,6 +128,15 @@ a.remove-tag{
 
 .large-icon{
   font-size: 18pt;
+}
+
+.person{
+  width: 200px;
+  margin:5px;
+}
+
+.person img{
+  margin-right: 5px;
 }
 
 /*** Search Styles ***/
