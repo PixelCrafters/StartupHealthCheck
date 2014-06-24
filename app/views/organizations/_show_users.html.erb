@@ -1,11 +1,16 @@
-  <div class="col-sm-8">
-    <div id="people">
-      <% @organization.users.each do |user| %>
-        <%= image_tag user.image %>
-        <%= link_to user.name, user_path(user) %>
-        <% if user.is_admin?(@organization) %>
-          (Admin) 
-        <% end %>
-      <% end %>
-    </div>
+<div class="row">
+  <div id="people">
+  <% @organization.organization_user_roles.each do |role| %>
+    <%= image_tag role.user.image %>
+    <%= role.name %>: <%= link_to role.user.name, user_path(role.user) %>
+  <% end %>
+</div>
+<div class="row">
+  <p>Are you affiliated with this company? Add your role:</p>
+  <div class="col-sm-4">
+    <%= form_tag add_role_path(@organization.id), method: :post, role: "form", class: "form-inline" do %>
+      <%= collection_select :role, :id, Role.all, :id, :name, {}, {class: "form-control"}%>
+      <%= submit_tag "Add Role", class: "btn btn-default" %>
+    <% end %>  
   </div>
+</div>
