@@ -111,7 +111,7 @@ a.remove-tag{
 }
 
 a.remove-role-org-page{
-  color: red;
+  color: red !important;
 }
 
 .check{
@@ -131,12 +131,19 @@ a.remove-role-org-page{
 }
 
 .person{
-  width: 200px;
+  width: 225px;
+  border: 1px solid #ccc;
   margin:5px;
+  padding:5px;
+  border-radius: 4px;
 }
 
 .person img{
   margin-right: 5px;
+}
+
+.chunk{
+  margin-bottom: 20px;
 }
 
 /*** Search Styles ***/
