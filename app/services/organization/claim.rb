@@ -11,6 +11,7 @@ class Organization::Claim
   def call
     if organization.update(claimed: true)
       organization.users << current_user
+      organization.update(admin_id: current_user.id)
       organization.create_activity key: "organization.claim", owner: current_user
     end
     organization
