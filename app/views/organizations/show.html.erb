@@ -6,4 +6,6 @@
 <%= render "organizations/show_profile_links" if @organization.profile_links.any? %>
 <%= render "organizations/show_types" if @organization.types.any? %>
 <%= render "organizations/profile_description" if @organization.description? %>
+<%= render "organizations/show_users" if @organization.users.any? %>
 <%= render "organizations/show_claimant" if @organization.claimed? %>
+
