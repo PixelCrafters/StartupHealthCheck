@@ -8,15 +8,15 @@
             <span class="pull-right"><%= link_to "Create New Organization", new_organization_path, class: "right" %></span>
           <% end %>
         </div>
-        <% @user.organizations.each do |org| %>
-          <div>
-            <span class="wr-icon wr-icon-startup wr-icon-xl placeholder"></span>
-            <%= link_to org.name, organization_path(org) %>
-              <% if user_is_current_user? %>
-                <% current_user.current_roles(org).each do |role| %>
-                (<%= role.name %>)
-              <% end %>
+        <% @user.organization_user_roles.each do |role| %>
+          <div class="role pull-left">
+            <% if role.organization.image.present? %>
+              <%= image_tag role.organization.image, height: "50", class: "pull-left" %>
+            <% else %>
+              <span class="wr-icon wr-icon-startup wr-icon-xl placeholder"></span>
             <% end %>
+            <%= link_to role.organization.name, organization_path(role.organization) %>  
+            <%= role.name %>      
           </div>  
         <% end %>
       </div>

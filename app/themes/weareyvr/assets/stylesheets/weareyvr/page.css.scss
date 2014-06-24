@@ -130,7 +130,7 @@ a.remove-role-org-page{
   font-size: 18pt;
 }
 
-.person{
+.person, .role{
   width: 225px;
   border: 1px solid #ccc;
   margin:5px;
@@ -138,7 +138,7 @@ a.remove-role-org-page{
   border-radius: 4px;
 }
 
-.person img{
+.person img, .role img{
   margin-right: 5px;
 }
 
