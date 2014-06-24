@@ -19,7 +19,6 @@ Feature: Organization's profile
   Scenario: User claims organization's profile
     When I visit the profile page
     And I claim the profile
-    And I login with "Twitter"
     And I submit an email address
     Then I should be the organization's admin user
     And I should see the organization on my profile

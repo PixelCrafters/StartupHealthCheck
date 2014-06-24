@@ -1,7 +1,6 @@
 Given "I am an admin user" do
   step %|I visit the profile page|
   step %|I claim the profile|
-  step %|I login with "Twitter"|
   step %|I submit an email address|
   step %|I visit the profile page|
 end
@@ -32,6 +31,7 @@ end
 When(/^I claim the profile$/) do
   expect(page).to have_css(".claim-header")
   click_link "click here"
+  expect(page).to have_content("claimed successfully")
 end
 
 Then(/^I should be the organization's admin user$/) do
