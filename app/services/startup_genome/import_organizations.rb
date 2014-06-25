@@ -3,10 +3,12 @@ module StartupGenome
     include Service
 
     def call
-      results = StartupGenome::API.new.get_organizations
-      persist(JSON.parse(results.body))
-
-      # TODO: Add Completion Summary "Inserted #{x} and updated #{y}"
+      offset = 0
+      begin
+        results = StartupGenome::API.new.get_organizations(offset)
+        persist(JSON.parse(results.body))
+        offset = offset + 100
+      end while JSON.parse(results.body).count == 100
     end
   
     private
