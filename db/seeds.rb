@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Role.create!([{name: 'Employee'}, {name: 'Founder'}])
+Role.create!([{name: 'Employee'}, {name: 'Founder'}, {name: 'Freelancer/Contractor'}, {name: 'Board Member'}, {name: 'Investor'}, {name: 'Service Provider'}, {name: 'Consultant'}, {name: 'Advisor'}, {name: 'Client'}, {name: 'User'}])
 
 Type.create!([
   {name: "Startups"},
