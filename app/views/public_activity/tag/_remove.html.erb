@@ -4,10 +4,11 @@
 
     removed tag 
 
-    <%= link_to activity.parameters[:tag_name], tag_url(activity.parameters[:tag_name]) if activity.parameters[:tag_name] %>
+    <%= link_to activity.parameters[:tag_name], search_url(tag: {names: [activity.parameters[:tag_name]]}) if activity.parameters[:tag_name] %>
      
     from
 
     <%= link_to activity.trackable.name, organization_url(activity.trackable) %>
   </div>
 </div>
+
