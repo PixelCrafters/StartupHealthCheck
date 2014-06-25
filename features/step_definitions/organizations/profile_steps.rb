@@ -21,6 +21,7 @@ When(/^I visit the profile page$/) do
 end
 
 Then(/^I should see the organization's profile$/) do
+  sleep 1
   expect(page).to have_content(@organization.name)
 end
 
@@ -39,6 +40,7 @@ Then(/^I should be the organization's admin user$/) do
 end
 
 Then(/^I should see the organization on my profile$/) do
+  sleep 1
   page.should have_content(@organization.name)
 end
 
@@ -76,10 +78,12 @@ When(/^I uncheck the hiring box$/) do
 end
 
 Then(/^the organization should be hiring$/) do
+  sleep 1
   page.should have_css('#label-hiring')
 end
 
 Then(/^the organization should not be hiring$/) do
+  sleep 1
   page.should_not have_css('#label-hiring')
 end
 

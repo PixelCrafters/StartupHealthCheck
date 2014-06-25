@@ -34,7 +34,7 @@ class TagsController < ApplicationController
   end
 
   def destroy_user_tag
-    if Tag::Destroy.call(params[:tag_id], nil, current_user)
+    if Tag::Destroy.call(params[:tag_id], current_user, current_user)
       flash[:success] = "The tag was successfully removed"
     else
       flash[:error] = "There was a problem removing your tag"

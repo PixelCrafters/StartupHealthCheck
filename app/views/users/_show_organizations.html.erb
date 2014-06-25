@@ -8,6 +8,17 @@
             <span class="pull-right"><%= link_to "Create New Organization", new_organization_path, class: "right" %></span>
           <% end %>
         </div>
+        <% @user.organizations.each do |organization| %>
+          <div class="role pull-left">
+            <% if organization.image.present? %>
+              <%= image_tag organization.image, height: "50", class: "pull-left" %>
+            <% else %>
+              <span class="wr-icon wr-icon-startup wr-icon-xl placeholder"></span>
+            <% end %>
+            <%= link_to organization.name, organization_path(organization) %><br />
+            Admin
+          </div>  
+        <% end %>
         <% @user.organization_user_roles.each do |role| %>
           <div class="role pull-left">
             <% if role.organization.image.present? %>
@@ -15,7 +26,7 @@
             <% else %>
               <span class="wr-icon wr-icon-startup wr-icon-xl placeholder"></span>
             <% end %>
-            <%= link_to role.organization.name, organization_path(role.organization) %>  
+            <%= link_to role.organization.name, organization_path(role.organization) %><br />
             <%= role.name %>      
           </div>  
         <% end %>
