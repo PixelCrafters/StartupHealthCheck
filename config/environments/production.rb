@@ -82,7 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = {
-    host: "weareyvr.herokuapp.com",
+    host: "weareyvr.ca",
     only_path: false
   }
   config.action_mailer.smtp_settings = {
@@ -92,7 +92,7 @@ Rails.application.configure do
     user_name: Rails.application.secrets.mandrill_username,
     password:  Rails.application.secrets.mandrill_password,
     authentication: 'login',
-    domain: 'weareyvr.herokuapp.com'
+    domain: 'weareyvr.ca'
   }
   config.action_mailer.raise_delivery_errors = true
 end
