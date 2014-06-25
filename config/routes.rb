@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "/search", to: "search#index"
   get "/search/organizations", to: "search#search_organizations"
-  get "/search/people", to: "search#search_people"
+  get "/search/people", to: "search#search_users", as: "search_users"
 
 
   get "/about", to: 'pages#about'
