@@ -1,0 +1,10 @@
+<h4>PEOPLE</h4>
+<% @organization.organization_user_roles.each do |role| %>
+  <div class="person pull-left">
+  <%= image_tag role.user.image, height: "50", class: "pull-left" %>
+  <%= role.name %><br /><%= link_to role.user.name, user_path(role.user) %>
+  <% if user_is_current_user?(role.user) || organization_admin_user? %>
+    <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, remove_role_path(@organization.id, role.id), method: :delete, class: "remove-role remove-role-org-page pull-right" %>
+  <% end %>
+  </div>
+<% end %>

@@ -21,6 +21,3 @@ Given(/^I submit an email address$/) do
   click_button "Submit"
 end
 
-Then(/^my email address should be present$/) do
-  expect(page).to have_content("jncoops7@live.com")
-end

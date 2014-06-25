@@ -1,0 +1,9 @@
+<% if current_user.present? %>
+  <div class="alert alert-info">
+    <p>Are you affiliated with this company? Add your role:</p>
+    <%= form_tag add_role_path(@organization.id), method: :post, role: "form", class: "form-inline" do %>
+      <%= collection_select :role, :id, Role.all, :id, :name, {}, {class: "form-control"}%>
+      <%= submit_tag "Add Role", class: "btn btn-default" %>
+    <% end %>  
+  </div>
+<% end %>

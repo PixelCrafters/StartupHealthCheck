@@ -8,7 +8,6 @@ When(/^I remove the tag$/) do
   within(".tag-list") do
     first("a.remove-tag").click
   end
-  sleep 2
 end
 
 Then(/^the new tag "(.*?)" should be applied to my organization$/) do |tag_name|

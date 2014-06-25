@@ -41,4 +41,8 @@ class User < ActiveRecord::Base
   def self.create_access_token(user)
     verifier.generate(user.id)
   end
+
+  def is_admin?(organization)
+    id == organization.admin_id
+  end
 end

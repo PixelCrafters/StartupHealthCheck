@@ -1,11 +1,9 @@
-  <div class="col-sm-8">
-    <div id="tags">
-      <div class="tag-list">
-        <% @organization.tags.each do |tag| %>
-          <span class="label label-primary tag pull-left">
-            <%= link_to tag.name, search_path(tag: {names: [tag.name]}) %>
-          </span>
-        <% end %>
-      </div>
-    </div>
+<div id="tags">
+  <div class="tag-list">
+    <% @organization.tags.each do |tag| %>
+      <span class="label label-primary tag pull-left">
+        <%= link_to tag.name, search_path(tag: {names: [tag.name]}) %>
+      </span>
+    <% end %>
   </div>
+</div>
