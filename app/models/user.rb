@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
 
   def self.read_access_token(signature)
     id = verifier.verify(signature)
-    User.where(id: id).first
+    User.find(id)
     rescue ActiveSupport::MessageVerifier::InvalidSignature
     nil
   end

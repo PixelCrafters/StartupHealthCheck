@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
   def check_if_signed_in
     if current_user.nil?
       session[:original_url] = request.original_url
-      redirect_to login_path 
-      return
+      redirect_to login_path
+      return false # cancel action
     end
   end
 

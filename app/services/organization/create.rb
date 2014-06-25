@@ -9,11 +9,15 @@ class Organization::Create
   end
 
   def call
-    @organization = Organization.create(params)
-    if @organization.persisted?
-      @organization.users << current_user
-      @organization.create_activity key: "organization.create", parameters: {org_name: @organization.name}
+    organization = Organization.new(params)
+
+    Organization.transaction do
+      if organization.save
+        organization.users << current_user
+        organization.create_activity key: "organization.create", parameters: {org_name: organization.name}
+      end
     end
-    @organization
+
+    organization
   end
 end

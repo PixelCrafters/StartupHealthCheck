@@ -7,8 +7,6 @@ def mock_auth_hash
 end
 
 Given(/^I login with "(.*?)"$/) do |auth_service|
-  sleep 5
-  mock_auth_hash
   visit login_path
   expect(page).to have_css(".auth-btns")
 end
