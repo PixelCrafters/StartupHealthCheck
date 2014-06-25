@@ -7,7 +7,7 @@ describe ActivityMailer do
  
     it 'renders the subject' do
       date = I18n.localize(Date.today, format: :long)
-      expect(mail.subject).to eql("Your Email Digest for #{date}")
+      expect(mail.subject).to eql("Your #{Rails.application.secrets.application_name} Email Digest for #{date}")
     end
  
     it 'renders the receiver email' do
