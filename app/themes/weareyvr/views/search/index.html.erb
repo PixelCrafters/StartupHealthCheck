@@ -2,7 +2,13 @@
 
 <div class="row">
   <div class="col-sm-10 col-sm-offset-1">
-    <% if @results.present? %>
+    <% if @results.empty? %>
+      <h4>Sorry! No results.</h4>
+    <% elsif @results.present? %>
+      <% if params[:query] %>
+        <h4>Results for "<%= params[:query] %>"</h4>
+        <br />
+      <% end %>
       <div id="organizations">
         <% @results.each do |result| %>
           <p class="search-result">
@@ -22,7 +28,6 @@
     <% end %>
   </div>
 </div>  
-
 
 <div class="row">
   <div class="col-sm-10">

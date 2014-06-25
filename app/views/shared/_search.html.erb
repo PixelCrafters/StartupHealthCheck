@@ -6,8 +6,8 @@
           <%= text_field_tag "query", params[:query], class: "form-control input-lg search", type: "search", placeholder: "Search", id: "home-page-search" %>
         </div>
         <div class="form-group">
-          <%= collection_select :type, :ids, Type.all, :id, :name, {}, {class: "form-control multiselect-types", multiple: true, value: 'Filter by Type' } %>
-          <%= collection_select :tag, :names, ActsAsTaggableOn::Tag.all, :name, :name, {}, {class: "form-control multiselect-tags", multiple: true, value: 'Filter by Type' } %>
+          <%= collection_select :types, :ids, Type.all, :id, :name, {}, {class: "form-control multiselect-types", multiple: true, value: 'Filter by Type' } %>
+          <%= collection_select :tags, :names, ActsAsTaggableOn::Tag.all, :name, :name, {}, {class: "form-control multiselect-tags", multiple: true, value: 'Filter by Type' } %>
         </div>
         <div class="submit">
           <%= submit_tag "Search", class: "btn btn-lg btn-primary search-btn" %>
