@@ -24,7 +24,7 @@ class TagsController < ApplicationController
 
   def create_user_tag
     params[:tag_list].split(',').each do |tag_name|
-      if Tag::Create.call(tag_name, nil, current_user)
+      if Tag::Create.call(tag_name, current_user, current_user)
         flash[:success] = "Your tag was saved successfully"
       else
         flash[:error] = "There was a problem saving your tag."

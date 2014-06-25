@@ -11,7 +11,6 @@ Feature: Organization Roles
   Scenario: Organization Admin adds a role
     When I visit the profile page
     And I claim the profile
-    And I login with "Twitter"
     And I submit an email address
     And I edit my profile page
     And I add my role "Employee"
@@ -22,7 +21,6 @@ Feature: Organization Roles
   Scenario: Organization Admin removes a role
     When I visit the profile page
     And I claim the profile
-    And I login with "Twitter"
     And I submit an email address
     And I edit my profile page
     And I add my role "Employee"

@@ -33,7 +33,7 @@ gem 'auth0'
 gem 'jwt', '0.1.11' #to fix dependency issue with jwt on heroku 
 gem 'acts-as-taggable-on', '3.2.3'
 gem 'public_activity'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'themes_on_rails'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 

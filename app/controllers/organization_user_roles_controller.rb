@@ -15,7 +15,7 @@ class OrganizationUserRolesController < ApplicationController
   end
 
   def destroy
-    if OrganizationUserRole.find(params[:id]).destroy!
+    if OrganizationUserRole.find(params[:id]).destroy
       flash[:success] = "Your role was deleted successfully!"
     else
       flash[:success] = "There was a problem deleting your role."

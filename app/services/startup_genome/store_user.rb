@@ -24,10 +24,10 @@ module StartupGenome
     end
 
     def build_data_hash(user_hash)
-      { name: user_hash["name"],
-        startup_genome_image: user_hash["image"],
-        startup_genome_slug: user_hash["slug"],
-        startup_genome_url: user_hash["url"] }
+      { name: user_hash.fetch("name"),
+        startup_genome_image: user_hash.fetch("image"),
+        startup_genome_slug: user_hash.fetch("slug"),
+        startup_genome_url: user_hash.fetch("url") }
     end
   end
 end

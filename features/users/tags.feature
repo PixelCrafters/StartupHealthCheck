@@ -8,7 +8,6 @@ Feature: User's tags
     Given there is a user available
     And I visit the user profile page for "Example User"
     And I claim the user profile
-    And I login with "Twitter"
     And I submit an email address
     And I edit the profile
 

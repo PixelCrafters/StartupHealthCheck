@@ -21,7 +21,7 @@ class OrganizationsController < ApplicationController
     else
       flash[:error] = "There was a problem adding your organization"
     end
-    redirect_to edit_organization_path(@organization)
+    redirect_to [:edit, @organization]
   end
 
   def claim
@@ -30,16 +30,17 @@ class OrganizationsController < ApplicationController
     else
       @organization = Organization::Claim.call(current_user, @organization)
       if @organization.claimed?
+        flash[:success] = "The organization was claimed successfully"
         redirect_to user_path(current_user)
       else
-        redirect_to organization_path(@organization)
+        redirect_to @organization
       end
     end
   end
 
   def edit
     @profile_link = ProfileLink.new
-    @organization.main_address ? @address = @organization.main_address : @address = Address.new
+    @address = @organization.main_address || Address.new
   end
 
   def update

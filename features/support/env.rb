@@ -39,6 +39,7 @@ end
 Capybara.default_wait_time = 5
 
 Before do
+  mock_auth_hash
   Capybara.reset_session!
 end
 
