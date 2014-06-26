@@ -4,6 +4,9 @@
   border-radius: 0;
   border-style: none;
   border-top-style: solid;
+}
+
+#activity-feed .panel:first-of-type {
   margin-top: 23px;
 }
 #activity-feed .panel > .panel-body {
