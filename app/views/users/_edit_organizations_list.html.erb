@@ -1,7 +1,7 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-body">
-      <span class="big-text">ORGANIZATIONS</span>
+      <h3>Organizations</h3>
       <%= link_to "Create New Organization", new_organization_path, class: "pull-right" %>
       <% current_user.organizations.each do |org| %>
         <div class="panel panel-default">

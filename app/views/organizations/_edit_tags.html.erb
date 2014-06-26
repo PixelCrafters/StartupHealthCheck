@@ -1,15 +1,15 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-body">
-      <h4>TAGS</h4>
+      <h3>Tags</h3>
       <table class="table table-striped tags-table">
         <% if @organization.tags.any? %>
           <tr>
             <td>
               <div class="tag-list">
                 <% @organization.tags.each do |tag| %>
-                  <span class="label label-primary tag">
-                    <%= link_to tag.name, search_path(tags: {names: [tag.name]}) %>
+                  <span class="pull-left">
+                    <%= link_to tag.name, search_path(tags: {names: [tag.name]}), class: "entity entity-tag" %>
                     <%= link_to '<span class="glyphicon glyphicon-remove"></span>
       '.html_safe, destroy_tag_path(@organization.id, tag.id), method: :delete, class: "remove-tag" %>
                   </span>
