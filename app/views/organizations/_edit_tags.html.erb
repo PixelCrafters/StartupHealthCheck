@@ -8,8 +8,8 @@
             <td>
               <div class="tag-list">
                 <% @organization.tags.each do |tag| %>
-                  <span class="label label-primary tag">
-                    <%= link_to tag.name, search_path(tag: {names: [tag.name]}) %>
+                  <span class="pull-left">
+                    <%= link_to tag.name, search_path(tag: {names: [tag.name]}), class: "entity entity-tag" %>
                     <%= link_to '<span class="glyphicon glyphicon-remove"></span>
       '.html_safe, destroy_tag_path(@organization.id, tag.id), method: :delete, class: "remove-tag" %>
                   </span>
