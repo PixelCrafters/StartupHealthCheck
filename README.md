@@ -43,29 +43,28 @@ Ensure you have RVM installed (or RBenv)
 
 Install Ruby 2.1.1
 ```
-  rvm install 2.1.1
+rvm install 2.1.1
 ```
 
 We use [ElasticSearch](http://www.elasticsearch.org/) as our full-text search engine.
 Install ElasticSearch (using [Homebrew](http://brew.sh/) or a package manager of your choosing).
 ```
-  brew install elasticsearch
+brew install elasticsearch
 ```  
 
 To start ElasticSearch, try this:
 ```
-  elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
 
 If you get errors, ensure you have the latest version of Java 1.7. Ensure you have the JDK, not the JRE.
 
 Clone the repository from git:
 ```
-  git clone git@github.com:PixelCrafters/StartupHealthCheck.git
+git clone git@github.com:PixelCrafters/StartupHealthCheck.git
 ```
 
-```
-Install Postgree, the best thing since MySQL. You can install Postgres with brew
+Install Postgres, the best thing since MySQL. You can install Postgres with Homebrew.
 ```
 brew install postgresql
 ```
@@ -77,13 +76,13 @@ initdb /DIRECTORY/YOU/WANT/TO/INSTALL/IT/data -E utf8
 
 Change directories into startuphealthcheck:
 ```
-  cd startuphealthcheck
+cd startuphealthcheck
 ```  
 
 Run Bundler (http://bundler.io):
 ```  
-  bundle install
-```  
+bundle install
+``` 
 
 Set up your database. 
 
