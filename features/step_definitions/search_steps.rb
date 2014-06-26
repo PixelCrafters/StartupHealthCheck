@@ -1,5 +1,4 @@
 def search_for_keywords(keywords)
-  User.reindex
   visit search_path
   fill_in "search-orgs", :with => keywords
   click_button "Search"
@@ -10,6 +9,7 @@ Given(/^there are organizations available$/) do
   FactoryGirl.create(:organization, name: 'Web Startup 1')
   FactoryGirl.create(:organization, name: 'Web Startup 2')
   Organization.reindex
+  User.reindex
 end
 
 Given(/^a type named "(.*?)"$/) do |type_name|

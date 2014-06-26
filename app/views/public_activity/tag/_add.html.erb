@@ -4,7 +4,7 @@
 
     added tag 
 
-    <%= link_to activity.parameters[:tag_name], search_url(tag: {names: [activity.parameters[:tag_name]]}) if activity.parameters[:tag_name] %>
+    <%= link_to activity.parameters[:tag_name], search_url(tags: {names: [activity.parameters[:tag_name]]}) if activity.parameters[:tag_name] %>
      
     to 
 

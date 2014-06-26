@@ -19,12 +19,14 @@ class SearchController < ApplicationController
   def prepare_search_params
     prepare_types if params[:types].present?
     prepare_tags if params[:tags].present?
-    prepare_query if params[:query].present?
+    if not params[:query].nil?
+      prepare_query if params[:query].empty?
+    end
     params
   end
 
   def prepare_query
-    params[:query] = nil if params[:query].empty?
+    params[:query] = nil
   end
 
   def prepare_tags

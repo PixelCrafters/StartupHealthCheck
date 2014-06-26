@@ -2,7 +2,7 @@
   <div class="tag-list">
     <% @organization.tags.each do |tag| %>
       <span class="label label-primary tag pull-left">
-        <%= link_to tag.name, search_path(tag: {names: [tag.name]}) %>
+        <%= link_to tag.name, search_path(tags: {names: [tag.name]}) %>
       </span>
     <% end %>
   </div>
