@@ -31,61 +31,60 @@ Startup HealthCheck requires ruby version 2.1.1.
 
 To install ruby we like to use [RVM](http://rvm.io/rvm/install) (but you can use any version manager of your choosing).
 
-First install Homebrew to install RVM.
+Ensure you have Homebrew installed
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
-Install RVM with homebrew.
-
+Ensure you have RVM installed (or RBenv)
 ```
 \curl -sSL https://get.rvm.io | bash -s stable
 ```
 
+Install Ruby 2.1.1
 ```
-  rvm install 2.1.1
+rvm install 2.1.1
 ```
 
 We use [ElasticSearch](http://www.elasticsearch.org/) as our full-text search engine.
 Install ElasticSearch (using [Homebrew](http://brew.sh/) or a package manager of your choosing).
 ```
-  brew install elasticsearch
+brew install elasticsearch
 ```  
 
 To start ElasticSearch, try this:
 ```
-  elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
 
-If you get errors, ensure you have the latest version of Java 1.7. Ensure you have JDK, not the JRE of Java.
+If you get errors, ensure you have the latest version of Java 1.7. Ensure you have the JDK, not the JRE.
 
 Clone the repository from git:
 ```
-  git clone git@github.com:PixelCrafters/StartupHealthCheck.git
+git clone git@github.com:PixelCrafters/StartupHealthCheck.git
 ```
 
-```
-Install Postgree, the best thing since MySQL. You can install Postgres with brew
+Install Postgres, the best thing since MySQL. You can install Postgres with Homebrew.
 ```
 brew install postgresql
 ```
 
+First you need to intialize the database if you are on a Mac.
+```
+initdb /DIRECTORY/YOU/WANT/TO/INSTALL/IT/data -E utf8
+```
+
 Change directories into startuphealthcheck:
 ```
-  cd startuphealthcheck
+cd startuphealthcheck
 ```  
 
 Run Bundler (http://bundler.io):
 ```  
-  bundle install
-```  
+bundle install
+``` 
 
 Set up your database. 
-
-First you need to intialize the database if you are on a Mac. You must intitalize the database.
-```
-  initdb /DIRECTOR/YOU/WANT/TO/INSTALL/IT/data -E utf8
-```
 
 Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file). The following command will create the database, run the migrations and add the seed data to the application.
 ```
