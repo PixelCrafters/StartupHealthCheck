@@ -183,7 +183,14 @@ footer{
 .time-ago{
   text-transform: uppercase;
   color: #777;
-  font-size: 8pt;
+  font-size: 8px;
+  float: right;
+  // Lining numerals - doesn't work in Safari yet, sadly
+  -moz-font-feature-settings: "lnum" 1;
+  -ms-font-feature-settings: "lnum" 1;
+  -o-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
 }
 
 /*** User Styles ***/
