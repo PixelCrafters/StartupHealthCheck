@@ -103,12 +103,23 @@ Start the rails server:
 
 ### Configuring the Application for Development and Test Environments
 
-We use the [dotenv-rails gem](https://github.com/bkeepers/dotenv) to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
+We use the [dotenv-rails](https://github.com/bkeepers/dotenv) gem to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
 
 After you have your database schema set up and .env file ready, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
 
+### Configuring Startup Genome
 
-### Signing up for Auth0
+In order to pull data from Startup Genome, you will need a Startup Genome API AUTH_CODE. You can get one of these by going to [startupgenome.co](https://startupgenome.co/) and registering as curator. 
+
+Once you're approved as a curator, you'll be able to request an AUTH_CODE from Startup Genome through your account.
+
+Once you have your AUTH_CODE, set STARTUP_GENOME_AUTH_CODE in your .env file. 
+
+You will also need the Startup Genome slug for your location. You can find this by visiting [startupgenome.co](https://startupgenome.co/), searching for your city/location, and taking a look at the URL. For instance, when we search for Vancouver on Startup Genome, we find that the url to access Vancouver is http://startupgenome.co/vancouver-britishcolumbia-can, and thus the slug is vancouver-britishcolumbia-can. Once you know your slug, set STARTUP_GENOME_LOCATION_SLUG in your .env file.
+
+If you find this process frustrating, you could try sending the good people at Startup Genome a very polite email requesting additional documentation.
+
+### Configuring Auth0
 
 In order to log into the site, you will need to set up your application for Auth0.
 
