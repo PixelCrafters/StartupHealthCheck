@@ -122,14 +122,12 @@ Go to [https://auth0.com/] and create a free account.
 
 4.It will ask you for what you'd like to set up. Turn on Facebook, LinkedIn, Twitter and Google. Don't enable email sign ups (we realize this is repetitive, sorry).
 
-```
 ![The settings you want for Auth0](https://raw.githubusercontent.com/PixelCrafters/StartupHealthCheck/master/app/themes/weareyvr/assets/images/weareyvr/Auth0SocialConnections.png)
-```
+
 
 5.Go to Applications, click on WeAreYVR and change the "CHANGE-TO-YOUR-PORT" to 3000.
-```
-![Settings for Port](/app/themes/weareyvr/assets/images/weareyvr/changeToYourPort.png)
-```
+![Settings for Port](https://raw.githubusercontent.com/PixelCrafters/StartupHealthCheck/master/app/themes/weareyvr/assets/images/weareyvr/changeToYourPort.png)
+
 
 6.you don't need to add all of this code to the application. You just need to set the AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_SECRET and AUTH0_CALLBACK_URL in your .env file. You can find these values on this page.
 
@@ -164,6 +162,6 @@ To change the theme from 'WeAreYVR' to 'Default', replace the following line in 
 ```
 After you've made this change, restart your server.
 
-To override a view file simple recreate it within your theme directory and make any changes (ie. app/themes/{theme-name}/views/{file-name}).
+To override a view file simply recreate it within your theme directory and make any changes (ie. app/themes/{theme-name}/views/{file-name}).
 
 To create custom themes have a look at the [Themes on Rails](https://github.com/yoolk/themes_on_rails) documentation.
