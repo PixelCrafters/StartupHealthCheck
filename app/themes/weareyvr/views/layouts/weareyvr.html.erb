@@ -2,7 +2,7 @@
 <html>
 <head>
   <title><%= yield(:title) %>WeAreYVR</title>
-  <%= stylesheet_link_tag    "weareyvr/all", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "weareyvr/all", media: "all" %>
   <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
   
   <%= csrf_meta_tags %>
@@ -27,8 +27,8 @@
           </div>
           <nav class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
-              <li<%= current_page?(organizations_path) ? ' class=active' : '' %>><%= link_to "Organizations", organizations_path %></li>
-              <li<%= current_page?(users_path) ? ' class=active' : '' %>><%= link_to "People", users_path %></li>
+              <li<%= current_page?(organizations_path) ? ' class=active' : '' %>><%= link_to "Organizations",  search_organizations_path %></li>
+              <li<%= current_page?(users_path) ? ' class=active' : '' %>><%= link_to "People", search_users_path %></li>
               <li<%= current_page?(about_path) ? ' class=active' : '' %>><%= link_to "About", about_path %></li>
               <li<%= current_page?(contact_path) ? ' class=active' : '' %>><%= link_to "Contact", contact_path %></li>
             </ul>
@@ -80,6 +80,6 @@
       WeAreYVR — A community project by <a href="http://launchacademy.ca">Launch Academy</a> &copy; 2014 &#8226; Thanks to <a href="http://startupgenome.com">StartupGenome</a>
     </div>
   </footer>
-  <%= javascript_include_tag "weareyvr/all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "weareyvr/all" %>
   </body>
 </html>

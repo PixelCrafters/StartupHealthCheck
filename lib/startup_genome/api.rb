@@ -12,12 +12,18 @@ module StartupGenome
       raise 'You must provide a Startup Genome Location Slug' if @location_slug.nil?
     end
 
-    def get_organizations
-      @conn.get organizations_url, {}, {'auth-code' => @auth_code}
+    def get_organizations(offset)
+      @conn.get do |req|                     
+        req.url organizations_url, :offset => offset
+        req.headers['auth-code'] = @auth_code
+      end
     end
 
-    def get_people
-      @conn.get people_url, {}, {'auth-code' => @auth_code}
+    def get_people(offset)
+      @conn.get do |req|                     
+        req.url people_url, :offset => offset
+        req.headers['auth-code'] = @auth_code
+      end
     end
 
     def update_organization(organization)

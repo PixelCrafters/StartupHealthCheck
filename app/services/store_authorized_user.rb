@@ -20,6 +20,7 @@ class StoreAuthorizedUser
       user.update!(attributes)
     else
       attributes[:name] = userinfo["info"]["name"]
+      attributes[:claimed] = true
       user = User.create!(attributes)
     end
     user.create_activity key: "user.create", owner: user

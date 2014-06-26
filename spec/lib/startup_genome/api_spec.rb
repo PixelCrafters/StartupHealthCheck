@@ -6,7 +6,7 @@ describe StartupGenome::API do
   describe "#get_organizations" do
     it "sends a success response" do
       VCR.use_cassette 'startup_genome_api_get_organizations' do
-        expect(sg.get_organizations.status).to eq(200) 
+        expect(sg.get_organizations(1).status).to eq(200) 
       end
     end
   end
@@ -14,7 +14,7 @@ describe StartupGenome::API do
   describe "#get_people" do
     it "sends a success response" do
       VCR.use_cassette 'startup_genome_api_get_people' do
-        expect(sg.get_people.status).to eq(200) 
+        expect(sg.get_people(1).status).to eq(200) 
       end
     end
   end

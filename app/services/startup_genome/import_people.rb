@@ -2,11 +2,23 @@ module StartupGenome
   class ImportPeople
     include Service
 
-    def call
-      results = StartupGenome::API.new.get_people
-      persist(JSON.parse(results.body))
+    PER_PAGE = 100
 
-      # TODO: Add Completion Summary "Inserted #{x} and updated #{y}"
+    def call
+      offset = 0
+      begin
+        results_json = StartupGenome::API.new.get_people(offset)
+        results = JSON.parse(results_json.body)
+        persist(results)
+        offset += PER_PAGE
+      end while fetch_more?(results)
+    end
+  
+    private
+
+    def fetch_more?(results)
+      # fetch only the first page in test env
+      results.count == PER_PAGE && !Rails.env.test?
     end
   
     private

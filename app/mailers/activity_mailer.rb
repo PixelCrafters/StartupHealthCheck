@@ -2,7 +2,7 @@ class ActivityMailer < ActionMailer::Base
   def weekly_digest(user)
     @user = user
     @activities = filtered_activities
-    mail(to: @user.email, subject: "Your Email Digest for #{l Date.today, format: :long}", from: "digest@weareyvr.ca")
+    mail(to: @user.email, subject: "Your #{Rails.application.secrets.application_name} Email Digest for #{l Date.today, format: :long}", from: "digest@weareyvr.ca")
   end
 
   private

@@ -21,7 +21,6 @@ end
 
 Then(/^I should see my changes on my profile page$/) do
   expect(page).to have_content("New Name")
-  expect(page).to have_content("newemail@example.com")
 end
 
 Then(/^I should be unsubscribed$/) do

@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
-      <%= form_tag search_path, method: "get", role: "form" do %>
+      <%= form_tag search_organizations_path, method: "get", role: "form" do %>
         <div class="form-group">
           <%= text_field_tag "query", params[:query], class: "form-control input-lg search", type: "search", placeholder: "Search", id: "home-page-search" %>
         </div>
