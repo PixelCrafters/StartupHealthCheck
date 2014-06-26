@@ -84,7 +84,7 @@ Set up your database.
 
 First you need to intialize the database if you are on a Mac. You must intitalize the database.
 ```
-initdb /DIRECTOR/YOU/WANT/TO/INSTALL/IT/data -E utf8
+  initdb /DIRECTORY/YOU/WANT/TO/INSTALL/IT/data -E utf8
 ```
 
 Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file). The following command will create the database, run the migrations and add the seed data to the application.
@@ -129,7 +129,22 @@ Next update the .env file with Domain, Client Id, Callback_url, and Secret.
 
 ### Launching the first server
 
-Next, open your browser of choice, and visit localhost:3000. The first thing to do is sign in with Twitter or Facebook.
+Restart the server.
+
+Open your browser of choice, and visit localhost:3000. The first thing to do is sign in with Twitter or Facebook.
+
+### Search Issues
+
+If the search returns a fatal error, you'll need to reindex both the Users and the Organizations.
+
+Open up the rails console and type in
+```
+  rails c
+  User.reindex
+  Organization.reindex
+```
+
+
 
 ### Running Tests
 
