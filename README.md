@@ -28,7 +28,20 @@ We are going to be designing and building this out in the open. We are collectin
 ## QUICKSTART
 
 Startup HealthCheck requires ruby version 2.1.1.
+
 To install ruby we like to use [RVM](http://rvm.io/rvm/install) (but you can use any version manager of your choosing).
+
+First install Homebrew to install RVM.
+```
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
+
+Install RVM with homebrew.
+
+```
+\curl -sSL https://get.rvm.io | bash -s stable
+```
+
 ```
   rvm install 2.1.1
 ```
@@ -41,12 +54,20 @@ Install ElasticSearch (using [Homebrew](http://brew.sh/) or a package manager of
 
 To start ElasticSearch, try this:
 ```
-  elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+  elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
+
+If you get errors, ensure you have the latest version of Java 1.7. Ensure you have JDK, not the JRE of Java.
 
 Clone the repository from git:
 ```
   git clone git@github.com:PixelCrafters/StartupHealthCheck.git
+```
+
+```
+Install Postgree, the best thing since MySQL. You can install Postgres with brew
+```
+brew install postgresql
 ```
 
 Change directories into startuphealthcheck:
@@ -60,6 +81,12 @@ Run Bundler (http://bundler.io):
 ```  
 
 Set up your database. 
+
+First you need to intialize the database if you are on a Mac. You must intitalize the database.
+```
+initdb /DIRECTOR/YOU/WANT/TO/INSTALL/IT/data -E utf8
+```
+
 Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file). The following command will create the database, run the migrations and add the seed data to the application.
 ```
   bundle exec rake db:setup
@@ -75,11 +102,42 @@ Start the rails server:
   rails server
 ```  
 
+### Signing up for Auth0
+
+Go to [https://auth0.com/] and create a free account.
+
+Create a auth0 domain. You can use your sweet name or whatevs.
+
+Turn on Facebook, Linked in, Twitter and Google. These are the four ways to sign in via Auth0.
+
+Add a new application. Click on ruby on rails. The friendly name should be We Are YVR.
+
+It will ask you for what you'd like to set up.
+
+```
+![The settings you want for Auth0](/app/themes/weareyvr/assets/images/weareyvr/Auth0SocialConnections.png)
+```
+
+The long explanation is already built in. You need to grab the keys out of this and put it into .env file.
+
+Go to Applications, click on WeAreYVR and change the "CHANGE-TO-YOUR-PORT" to 3000.
+
+```
+![Settings for Port](/app/themes/weareyvr/assets/images/weareyvr/changeToYourPort.png)
+```
+Next update the .env file with Domain, Client Id, Callback_url, and Secret.
+
+### Launching the first server
+
+Next, open your browser of choice, and visit localhost:3000. The first thing to do is sign in with Twitter or Facebook.
+
 ### Running Tests
 
-  
-After you have your database schema set up, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
+### Configuring the Application for Development and Test Environments
 
+We use the [dotenv-rails gem](https://github.com/bkeepers/dotenv) to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
+
+After you have your database schema set up and .evn file ready, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
 
 To run Cucumber:
 ```
@@ -90,10 +148,6 @@ To run RSpec:
 ```
   rspec spec
 ```
-
-### Configuring the Application for Development and Test Environments
-
-We use the [dotenv-rails gem](https://github.com/bkeepers/dotenv) to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
 
 ### Adding Custom Styling
 
