@@ -27,34 +27,32 @@ We are going to be designing and building this out in the open. We are collectin
 
 ## QUICKSTART
 
-Startup HealthCheck requires ruby version 2.1.1.
+We like to use [RVM](http://rvm.io/) and [Homebrew](http://brew.sh/) to get everything up and running. You can use other tools if you'd like, but we'll use these in our instructions.
 
-To install ruby we like to use [RVM](http://rvm.io/rvm/install) (but you can use any version manager of your choosing).
 
 Ensure you have Homebrew installed
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
-Ensure you have RVM installed (or RBenv)
+Ensure you have RVM installed
 ```
 \curl -sSL https://get.rvm.io | bash -s stable
 ```
 
-Install Ruby 2.1.1
+Startup HealthCheck requires ruby version 2.1.1.
 ```
 rvm install 2.1.1
 ```
 
 We use [ElasticSearch](http://www.elasticsearch.org/) as our full-text search engine.
-Install ElasticSearch (using [Homebrew](http://brew.sh/) or a package manager of your choosing).
 ```
 brew install elasticsearch
 ```  
 
 To start ElasticSearch, try this:
 ```
-elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+brew services start elasticsea
 ```
 If you get errors, ensure you have the latest version of the JDK (1.7).
 
