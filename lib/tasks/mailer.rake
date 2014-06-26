@@ -1,9 +1,13 @@
 namespace :mailer do
+
+  #TODO: make day of week configurable - currently set to Monday
   desc "Send weely email digest"
   task send_weekly_digest: :environment do
-    subscribed_users = User.where(email_digest: true)
-    subscribed_users.each do |user|
-      ActivityMailer.weekly_digest(user).deliver
+    if Time.now.monday?
+      subscribed_users = User.where(email_digest: true)
+      subscribed_users.each do |user|
+        ActivityMailer.weekly_digest(user).deliver
+      end
     end
   end
 
