@@ -7,10 +7,11 @@
           <%= link_to org.name, organization_path(org) %>
         </p>
       <% end %>
-  <% end %>
-</div>
-<div class="row">
-  <div class="col-sm-11">
-    <%= paginate @organizations %>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-sm-11">
+      <%= paginate @organizations %>
+    </div>
   </div>
 </div>
