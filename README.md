@@ -84,7 +84,7 @@ Set up your database.
 
 First you need to intialize the database if you are on a Mac. You must intitalize the database.
 ```
-initdb /DIRECTOR/YOU/WANT/TO/INSTALL/IT/data -E utf8
+  initdb /DIRECTOR/YOU/WANT/TO/INSTALL/IT/data -E utf8
 ```
 
 Start by creating a config/database.yml file with your database settings (based on the config/database.yml.sample file). The following command will create the database, run the migrations and add the seed data to the application.
