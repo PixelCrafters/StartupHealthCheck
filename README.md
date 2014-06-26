@@ -56,22 +56,22 @@ To start ElasticSearch, try this:
 ```
 elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
+If you get errors, ensure you have the latest version of the JDK (1.7).
 
-If you get errors, ensure you have the latest version of Java 1.7. Ensure you have the JDK, not the JRE.
 
-Clone the repository from git:
-```
-git clone git@github.com:PixelCrafters/StartupHealthCheck.git
-```
-
-Install Postgres, the best thing since MySQL. You can install Postgres with Homebrew.
+Install PostgreSQL, the best thing since MySQL. You can install PostgreSQL with Homebrew.
 ```
 brew install postgresql
 ```
 
-First you need to intialize the database if you are on a Mac.
+Start PostgreSQL
 ```
-initdb /DIRECTORY/YOU/WANT/TO/INSTALL/IT/data -E utf8
+brew services start postgresql
+```
+
+Clone the repository from git:
+```
+git clone git@github.com:PixelCrafters/StartupHealthCheck.git
 ```
 
 Change directories into startuphealthcheck:
@@ -101,42 +101,40 @@ Start the rails server:
   rails server
 ```  
 
+### Configuring the Application for Development and Test Environments
+
+We use the [dotenv-rails gem](https://github.com/bkeepers/dotenv) to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
+
+After you have your database schema set up and .env file ready, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
+
+
 ### Signing up for Auth0
+
+In order to log into the site, you will need to set up your application for Auth0.
 
 Go to [https://auth0.com/] and create a free account.
 
-Create a auth0 domain. You can use your sweet name or whatevs.
+1.Create an Auth0 domain. You can use your sweet name or whatevs.
 
-Turn on Facebook, Linked in, Twitter and Google. These are the four ways to sign in via Auth0.
+2.Turn on Facebook, LinkedIn, Twitter and Google. Don't enable email sign ups.
 
-Add a new application. Click on ruby on rails. The friendly name should be We Are YVR.
+3.Add a new application. Click on Ruby on Rails. The friendly name should be WeAreYVR.
 
-It will ask you for what you'd like to set up.
+4.It will ask you for what you'd like to set up. Turn on Facebook, LinkedIn, Twitter and Google. Don't enable email sign ups (we realize this is repetitive, sorry).
 
 ```
 ![The settings you want for Auth0](/app/themes/weareyvr/assets/images/weareyvr/Auth0SocialConnections.png)
 ```
 
-The long explanation is already built in. You need to grab the keys out of this and put it into .env file.
-
-Go to Applications, click on WeAreYVR and change the "CHANGE-TO-YOUR-PORT" to 3000.
-
+5.Go to Applications, click on WeAreYVR and change the "CHANGE-TO-YOUR-PORT" to 3000.
 ```
 ![Settings for Port](/app/themes/weareyvr/assets/images/weareyvr/changeToYourPort.png)
 ```
-Next update the .env file with Domain, Client Id, Callback_url, and Secret.
 
-### Launching the first server
+6.you don't need to add all of this code to the application. You just need to set the AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_SECRET and AUTH0_CALLBACK_URL in your .env file. You can find these values on this page.
 
-Next, open your browser of choice, and visit localhost:3000. The first thing to do is sign in with Twitter or Facebook.
 
 ### Running Tests
-
-### Configuring the Application for Development and Test Environments
-
-We use the [dotenv-rails gem](https://github.com/bkeepers/dotenv) to populate environment variables for development and test environments. To configure your application you will need to create a .env file in the root directory of your application. See the .env.example file to get started.
-
-After you have your database schema set up and .evn file ready, you can begin running tests with either RSpec (https://github.com/rspec/rspec) or Cucumber (http://cukes.info).
 
 To run Cucumber:
 ```
@@ -156,13 +154,13 @@ Right now Startup HealthCheck has the following themes:
 - Default (app/themes/default)
 - WeAreYVR (app/themes/weareyvr)
 
-To change the theme from 'Default' to 'WeAreYVR', replace the following line in app/controllers/application_controller.rb
+To change the theme from 'WeAreYVR' to 'Default', replace the following line in app/controllers/application_controller.rb
 ```
-  theme "default"
+  theme "weareyvr"
 ```
 ...with...
 ```
-  theme "weareyvr"
+  theme "default"
 ```
 After you've made this change, restart your server.
 
