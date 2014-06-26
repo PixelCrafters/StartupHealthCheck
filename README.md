@@ -123,7 +123,7 @@ Go to [https://auth0.com/] and create a free account.
 4.It will ask you for what you'd like to set up. Turn on Facebook, LinkedIn, Twitter and Google. Don't enable email sign ups (we realize this is repetitive, sorry).
 
 ```
-![The settings you want for Auth0](/app/themes/weareyvr/assets/images/weareyvr/Auth0SocialConnections.png)
+![The settings you want for Auth0](https://raw.githubusercontent.com/PixelCrafters/StartupHealthCheck/master/app/themes/weareyvr/assets/images/weareyvr/Auth0SocialConnections.png)
 ```
 
 5.Go to Applications, click on WeAreYVR and change the "CHANGE-TO-YOUR-PORT" to 3000.
