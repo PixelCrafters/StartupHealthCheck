@@ -9,7 +9,7 @@
     <% end %>
   </div>
   <div class="col-sm-8">
-    <span class="big-text"><%= @user.name %></span>
+    <h2 class="page-header"><%= @user.name %></h2>
     <div class="user_details">
       <% if @user.email.nil? %>
         <%= render "users/email_modal" %>

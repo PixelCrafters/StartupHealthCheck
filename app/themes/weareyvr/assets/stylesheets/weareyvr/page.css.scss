@@ -55,16 +55,9 @@ div.submit{
 
 /*** Organization Styles ***/
 
-.claim-header{
-  padding: 15px;
-  background-color: #10988b !important;
-  margin-bottom: 15px;
-  color: #FFF !important;
-}
-
-.claim-header a{
-  color: #FFF !important;
-  text-decoration: underline !important;
+.alert.claim-header{
+  border-color: fade-out(#10988b, 0.6) !important;
+  background-color: fade-out(#10988b, 0.7) !important;
 }
 
 .small-field{
@@ -88,26 +81,13 @@ a.edit{
   margin-bottom: 15px;
 }
 
-.tag{
-  margin-right: 3px;
-  margin-bottom: 5px !important;
-  font-size: 11pt !important;
-}
-
-.tag a{
-  color: #FFF;
-}
-
-.tag a:hover{
-  color: #FFF;
-}
-
-.tag a:visited{
-  color: #FFF;
-}
-
 a.remove-tag{
-  text-decoration: none !important;
+  &,
+  &:link,
+  &:visited {
+    color: red;
+    margin-right: 0.8em;
+  }
 }
 
 a.remove-role-org-page{
@@ -183,7 +163,14 @@ footer{
 .time-ago{
   text-transform: uppercase;
   color: #777;
-  font-size: 8pt;
+  font-size: 8px;
+  float: right;
+  // Lining numerals - doesn't work in Safari yet, sadly
+  -moz-font-feature-settings: "lnum" 1;
+  -ms-font-feature-settings: "lnum" 1;
+  -o-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
 }
 
 /*** User Styles ***/
