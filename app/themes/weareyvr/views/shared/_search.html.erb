@@ -7,7 +7,7 @@
             <%= text_field_tag "query", "", class: "form-control wr-search-bar-field", id: "search-orgs", type: "search" %>
             <%= submit_tag "Search", class: "btn btn-primary wr-search-bar-submit-btn" %>
         </div>
-        <div class="form-group">
+        <div class="form-group pull-right">
           <%= collection_select :types, :ids, Type.all, :id, :name, {}, {class: "form-control multiselect-types", multiple: true, value: 'Filter by Type' } %>
           <%= collection_select :tags, :names, ActsAsTaggableOn::Tag.all, :name, :name, {}, {class: "form-control multiselect-tags", multiple: true, value: 'Filter by Type' } %>
         </div>
