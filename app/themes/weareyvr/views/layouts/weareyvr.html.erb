@@ -4,7 +4,10 @@
   <title><%= yield(:title) %>WeAreYVR</title>
   <%= stylesheet_link_tag    "weareyvr/all", media: "all" %>
   <script src="https://cdn.auth0.com/w2/auth0-widget-3.0.min.js"></script>
-  
+  <script type="text/javascript" src="http://assets.freshdesk.com/widget/freshwidget.js"></script>
+<script type="text/javascript">
+  FreshWidget.init("", {"queryString": "&widgetType=popup&formTitle=WeAreYVR+Feedback", "backgroundImage": "http://assets.freshdesk.com/widget/help-button.png", "widgetType": "popup", "buttonType": "image", "buttonText": "Feedback", "buttonColor": "white", "buttonBg": "#006063", "alignment": "3", "offset": "145px", "formHeight": "500px", "url": "http://support.weareyvr.ca"} );
+</script>
   <%= csrf_meta_tags %>
 </head>
   <body>
