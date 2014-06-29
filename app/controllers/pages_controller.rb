@@ -6,4 +6,10 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def offices
+  end
+
+  def events
+  end
+
 end
