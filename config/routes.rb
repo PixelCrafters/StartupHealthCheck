@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   get "/about", to: 'pages#about'
   get "/contact", to: 'pages#contact'
-  
+
   get "/offices", to: 'pages#offices'
-  get "/events", to: 'pages:events'
+  get "/events", to: 'pages#events'
 
   resources :organizations, only: [:index, :show, :edit, :update, :new, :create] do
     get "claim", on: :member
