@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/offices", to: 'pages#offices'
   get "/events", to: 'pages#events'
 
+  get "/internationaljobs", to: 'pages#internationaljobs'
+
   resources :organizations, only: [:index, :show, :edit, :update, :new, :create] do
     get "claim", on: :member
     post "toggle_hiring", on: :member

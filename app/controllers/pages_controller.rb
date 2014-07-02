@@ -12,4 +12,7 @@ class PagesController < ApplicationController
   def events
   end
 
+  def internationaljobs
+  end
+
 end
