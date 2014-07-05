@@ -52,7 +52,7 @@ brew install elasticsearch
 
 To start ElasticSearch, try this:
 ```
-brew services start elasticsea
+brew services start elasticsearch
 ```
 If you get errors, ensure you have the latest version of the JDK (1.7).
 
@@ -92,6 +92,11 @@ Start by creating a config/database.yml file with your database settings (based 
 After you've setup your database, you will have two example organizations in the database (Example Startup and Example Startup2). In order to access these organizations via search add data to the search index.
 ```
   bundle exec rake searchkick:reindex CLASS=Organization
+```
+
+You'll need to run a similar command to index People / users in the database.
+```
+  bundle exec rake searchkick:reindex CLASS=User
 ```
 
 Start the rails server:
