@@ -37,6 +37,10 @@ gem 'rails_12factor', group: :production
 gem 'themes_on_rails'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
+# active admin
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
