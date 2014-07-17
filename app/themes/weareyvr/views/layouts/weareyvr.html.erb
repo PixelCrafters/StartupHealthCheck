@@ -49,6 +49,7 @@
       </nav>
 
       <div class="container">
+
         <% if current_page?(root_url) %>
         <section class="row">
           <div class="col-md-8 text-content  col-sm-offset-2">
@@ -62,11 +63,10 @@
           <%= render "shared/flash_message" %>
         </div>
         <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-            <%= yield %>
-          </div>
+          <%= yield %>
         </div>
       </div><!-- /.container -->
+      
     </div>
   </div>
   <footer>
