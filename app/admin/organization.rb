@@ -38,10 +38,20 @@ ActiveAdmin.register Organization do
           truncate(organization.headline, omision: "…", length: 100)
         end
 
+    # TODO: not working correctly
     column :types do |organization|
       table_for organization.types.order('name ASC') do
         column do |type|
           link_to type.name, [ :admin, type ]
+        end
+      end
+    end
+
+    # TODO: not working correctly
+    column :profile_links do |organization|
+      table_for organization.profile_links.order('name ASC') do
+        column do |profile_link|
+          link_to profile_link.name, [ profile_link.url ]
         end
       end
     end
@@ -77,7 +87,8 @@ ActiveAdmin.register Organization do
       f.input :types
       f.input :active
       f.input :hiring
-      f.input :founded
+      f.input :founded 
+
     end
     f.actions
   end
