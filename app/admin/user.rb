@@ -16,6 +16,12 @@ ActiveAdmin.register User do
 
   config.filters = false
 
+  sidebar 'Organizations Claimed by this User', :only => :show do
+    table_for Organization.joins(:users).where(:admin_id => user.id) do |t|
+      t.column("Org Name") { |organization| organization.name }
+    end
+  end
+
   index do
     actions
     column :name, :min_width => "100px"

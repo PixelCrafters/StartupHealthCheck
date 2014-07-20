@@ -46,19 +46,14 @@ ActiveAdmin.register Organization do
         end
       end
     end
-
-    # TODO: not working correctly
-    column :profile_links do |organization|
-      table_for organization.profile_links.order('name ASC') do
-        column do |profile_link|
-          link_to profile_link.name, [ profile_link.url ]
-        end
-      end
-    end
         
+    column :claimed
+    column "Claimed By" do |organization|
+      # TODO: look up admin id and join on user table to get name / admin link to user
+    end
+
     column :active
     column :founded
-    column :claimed
     column :hiring
   end
 
@@ -74,7 +69,11 @@ ActiveAdmin.register Organization do
       end
       row :founded
       row :active
+
       row :claimed
+      row "Claimed By"
+      # TODO: same look up admin id as above
+
       row :hiring
     end
   end
