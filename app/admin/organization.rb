@@ -16,35 +16,11 @@ ActiveAdmin.register Organization do
 
   permit_params :name, :headline, :description, :founded, :active, :claimed, :hiring, :hiring_url
 
-  index do
-    actions
-    column :name
-    column "Headline" do |organization|
-          truncate(organization.headline, omision: "…", length: 100)
-        end
-    column :active
-    column :founded
-    column :claimed
-    column :hiring
-  end
-
-  # AA doesn't handle has_many well
-  remove_filter :organization_user_roles
-  remove_filter :addresses
-  remove_filter :profile_links
-  remove_filter :roles
-  remove_filter :users
-  remove_filter :activities
-  remove_filter :taggings
-  remove_filter :base_tags
-  remove_filter :tag_taggings
-  remove_filter :slug
-  remove_filter :startup_genome_slug
-  remove_filter :hiring_url
-  remove_filter :url
-  remove_filter :image
-  remove_filter :organizations_users
-  remove_filter :organizations_types
+  # AA doesn't handle has_many well, so don't use those
+  filter :types
+  filter :active
+  filter :claimed
+  filter :hiring
 
   # need to find by ID
   before_filter do
@@ -53,6 +29,57 @@ ActiveAdmin.register Organization do
         id.to_s
       end
     end
+  end
+
+  index do
+    actions
+    column :name, :min_width => "100px"
+    column "Headline", :min_width => "250px" do |organization|
+          truncate(organization.headline, omision: "…", length: 100)
+        end
+
+    column :types do |organization|
+      table_for organization.types.order('name ASC') do
+        column do |type|
+          link_to type.name, [ :admin, type ]
+        end
+      end
+    end
+        
+    column :active
+    column :founded
+    column :claimed
+    column :hiring
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :headline
+      row :description
+      table_for organization.types.order('name ASC') do
+        column "Types" do |type|
+          link_to type.name, [ :admin, type ]
+        end
+      end
+      row :founded
+      row :active
+      row :claimed
+      row :hiring
+    end
+  end
+
+  form do |f|
+    f.inputs "Add/Edit Organization" do
+      f.input :name
+      f.input :headline
+      f.input :description
+      f.input :types
+      f.input :active
+      f.input :hiring
+      f.input :founded
+    end
+    f.actions
   end
 
 
