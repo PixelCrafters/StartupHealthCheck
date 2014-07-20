@@ -14,6 +14,20 @@ ActiveAdmin.register Organization do
   #  permitted
   # end
 
+  permit_params :name, :headline, :description, :founded, :active, :claimed, :hiring, :hiring_url
+
+  index do
+    actions
+    column :name
+    column "Headline" do |organization|
+          truncate(organization.headline, omision: "…", length: 100)
+        end
+    column :active
+    column :founded
+    column :claimed
+    column :hiring
+  end
+
   # AA doesn't handle has_many well
   remove_filter :organization_user_roles
   remove_filter :addresses
@@ -31,5 +45,15 @@ ActiveAdmin.register Organization do
   remove_filter :image
   remove_filter :organizations_users
   remove_filter :organizations_types
+
+  # need to find by ID
+  before_filter do
+    Organization.class_eval do
+      def to_param
+        id.to_s
+      end
+    end
+  end
+
 
 end
