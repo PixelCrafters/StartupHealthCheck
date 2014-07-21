@@ -559,6 +559,9 @@ a.bg-danger:hover {
   margin: 46px 0 23px;
   border-bottom: 1px solid #f2f5f5;
 }
+.page-header.organization {
+  margin-top: 0;
+}
 ul,
 ol {
   margin-top: 0;
@@ -7275,6 +7278,8 @@ a.entity-tag {
   border-color: rgba(16, 152, 139, 0.2);
   padding-right: 0.6em;
   padding-left: 0.6em;
+  margin-right: 0.6em;
+  margin-bottom: 0.6em;
 }
 a.entity-tag,
 a.entity-tag:link,
