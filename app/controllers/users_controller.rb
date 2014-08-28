@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :sign_in_before_claim, only: [:claim]
 
   def index
-    @users = User.all.order("name ASC").page(params[:page])  
+    @users = User.all.order("updated_at DESC").page(params[:page])
   end
 
   def show
