@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   def search_data
     {
       name: name,
+      updated_at: updated_at,
       tag_names: tags.map(&:name)
     }
   end

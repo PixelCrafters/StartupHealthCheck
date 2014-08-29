@@ -4,7 +4,7 @@ class OrganizationsController < ApplicationController
   before_filter :find_organization, only: [:show, :claim, :edit, :update, :toggle_hiring, :add_role]
 
   def index
-    @organizations = Organization.all.order("name ASC").page(params[:page]) 
+    @organizations = Organization.all.order("updated_at DESC").page(params[:page])
   end
 
   def show

@@ -36,14 +36,15 @@ class Search
   end
 
   def conditions
+    order = { order: { updated_at: :desc } }
     if tags && types
-      {where: {tag_names: {all: tags}, type_ids: {all: types}}}
+      {where: {tag_names: {all: tags}, type_ids: {all: types}}}.merge order
     elsif tags
-      {where: {tag_names: {all: tags}}}
+      {where: {tag_names: {all: tags}}}.merge order
     elsif types
-      {where: {type_ids: {all: types}}}
+      {where: {type_ids: {all: types}}}.merge order
     else
-      {}
+      {}.merge order
     end
   end
 end

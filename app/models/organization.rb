@@ -17,6 +17,7 @@ class Organization < ActiveRecord::Base
   def search_data
     {
       name: name,
+      updated_at: updated_at,
       type_ids: types.pluck(:id),
       tag_names: tags.pluck(:name)
     }
