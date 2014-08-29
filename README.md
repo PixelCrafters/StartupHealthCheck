@@ -13,7 +13,6 @@ The core of HealthCheck's backend curation around startup company data is powere
 * aggregation - limited "original content" creation; aggregation of title + link + limited other metadata for events and jobs -- i.e. not a blogging or content creation platform
 * open data - connectivity and re-use of StartupGenome API, plugins for Salesforce, default license that makes data shareable by default
 
-
 ## Team
 
 Startup HealthCheck is a project of the non-profit startup hub / co-working space, [Launch Academy](http://launchacademy.ca/), based out of Vancouver, BC, Canada. [PixelCrafters](http://www.pixelcrafters.ca) is an entrepreneur-led Vancouver tech community group.
@@ -23,7 +22,6 @@ Check the Contributors file for a list of the people & companies that are active
 ## Collaborating
 
 We are going to be designing and building this out in the open. We are collecting partners and have talked to startup communities in Vancouver, Seattle, Portland, Nanaimo, Victoria, and Toronto. If you are interested in participating, please get in touch or post an [issue](https://github.com/PixelCrafters/StartupHealthCheck/issues).
-
 
 ## QUICKSTART
 
