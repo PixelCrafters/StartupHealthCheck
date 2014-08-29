@@ -37,13 +37,13 @@ class Search
 
   def conditions
     if tags && types
-      {where: {tag_names: {all: tags}, type_ids: {all: types}}}
+      {where: {tag_names: {all: tags}, type_ids: {all: types}}, order: { updated_at: :desc }}
     elsif tags
-      {where: {tag_names: {all: tags}}}
+      {where: {tag_names: {all: tags}}, order: { updated_at: :desc }}
     elsif types
-      {where: {type_ids: {all: types}}}
+      {where: {type_ids: {all: types}}, order: { updated_at: :desc }}
     else
-      {}
+      {order: { updated_at: :desc }}
     end
   end
 end
