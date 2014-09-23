@@ -14,6 +14,17 @@ class Organization < ActiveRecord::Base
   has_and_belongs_to_many :users
   has_and_belongs_to_many :types
 
+  def admin_id=(value)
+    if !admin_id.nil?
+      write_attribute(:claimed, true) 
+    else
+      write_attribute(:claimed, false) 
+    end
+    ###
+    write_attribute(:admin_id, value)
+    # this is same as self[:attribute_name] = value
+  end
+
   def search_data
     {
       name: name,

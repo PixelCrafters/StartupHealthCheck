@@ -14,7 +14,7 @@ ActiveAdmin.register Organization do
   #  permitted
   # end
 
-  permit_params :name, :headline, :description, :founded, :active, :claimed, :hiring, :hiring_url
+  permit_params :name, :headline, :description, :founded, :active, :claimed, :hiring, :hiring_url, :admin_id
 
   # AA doesn't handle has_many well, so don't use those
   filter :types
@@ -38,20 +38,19 @@ ActiveAdmin.register Organization do
           truncate(organization.headline, omision: "…", length: 100)
         end
 
-    # TODO: not working correctly
-    column :types do |organization|
-      table_for organization.types.order('name ASC') do
-        column do |type|
-          link_to type.name, [ :admin, type ]
-        end
-      end
+    column "Types" do |organization|
+      raw(organization.types.order('name ASC').map{ |type| link_to type.name, [ :admin, type ]}.join(", "))
     end
         
-    column :claimed
     column "Claimed By" do |organization|
-      # TODO: look up admin id and join on user table to get name / admin link to user
-    end
-
+      if organization.claimed && !organization.admin_id.nil?
+        usr = User.find(organization.admin_id)
+        link_to usr.name, admin_user_path(organization.admin_id)  
+      else
+        "None"
+      end
+    end 
+    
     column :active
     column :founded
     column :hiring
@@ -68,12 +67,10 @@ ActiveAdmin.register Organization do
         end
       end
       row :founded
-      row :active
-
       row :claimed
-      row "Claimed By"
-      # TODO: same look up admin id as above
-
+      row :active
+      row :admin_id
+      
       row :hiring
     end
   end
@@ -87,7 +84,7 @@ ActiveAdmin.register Organization do
       f.input :active
       f.input :hiring
       f.input :founded 
-
+      f.input :admin_id, :label => 'Claimed by', :as => :select, :collection => User.order(:name).all.map{|u| ["#{u.name}", u.id]}
     end
     f.actions
   end

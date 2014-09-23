@@ -13,6 +13,8 @@ ActiveAdmin.register User do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  
+  permit_params :email, :name, :image, :email_verified, :email_digest, :startup_genome_slug, :startup_genome_image, :startup_genome_url, :claimed, :created_at, :updated_at
 
   config.filters = false
 
@@ -23,14 +25,9 @@ ActiveAdmin.register User do
   end
 
   index do
-    actions
     column :name, :min_width => "100px"
-    column :tags do |user|
-      table_for user.tags.order('name ASC') do
-        column do |tag|
-          link_to tag.name, [ :admin, type ]
-        end
-      end
+    column "Tags" do |user|
+      raw(user.tags.order('name ASC').map{ |tag| tag.name }.join(", "))
     end
         
     column :claimed
