@@ -1,6 +1,9 @@
+require 'carrierwave/orm/activerecord'
+
 class User < ActiveRecord::Base
   include PublicActivity::Common
 
+  mount_uploader :avatar, AvatarUploader
   searchkick
   acts_as_taggable
 

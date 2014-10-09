@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       SendVerificationEmail.call(params[:user][:email], @user, session[:current_connection])
       @user.update(user_params)
       redirect_to user_path(@user)
-    else  
+    else
       @user.update(user_params)
       redirect_to edit_user_path(@user)
     end
@@ -66,6 +66,16 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def upload_avatar
+    @user = User.find(params[:id])
+    user.avatar = params[:avatar]
+    if user.save!
+      flash[:success] = "Your image was successfully saved!"
+    else
+      flash[:error] = "We had a problem saving your image."
+    end
+  end
+
   private
 
   def sign_in_before_claim
@@ -73,7 +83,7 @@ class UsersController < ApplicationController
     if current_user.nil?
       session[:original_url] = request.original_url
       session[:claimed_user_id] = user.id
-      redirect_to login_path 
+      redirect_to login_path
       return
     end
   end

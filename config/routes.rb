@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update, :edit] do
     get "claim", on: :member
+    post "upload_avatar", on: :member
   end
 
   get "/people", to: "users#index", as: "users"

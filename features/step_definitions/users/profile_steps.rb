@@ -27,4 +27,15 @@ Then(/^I should be unsubscribed$/) do
   checkbox = find('#email_digest')
   expect(checkbox).to_not be_checked
 end
-  
+
+When(/^I click change on my profile image$/) do
+  click_on "Change"
+end
+
+When(/^I select a file$/) do
+  page.attach_file('avatar', 'app/features/support/images/yay-programming.gif')
+end
+
+Then(/^I should see my new avatar on my profile$/) do
+  expect(page).to have_image('avatar')
+end

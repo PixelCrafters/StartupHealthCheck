@@ -15,3 +15,8 @@ Feature: User's profile
   Scenario: Unsubscribing from email digest
     When I unsubscribe from the email digest
     Then I should be unsubscribed
+
+  Scenario: Uploading a new avatar
+    When I click change on my profile image
+    And I select a file
+    Then I should see my new avatar on my profile
